@@ -6,20 +6,11 @@
 
 </head>
 <body>
-	<h1>What to buy </h1>
-	<p title="a gentle reminder">Don't forget to buy this stuff.	</p>
-	<ul id="purchase">	
-		<li>A tin of beans</li>
-		<li class="sale">Cheese</li>
-		<li class="sale important">Milk</li>
+	<h1>js学习</h1>
+	<ul>
+		<a href="01.html"><li>01</li></a>
+		<a href="02.html"><li>02（实现跳转初稿）</li></a>
+		<a href="03.html"><li>03(实现跳转完整版)</li></a>
 	</ul>
-	<script type="text/javascript">
-	var shopping = document.getElementById('purchase');
-	var items = shopping.getElementsByTagName("*");
-	alert(items.length);
-	for (var i = 0; i < items.length; i++) {
-		alert(typeof items[i]);
-	};
-	</script>
 </body>
 </html>
