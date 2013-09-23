@@ -1,0 +1,19 @@
+body,ul,p,h1,h2,h3,h4,dl,dd,form,input,textarea,select{
+	padding: 0; margin: 0; font-family: arial;
+}
+li {list-style: none;	}
+img { border:none;}
+a { text-decoration: none;}
+a:hover { text-decoration: none;}
+
+body {
+	background: url(../images/index_bg.png) no-repeat center 0 ;
+	background-attachment: fixed;
+}
+#body {
+	width: 1024px;
+	margin: 200px auto;
+}
+a {
+	color: #653488;
+}
