@@ -11,7 +11,7 @@ function getNewContent () {
 			};
 		}
 		request.send(null);
-	};else{
+	}else{
 		alert("Sorry,your browser doesn't support XMLHttpRequest");
 	}
 }
