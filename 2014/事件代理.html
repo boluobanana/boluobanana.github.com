@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="div1">
+		<ul id="ul">
+			<li><a href="">qqq</a></li>
+			<li><a href="">qqq</a></li>
+			<li><a href="">qqqqqq</a></li>
+			<li><a href="">qqq</a></li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+	var addEvent = (function(){
+		if (document.addEventListener) {
+			return function(el, type, fn){
+				el.addEventListener(type, fn, false);
+			};	
+		} else{
+			return function  (el, type, fn) {
+				el.attachEvent('on' + type, function(){
+					return fn.call(el, window.event);
+				});
+			}
+		};
+	})();
+	window.onload = function  () {
+		var ul = document.getElementById('ul');
+		ul.onclick = function () {
+		   var e = arguments[0]||window.event;
+		   target = e.srcElement ? e.srcElement : e.target;
+		   alert(target.innerHTML);
+		   return false;
+		}
+		var div1 = document.getElementById('div1');
+		addEvent(div1, 'click', function(){
+			alert("找到我 了！ 我是父级div");
+		})
+	}
+</script>
+</html>

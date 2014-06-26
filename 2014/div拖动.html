@@ -1,0 +1,422 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <title>Div拖动/调整大小实例</title>
+</head>
+
+ 
+
+<script type="text/javascript">
+ //保留的位置
+ var saveLeft,saveTop,saveWidth,saveHeight;
+ var theBody;
+ var eventType;    //事件种类, "move"、"resize"
+ var div;
+ 
+ //创建并设定div的参数
+ function setDiv()
+ {
+  //防止重复打开
+  if (div)
+  {
+   return;
+  }
+  var newLeft,newTop,newWidth,newHeight;
+  theBody = document.body;
+  
+  div = document.createElement("div");
+  div.id = "panelDiv";
+  div.style.position = "absolute";
+  div.style.backgroundColor = "#E5E5E5"
+  div.style.padding = "2px 5px 5px 2px";
+  div.style.overflow = "hidden";
+  div.style.zIndex = 1;
+  
+  //设定打开的大小和位置
+  Function()
+  {
+   var openType = document.getElementById("radio1").checked ? 0 : 1;
+   if (openType == 0)   //默认大小默认位置居中打开
+   {
+    newWidth = "300px";
+    newHeight = "300px";
+    newLeft = (theBody.clientWidth - parseInt(newWidth)) / 2 + "px";
+    newTop = (theBody.clientHeight - parseInt(newHeight)) / 2 + "px";
+   }
+   else //存储的位置与大小
+   {
+    newWidth = saveWidth ? saveWidth : "300px";
+    newHeight = saveHeight ? saveHeight : "300px";
+    newLeft = saveLeft ? saveLeft : (theBody.clientWidth - parseInt(newWidth)) / 2 + "px";
+    newTop = saveTop ? saveTop : (theBody.clientHeight - parseInt(newHeight)) / 2 + "px";
+   }
+   div.style.width = newWidth;
+   div.style.height = newHeight;
+   div.style.left = newLeft;
+   div.style.top = newTop;
+  }
+  div = setChild(div);
+  theBody.appendChild(div);
+  
+  var ipt = document.getElementsByTagName("input");
+  for(var i = 0; i < ipt.length; i++)
+  {
+   ipt[i].disabled = true;
+  }
+ }
+ 
+ function setChild(div)
+ {
+  //可否移动、调整
+  var isMove = document.getElementById("isMove").checked;
+  var isResize = document.getElementById("isResize").checked;
+  
+  //底色
+  var cDiv = document.createElement;
+  var backDiv = cDiv("div");
+  backDiv.style.cssText = "left: 0px; top: 0px; width: 100%; height: 100%; background-color: #F5F5F5;";
+  div.appendChild(backDiv);
+  
+  //标题
+  var topDiv = cDiv("div");
+  topDiv.style.cssText = "left: 2px; top: 2px; width: 100%; height: 30px; position: absolute; background-color: #78ABFF; vertical-align: middle; z-index: 5";
+  if (isMove)
+  {
+   topDiv.style.cursor = "move";
+   topDiv.setAttribute("onmousedown", function(){setMove(this)});
+  }
+  else
+  {
+   topDiv.style.cursor = "default";
+  }
+  topDiv.innerHTML = "<span style='top: 5px; left:5px; font-size: 20px; font-weight: bold; color: #102548; position: relative;' onselectstart='return false'>标题栏</span>";
+  div.appendChild(topDiv);
+  
+  //关闭按钮
+  var closeDiv = cDiv("div");
+  closeDiv.style.cssText = "right: 8px; top : 5px; width: 24px; height: 24px; position: absolute; background-color: #E4EEFF; border: #2D66C4 1px solid; text-align: center; vertical-align: middle; cursor: pointer; z-index: 10";
+  closeDiv.setAttribute("onclick", function() {eCloseDiv()});
+  closeDiv.innerHTML = "<span style='font-size: 20px; font-weight: bold; color: #0E377A;' title='Esc快捷键'>×</span>";
+  div.appendChild(closeDiv);
+  
+  //内容
+  var contentDiv = cDiv("div");
+  contentDiv.style.cssText = "left: 2px; top: 35px; width: 100%; position: absolute; overflow: auto";
+  contentDiv.style.height = (parseInt(div.style.height) - 40) + "px";
+  contentDiv.innerHTML = "<table style='width: 100%; height: 100%; text-align: center; vertical-align: hidden'><tr><td><p>这里是内容区！</p><a href='javascript:saveDiv()'>保留这个位置和大小</a></td></tr></table>";
+  div.appendChild(contentDiv);
+  
+  //调整大小
+  var reDiv = cDiv("div");
+  reDiv.style.cssText = "right: 0px; bottom: 0px; width: 5px; height: 5px; position: absolute;";
+  if (isResize)
+  {
+   reDiv.style.cursor = "se-resize";
+   reDiv.setAttribute("onmousedown", function(){setResize(this)});
+  }
+  else
+  {
+   reDiv.style.cursor = "default";
+  }
+  div.appendChild(reDiv);
+  
+  return div;
+ }
+ 
+ var oX, oY, oLeft, oTop, oWidth, oHeight; //存储原始移动前的位置
+ var divClone, oDiv;   //克隆的节点和原始节点
+ var oTime;
+ //clone拖移的节点
+ function setMove(obj)
+ {
+  if (event.button == 1)
+  {
+   if (oTime)
+   {
+    clearTimeout(oTime);
+    divClone.parentNode.removeChild(divClone);
+   }
+   oDiv = obj.parentNode;
+   divClone = oDiv.cloneNode(true);
+   divClone.style.filter = "Alpha(opacity=50)";
+   divClone.childNodes[1].setAttribute("onmousemove", function(){startMove(this)});
+   divClone.childNodes[1].setAttribute("onmouseup", function(){endMove()});
+   oX = parseInt(event.clientX);
+   oY = parseInt(event.clientY);
+   oLeft = parseInt(divClone.style.left);
+   oTop = parseInt(divClone.style.top);
+   document.body.appendChild(divClone);
+   divClone.childNodes[1].setCapture();
+   eventType = "move";
+  }
+ }
+ 
+ //拖移
+ function startMove(obj)
+ {
+  if (eventType == "move" && event.button == 1)
+  {
+   var moveDiv = obj.parentNode;
+   moveDiv.style.left = (oLeft + event.clientX - oX) + "px";
+   moveDiv.style.top = (oTop + event.clientY - oY) + "px";
+  }
+ }
+ 
+ //拖移结束调用动画
+ function endMove()
+ {
+  if (eventType == "move")
+  {
+   divClone.childNodes[1].releaseCapture();
+            move(parseInt(divClone.style.left), parseInt(divClone.style.top));
+   eventType = "";
+  }
+ }
+ 
+ //移动的动画
+ function move(aimLeft, aimTop)
+ {
+  var nowLeft = parseInt(oDiv.style.left);
+  var nowTop = parseInt(oDiv.style.top);
+  var moveSize = 30;
+  if (nowLeft > aimLeft + moveSize || nowLeft < aimLeft - moveSize || nowTop > aimTop + moveSize || nowTop < aimTop - moveSize)
+  {
+   oDiv.style.left = aimLeft > nowLeft + moveSize ? (nowLeft + moveSize) + "px" : aimLeft < nowLeft - moveSize ? (nowLeft - moveSize) + "px" : nowLeft + "px";
+   oDiv.style.top = aimTop > nowTop + moveSize ? (nowTop + moveSize) + "px" : aimTop < nowTop - moveSize ? (nowTop - moveSize) + "px" : nowTop + "px";
+   oTime = setTimeout("move(" + aimLeft + ", " + aimTop + ")", 1);
+  }
+  else
+  {
+   oDiv.style.left = divClone.style.left;
+   oDiv.style.top = divClone.style.top;
+   divClone.parentNode.removeChild(divClone);
+   divClone == null;
+  }
+ }
+ 
+ //clone调整大小的节点
+ function setResize(obj)
+ {
+  if (event.button == 1)
+  {
+   if (oTime)
+   {
+    clearTimeout(oTime);
+    divClone.parentNode.removeChild(divClone);
+   }
+   oDiv = obj.parentNode;
+   divClone = oDiv.cloneNode(true);
+   divClone.style.filter = "Alpha(opacity=50)";
+   divClone.childNodes[4].setAttribute("onmousemove", function(){startResize(this)});
+   divClone.childNodes[4].setAttribute("onmouseup", function(){endResize()});
+   oX = parseInt(event.clientX);
+   oY = parseInt(event.clientY);
+   oWidth = parseInt(divClone.style.width);
+   oHeight = parseInt(divClone.style.height);
+   document.body.appendChild(divClone);
+   divClone.childNodes[4].setCapture();
+   eventType = "resize";
+  }
+ }
+ 
+ //拖动调整大小
+ function startResize(obj)
+ {
+  if (eventType == "resize" && event.button == 1)
+  {
+   var nX = event.clientX;
+   var nY = event.clientY;
+   if (nX > oX - oWidth && nY > oY - oHeight + 40)
+   {
+    var resizeDiv = obj.parentNode;
+    resizeDiv.style.width = (oWidth + event.clientX - oX) + "px";
+    resizeDiv.style.height = (oHeight + event.clientY - oY) + "px";
+    resizeDiv.childNodes[3].style.height = (parseInt(resizeDiv.style.height) - 40) + "px";
+   }
+  }
+ }
+ 
+ //调整大小结束
+ function endResize()
+ {
+  if (eventType == "resize")
+  {
+   divClone.childNodes[4].releaseCapture();
+            resize(parseInt(divClone.style.width), parseInt(divClone.style.height));
+   eventType = "";
+  }
+ }
+ 
+ //调整大小的动画
+ function resize(aimWidth, aimHeight)
+ {
+  var nowWidth = parseInt(oDiv.style.width);
+  var nowHeight = parseInt(oDiv.style.height);
+  var resizeSize = 30;
+  if (nowWidth > aimWidth + resizeSize || nowWidth < aimWidth - resizeSize || nowHeight > aimHeight + resizeSize || nowHeight < aimHeight - resizeSize)
+  {
+   oDiv.style.width = aimWidth > nowWidth + resizeSize ? (nowWidth + resizeSize) + "px" : aimWidth < nowWidth - resizeSize ? (nowWidth - resizeSize) + "px" : nowWidth + "px";
+   oDiv.style.height = aimHeight > nowHeight + resizeSize ? (nowHeight + resizeSize) + "px" : aimHeight < nowHeight - resizeSize ? (nowHeight - resizeSize) + "px" : nowHeight + "px";
+   oDiv.childNodes[3].style.height = (parseInt(oDiv.style.height) - 40) + "px";
+   oTime = setTimeout("resize(" + aimWidth + ", " + aimHeight + ")", 1);
+  }
+  else
+  {
+   oDiv.style.width = divClone.style.width;
+   oDiv.style.height = divClone.style.height;
+   oDiv.childNodes[3].style.height = (parseInt(oDiv.style.height) - 40) + "px";
+   divClone.parentNode.removeChild(divClone);
+   divClone == null;
+  }
+ }
+ 
+ //关闭DIV
+ function eCloseDiv()
+ {
+  if (div)
+  {
+   div.parentNode.removeChild(div);
+   var ipt = document.getElementsByTagName("input");
+   for(var i = 0; i < ipt.length; i++)
+   {
+    ipt[i].disabled = false;
+   }
+   div = null;
+  }
+ }
+ 
+ //保留位置和大小
+ function saveDiv()
+ {
+  if (div)
+  {
+   saveLeft = div.style.left;
+   saveTop = div.style.top;
+   saveWidth = div.style.width;
+   saveHeight = div.style.height;
+   alert("保留成功！");
+  }
+ }
+ 
+ //快捷键
+ document.onkeydown = function()
+ {
+  event.keyCode == 27 ? eCloseDiv() : null;  //Esc快捷键
+  event.ctrlKey && (event.keyCode == 83 || event.keyCode == 115) ? saveDiv() : null; //ctrl+s保存位置
+  event.ctrlKey && event.keyCode == 13 ? setDiv() : null //ctrl+enter打开Div
+  !event.ctrlKey && (event.keyCode == 37 || event.keyCode == 38 || event.keyCode == 39 || event.keyCode == 40) ? arrowMove(event.keyCode) : null;
+  event.ctrlKey && (event.keyCode == 37  || event.keyCode == 38 || event.keyCode == 39 || event.keyCode == 40) ? arrowResize(event.keyCode) : null;
+ }
+ 
+ //上下左右箭头移动div
+ function arrowMove(eKeyCode)
+ {
+  if (div)
+  {
+   var isMove = document.getElementById("isMove").checked;
+   if (isMove)
+   {
+    switch(eKeyCode)
+    {
+     case 37:
+      div.style.left = (parseInt(div.style.left) - 1) + "px"; //left
+      break
+     case 38:
+      div.style.top = (parseInt(div.style.top) - 1) + "px"; //up
+      break
+     case 39:
+      div.style.left = (parseInt(div.style.left) + 1) + "px"; //right
+      break
+     case 40:
+      div.style.top = (parseInt(div.style.top) + 1) + "px"; //down
+      break
+    }
+   }
+  }
+ }
+ 
+ //ctrl+上下左右箭头调整div大小
+ function arrowResize(eKeyCode)
+ {
+  if (div)
+  {
+   var isResize = document.getElementById("isResize").checked;
+   if (isResize)
+   {
+    switch(eKeyCode)
+    {
+     case 37:
+      div.style.width = (parseInt(div.style.width) - 1) + "px"; //left
+      break
+     case 38:
+      div.style.height = (parseInt(div.style.height) - 1) + "px"; //up
+      break
+     case 39:
+      div.style.width = (parseInt(div.style.width) + 1) + "px"; //right
+      break
+     case 40:
+      div.style.height = (parseInt(div.style.height) + 1) + "px"; //down
+      break
+    }
+   }
+  }
+ }
+</script>
+
+ 
+
+<body>
+<p>
+ <input type="checkbox" id="isMove" /><label for="isMove">可移动</label>&nbsp;&nbsp;&nbsp;
+ <input type="checkbox" id="isResize" /><label for="isResize">可调整大小</label>&nbsp;&nbsp;&nbsp;
+</p>
+  
+<p>
+ <input type="radio" name="radio" id="radio1" checked /><label for="radio1">默认居中打开</label>&nbsp;&nbsp;&nbsp;
+ <input type="radio" name="radio" id="radio2" /><label for="radio2">保留位置上打开</label>
+</p>
+<p><a href="javascript:setDiv()">打开DIV</a></p>
+<p style="font-weight: bold">操作说明：</p>
+<ol>
+ <li>
+  选中复选框（可移动、可调整大小）后，打开的DIV具有移动/调整大小的功能(此时移动/调整大小快捷键可使用);<br>
+  反之，不可移动/调整大小(此时移动/调整大小快捷键无效)
+ </li>
+ <li>
+  单选框默认居中打开选中，无论有无保存DIV位置和大小均以默认位置及大小打开DIV
+ </li>
+ <li>
+  单选框保留位置上打开选中，如果未发现保存记录以默认方式打开，否则以保存的位置及大小打开
+ </li>
+ <li>
+  如果选中可移动后，鼠标经过标题位置（蓝色背景）处会变成移动的图标，此时按住鼠标左键会产生一个半透明的DIV，按住鼠标不动拉动此半透明DIV会跟随移动，释放鼠标左键后会产生一段原始位置移动至半透明位置的动画，当动画重叠时，半透明的DIV将回收。
+ </li>
+ <li>
+  如果选中可调整大小后，鼠标经过整个DIV的最右下角处会变成伸缩的图标，此时按住鼠标左键会产生一个半透明的DIV，按住鼠标不动拉动此半透明DIV会随着移动而调整大小，释放鼠标左键后会产生一段原始大小伸缩至半透明大小的动画，当动画重叠时，半透明的DIV将回收。
+ </li>
+ <li>
+  DIV的右上角有关闭按钮，按下后DIV将remove
+ </li>
+</ol> 
+<p style="font-weight: bold">
+ 快捷键说明：
+<ol>
+ <li>
+  Ctrl + Enter : 打开div
+ </li>
+ <li>
+  Ctrl + s(大小写均可) : 保存div的大小和位置
+ </li>
+ <li>
+  上下左右箭头 : 轻移div位置
+ </li>
+ <li>
+  Ctrl + 上下左右箭头 : 轻调div大小
+ </li>
+ <li>
+  Esc : 关闭Div
+ </li>
+</ol> 
+</p>
+</body>
+</html>
