@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件监听test</title>
+	<style type="text/css">
+		#div2 {
+			width: 100px;height: 100px;
+			background-color: #eee;
+			display: none;
+		}
+		a {
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body id="body">
+	<div>
+		<div id="div1">
+			<ul>
+				<li><a href="javascript:void(0); ">11111</a></li>
+				<li><a href="javascript:void(0); ">wwwww</a></li>
+				<li><a href="javascript:void(0); ">eeeee</a></li>
+				<li><a href="javascript:void(0); ">rrrrr</a></li>
+				<li><a href="javascript:void(0); ">ttttt</a></li>
+			</ul>
+			<div id="div2"></div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	//监听函数
+	var addEvent = (function  () {
+		if (document.addEventListener) {
+			return function  (el, type,fn) {
+				el.addEventListener(type,fn,false);
+			};
+		} else{
+			return function  (el, type ,fn) {
+				el.attachEvent('on' + type, function(){
+					return fn.call(el, window.event);
+				})
+			}
+		};
+	})();
+	//阻止事件继续向上冒泡
+	var stopEvent = function(event){ 
+		e = event || window.event; 
+		if(e.stopPropagation){ 
+			e.stopPropagation(); 
+		}else { 
+			e.cancelBubble = true;
+		} 
+	};
+	var div1 = document.getElementById('div1');
+	var div2 = document.getElementById('div2');
+	var ul = document.getElementsByTagName('div1');
+	var body = document.getElementById('body');
+
+	addEvent(div1,'click',function(){
+		div2.style.display = "block";
+	});
+	addEvent(div1,'click',stopEvent)
+	addEvent(body, 'click', function  () {
+		alert("body");
+	});
+</script>
+</html>
