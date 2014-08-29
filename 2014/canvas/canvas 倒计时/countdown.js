@@ -17,7 +17,11 @@ function render (cxt) {
 	var minutes = 34;
 	var seconds = 56;
 
+	
+
 	renderDigit(0,0,parseInt(hours/10), cxt);
+	renderDigit(0,0,parseInt(minutes/10), cxt);
+	renderDigit(0,0,parseInt(seconds/10), cxt);
 }
 
 function renderDigit (x,y,num,cxt) {
