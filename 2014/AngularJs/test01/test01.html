@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="banana">
+<head>
+	<meta charset="UTF-8">
+	<title>banana list</title>
+	<script type="text/javascript" src="../angular-1.2.23/angular.js"></script>
+	<script type="text/javascript" src="js/controllers.js"></script>
+	
+</head>
+<body ng-controller="BananaListCtrl">
+	<ul>
+		<li ng-repeat="banana in bananas">
+			{{banana.name}}
+			<p>{{banana.sizes}}</p>
+		</li>
+	</ul>
+</body>
+</html>
