@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="banana">
+<head>
+	<meta charset="UTF-8">
+	<title>test04 json数据</title>
+	<script type="text/javascript" src="../angular-1.2.23/angular.js"></script>
+	<script type="text/javascript" src="js/controllers.js"></script>
+</head>
+<body ng-controller="BananaListCtrl">
+	<input ng-model="query">
+	<select ng-model="orderProp">
+		<option value="name">name</option>
+		<option value="age">age</option>
+	</select>
+	<ul>
+		<li ng-repeat="banana in bananas | filter:query | orderBy:orderProp">
+			<span>{{banana.name}}</span>
+			<p>{{banana.size}}</p>
+		</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="banana">
+<head>
+	<meta charset="UTF-8">
+	<title>test05 a链接 ng-src链接</title>
+	<script type="text/javascript" src="../angular-1.2.23/angular.js"></script>
+	<script type="text/javascript" src="js/controllers.js"></script>
+</head>
+<body ng-controller="BananaListCtrl">
+	<input ng-model="query">
+	<select ng-model="orderProp">
+		<option value="name">name</option>
+		<option value="age">age</option>
+	</select>
+	<ul>
+		<li ng-repeat="banana in bananas | filter:query | orderBy:orderProp">
+			<a href="#{{banana.id}}">{{banana.name}}</a>
+			<a href="#{{banana.id}}"><img ng-src="{{banana.imageUrl}}"></a>
+			<p>{{banana.size}}</p>
+		</li>
+
+	</ul>
+</body>
+</html>
