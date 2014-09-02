@@ -14,7 +14,7 @@ bananaControllers.controller('BananaDetailCtrl',[
 	'$scope', '$routeParams','$http',
 	function($scope, $routeParams, $http){
 		$http.get('json/' + $routeParams.bananaId + '.json').success(function(data){
-			$scope.bananaId = data.id;
+			$scope.banana = data;
 			$scope.mainImageUrl = data.images[0];
 		});
 		$scope.setImage = function(imageUrl){

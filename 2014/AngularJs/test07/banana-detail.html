@@ -7,9 +7,12 @@
 
 </body>
 </html>
-<h1 style="color:red;">{{bananaId}}</h1>
+<h1 style="color:red;">{{banana.id}}</h1>
+<div style="margin:20px auto;">
+	<img ng-src="{{mainImageUrl}}" class="phone">
+</div>
 <ul>
-	<li ng-repeat="img in banana.images">
+	<li ng-repeat="img in banana.images" style="float:left;">
 		<img ng-src="{{img}}" ng-click="setImage(img)">
 	</li>
 </ul>
