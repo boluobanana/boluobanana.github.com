@@ -1,0 +1,15 @@
+<input ng-model="query">
+	<select ng-model="orderProp">
+		<option value="name">name</option>
+		<option value="age">age</option>
+	</select>
+	<ul>
+		<li ng-repeat="banana in bananas | filter:query | orderBy:orderProp">
+			<h1>
+				<a href="#/bananas/{{banana.id}}">{{banana.name}}</a>
+			</h1>
+			<a href="#/bananas/{{banana.id}}"><img ng-src="{{banana.imageUrl}}"></a>
+			<p>{{banana.size}}</p>
+		</li>
+
+	</ul>
