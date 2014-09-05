@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>排版</title>
+	<style type="text/css">
+		div{
+			border: 1px solid #ccc;
+			height: 200px; 
+		}
+		.col-1{
+			width: 200px;
+			background-color: red;	
+			float: left;
+		}
+		.col-2{
+			background-color: green;
+		}
+		@media screen and (max-width: 600px){
+			.col-1{
+				width: 600px;
+			}
+			.col-2{
+				float: left;
+				width: 600px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="header" style="background-color:#ccc;"></div>
+	<div class="col col-1"></div>
+	<div class="col col-2"></div>
+	
+</body>
+</html>

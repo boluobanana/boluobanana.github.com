@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>物理实验</title>
+</head>
+<body>
+	<canvas id="canvas" style="margin:50px auto; display:block; border:1px solid black;">
+		请使用更先进的浏览器打开此网页
+	</canvas>
+	
+
+
+	<script type="text/javascript">
+	var WINDOW_WIDTH = 1024;
+	var WINDOW_HEIGHT = 768;
+	var ball = {x:512, y:100, r:20, g:2, vx:-100, vy:-10, color:'#005588'}
+	window.onload = function  () {
+		var canvas = document.getElementById('canvas');
+		var context = canvas.getContext('2d');
+
+		canvas.width = WINDOW_WIDTH;
+		canvas.height = WINDOW_HEIGHT;
+
+		setInterval(
+			function(){
+				render(context);
+				update();
+			},
+			50
+			);
+	}
+
+	function render (cxt) {
+		
+		cxt.clearRect(0,0,cxt.canvas.width,cxt.canvas.height);
+
+		cxt.beginPath();
+		cxt.arc(ball.x, ball.y ,ball.r , 0,2*Math.PI);
+		cxt.closePath();
+		cxt.fillStyle = ball.color;
+		cxt.fill();
+	}
+
+	function update () {
+		ball.x += ball.vx;
+		ball.y += ball.vy;
+		ball.vy += ball.g;
+
+		if (ball.y > (768 - ball.r)) {
+			ball.y = 768 - ball.r;
+			ball.vy = -0.9 * ball.vy;
+		};
+		if (ball.x < (0 + ball.r)) {
+			ball.x = 0 + ball.r;
+			ball.vx = -0.9 * ball.vx;
+		};
+		if (ball.x > (1024 - ball.r)) {
+			ball.x = 1024 - ball.r;
+			ball.vx = -0.9 * ball.vx;
+		};
+
+	}
+	</script>
+</body>
+</html>
