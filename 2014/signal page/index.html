@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="scotchApp">
+
+<head>
+  <!-- SCROLLS -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link rel="stylesheet" type="text/css" href="style/main.css">
+
+  <!-- SPELLS -->
+  <!--// <script src="angular-cookies.js"></script>
+  // <script src="angular-sanitize.js"></script> -->
+  <script src="scripts/angular.js"></script>
+  <script src="scripts/angular-route.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/services.js"></script>
+  <script src="scripts/controllers.js"></script>
+</head>
+
+<!-- define angular controller -->
+<body ng-controller="PromotionController">
+
+  
+
+  <div id="main">
+  
+    <!-- angular templating -->
+		<!-- this is where content will be injected -->
+    <div ng-view></div>
+    
+  </div>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Angular Routing Example</a>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#promotion"><i class="fa fa-home"></i> Promotion</a></li>
+        <li><a href="#activity"><i class="fa fa-shield"></i> Activity</a></li>
+        <li><a href="#shop"><i class="fa fa-comment"></i>Shop</a></li>
+      </ul>
+    </div>
+  </nav>
+</body>
+
+</html>

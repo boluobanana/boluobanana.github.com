@@ -1,0 +1,400 @@
+@font-face {font-family: 'iconfont';
+    src: url('../style/iconfont/iconfont.eot'); /* IE9*/
+    src: url('../style/iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../style/iconfont/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../style/iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../style/iconfont/iconfont.svg#uxiconfont') format('svg'); /* iOS 4.1- */
+}
+/*定义使用iconfont的样式*/
+body{
+	background-color: #f5f5f5 !important;
+	margin: 0 !important;
+}
+a{
+	text-decoration: none;
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;}
+/*优惠*/
+/*头部*/
+.tabs-header {
+	height: 48px;width: 100%;
+	margin-top: -1px;
+	background-color: #e33a3d;
+	padding: 5px;/*去除同级class.bar默认样式,并更改为7px*/
+}
+/*头部-导航标题*/
+.tabs-header h1 {
+	color: #fff;display: inline;
+	font-size: 16px;
+	line-height: 34px;
+	margin-left: 5px;
+}
+/*头部-导航标题*/
+.tabs-header h1 i.icon-logo {
+	font-size: 85px;
+}
+
+/*去除button默认样式*/
+.button-header-back {
+	background-color: #e33a3d;
+	border: 0px;
+	color: #fff;
+	position: absolute;
+	left: 0;
+	margin: -5px 0 0 0;
+}
+.button-header-back-search {
+	width: 44px;
+	height: 44px;
+}
+.button-header-left {
+	width: 44px;
+	height: 44px;
+	background-color: #e33a3d;
+	border: 0px;
+	border-radius: 0;
+	color: #fff;
+	position: absolute;
+	right: 49px;
+	margin: -5px -5px 0 0;
+}
+/*头部按钮-右*/
+.button-header-right {
+	width: 44px;
+	height: 44px;
+	background-color: #e33a3d;
+	border: 0px;
+	color: #fff;
+	position: absolute;
+	right: 0;
+	margin: -5px -5px 0 0;
+}
+.icon-left {
+	font-size: 22px;
+	margin-left: -8px;
+}
+.button-header-back h1 {
+	margin: 0;
+	line-height: 44px;
+	display: inline;
+}
+.icon-message {
+	font-size: 30px;
+	line-height: 44px;
+}
+.ul-bg{
+	margin: 0 1% !important;
+}
+.row-title {
+	height: 60px;
+	background-color: #fff;
+	position: relative;
+    margin:0 1%; 
+    margin-top: -10px;
+	border-bottom: 1px solid #f5f5f5;
+}
+.row-title h1 {
+	margin-bottom: 0;/*去除h1自带样式*/
+	padding-left: 5px;
+	line-height: 60px;
+	font-size: 35px;
+	color: #e33a3d;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.row-title h1 span {
+	padding-left: 5px;
+	font-size: 14px;
+	color: #a9a9ae;
+	text-decoration: line-through;
+}
+.btn-hover .button:hover{
+	color: #ffffff;}
+/*详情清单*/
+.ul-bg{
+	background-color: #fff !important;
+}
+.list-detail{
+	list-style: none;
+	margin-top: 10px;background-color: #fff;
+	margin-left: 1%;margin-right: 1%;
+}
+
+.list-detail .item {
+	height: 30px;
+/*	margin-left: -35px;  //可能需要修改
+*/	border-top:1px dashed #545661 ;
+	line-height: 10px;
+	color: #545661;
+}
+/*可公用样式，去除border-top*/
+.clear-border-top {
+	border-top: 0 !important;
+}
+/*可公用样式，去除border-bottom*/
+.clear-border-bottom {
+	border-bottom: 0;
+}
+/*可公用样式，左右margin5px*/
+.angle {
+	height: 9px;
+	background: url(../img/sanjiao.png) repeat-x;
+	margin-top: 5px;
+	position: relative;
+	z-index: 999;
+}
+.button-user {
+	width: 100px;
+	height: 40px;
+	border-radius: 5px;
+	background-color: #e33a3d;
+	border: 0;/*去除button默认样式*/
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+	position: absolute;
+	top: 10px;
+	right: 5px;
+}
+/*代金券*/
+.row-ticket {
+	height: 115px;
+	background-color: #fff;
+	margin: 0 1%;
+}
+.row-ticket-title {
+	height: 65px;
+	background-color: #e33a3d;
+	color: #fff;
+	position: relative;
+}
+.row-ticket-title img {
+	margin: 5px 5px ;
+}
+.row-ticket-title h2 {
+	margin: 0;/*去除h2自带样式*/
+	font-size: 18px;
+	color: #fff;position: absolute;
+	top: 5px;left: 50px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+}
+.row-ticket-title h3 {
+	margin: 0;
+	position: absolute;
+	top: 6px;
+	right: 5px;
+	font-size: 26px;
+	color: #fff;
+}
+.row-ticket-title p {
+	margin-bottom: 0;/*去除p自带样式*/
+	font-size: 14px;
+	position: absolute;
+	bottom: 0;
+	left: 50px;
+}
+
+.row-ticket-content {
+	position: relative;
+	background-color: #fff;
+}
+.row-ticket-content p {
+	margin-bottom: 0;/*去除p自带样式*/
+	line-height: 60px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #5b5d67;
+	margin-top: -2px;
+}
+.row-ticket-content span {
+	font-size: 20px;
+	font-weight: bold;
+	font-style: italic;
+	color: #e33a3d;
+}
+.row-ticket-content button {
+	right: 0;
+}
+.margin-top {
+	margin-top: 5px;
+}
+.margin-top h1 {
+	height: 30px;/*hack调试*/
+}
+.position-relative {
+	position: relative;
+}
+
+/*栏目标题*/
+.column-title {
+	height: 30px;padding-left:1%;padding-top: 5px;
+	clear: left;
+}
+.column-title img {
+	float: left;
+}
+.column-title h1 {
+	margin: 0 auto;/*去除h1自带样式*/
+	float: left;
+	line-height: 34px;
+	font-size: 16px;
+	color: #5b5d67;
+}
+
+/*栏目列表*/
+.column-list {
+	background-color: #fff !important;height: 90px;margin-top: 5px;
+	margin: 1%;
+}
+.column-list img {
+	float: left;
+	margin-right: 5px;
+}
+.column-list h1 {
+	margin: 0 auto;/*去除h1自带样式*/
+	padding: 8px 0;
+	font-size: 16px;
+	color: #5b5d67;
+	font-weight: bold;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+}
+.column-list h2 {
+	margin: 0 auto;/*去除h2自带样式*/
+	font-size: 24px;
+	color: #e33a3d;
+	overflow: hidden;
+	white-space: nowrap;
+}
+.column-list h2 span {
+	padding-left: 5px;
+	font-size: 14px;
+	color: #a9a9ae;
+	text-decoration: line-through;
+}
+.column-list p {
+	margin-top: 5px;
+	font-size: 14px;
+	color: #a9a9ae;
+}
+.column-list p span {
+	display: inline-block;
+	font-size: 14px;
+	color: #a9a9ae;
+	position: absolute;
+	right: 5px;
+}
+
+
+/*商家信息*/
+.row-message {
+	height: 70px;margin-top: 5px;
+	background-color: #fff;
+	position: relative;
+	margin:0 1%;
+}
+.row-message h1 {
+	margin: 0;/*去除h1自带样式*/
+	height: 16px;
+	font-size: 16px;
+	color: #5b5d67;
+}
+.row-message h2 {
+	margin: 0;/*去除h2自带样式*/
+	position: absolute;
+	top: 20px;
+	left: 5px;
+}
+.row-message p {
+	margin-bottom: 0;/*去除p自带样式*/
+	position: absolute;
+	bottom: 0;
+	left: 5px;
+}
+.row-message span {
+	height: 20px;
+	position: absolute;
+	bottom: 0;
+	right: 5px;
+}
+.button-nav{
+	height: 70px;min-width: 100%;
+	margin-top:5px;text-align: center;
+
+}
+.button-nav a{
+	width: auto;
+}
+.button-nav button{
+    height: 75px;width:75px;background-color: #fff;
+    border: none;
+}
+/*活动列表*/
+.activity-column-list {
+	position: relative;
+	margin-top: 5px;
+}
+.activity-column-list-title {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(transparent), to(#000));
+	background: -webkit-linear-gradient(transparent, #000);
+	background: -moz-linear-gradient(transparent, #000);
+	background: -ms-linear-gradient(transparent, #000);
+	background: -o-linear-gradient(transparent, #000);
+	-pie-background: linear-gradient(transparent, #000);
+	background: linear-gradient(transparent, rgba(63, 48, 48, 0.9));
+	padding-left: 5px;
+}
+.activity-column-list-title h1 {
+	margin: 0 auto;/*去除h1自带样式*/
+	font-size: 18px;
+	color: #fff;
+	font-weight: bold;
+	margin-top: 10px;
+}
+.activity-column-list-title h1 span {
+	position: absolute;
+	right: 5px;
+	display: inline-block;
+	font-size: 10px;
+	color: #fff;
+}
+.activity-column-list-title p {
+	margin: 0;/*去除p自带样式*/
+	font-size: 10px;
+	color: #fff;
+}
+.activity-column-list-title p span {
+	display: inline-block;
+	font-size: 10px;
+	color: #fff;
+	position: absolute;
+	right: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

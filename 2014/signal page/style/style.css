@@ -1,0 +1,89 @@
+@font-face {font-family: 'iconfont';
+    src: url('../style/iconfont/iconfont.eot'); /* IE9*/
+    src: url('../style/iconfont/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../style/iconfont/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../style/iconfont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../style/iconfont/iconfont.svg#uxiconfont') format('svg'); /* iOS 4.1- */
+}
+/*定义使用iconfont的样式*/
+body{
+	background-color: #f5f5f5 !important;
+	margin: 0 !important;
+}
+a{
+	text-decoration: none;
+}
+h2{
+	display: inline;
+	color: #fff;
+	line-height: 48px;
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;}
+/*优惠*/
+/*头部*/
+.bar-header{
+	width: 100% - 10px;height: 48px;
+	background-color: #e33a3d;
+	padding: 0px 0 0 8px;
+}
+.bar-header button{
+	background-color: rgba(255, 255, 255, 0);
+	border: transparent;
+	color: white;
+	width: 48px;height: 48px;
+}
+.botton-left{
+	position: fixed;
+	right: 0px;
+}
+.botton-left-near{
+	position: fixed;
+	right: 48px;
+}
+.icon-message {
+	font-size: 30px;
+	line-height: 44px;
+}
+.content-detail h1 {
+	display: inline;
+	padding-left: 5px;
+	line-height: 60px;
+	font-size: 35px;
+	color: #e33a3d;
+}
+.content-detail h1 span {
+	padding-left: 5px;
+	font-size: 14px;
+	color: #a9a9ae;
+	text-decoration: line-through;
+}
+.content-detail button{
+	position: fixed;
+	right: 4px;
+	color: #fff;
+	font-size: 18px;
+	margin-top: 10px;
+	background-color: #e33a3d;
+	border:transparent;
+	width: 100px; height: 40px;
+	border-radius: 5px;
+
+}
+.list-detail{
+	list-style: none;
+	margin-top: -0px;
+	
+}
+.list-detail li{
+	height: 30px;
+	border-top:1px dashed #ccc;
+	line-height: 30px;
+	color: #545661;
+	margin-left: -30px;
+	font-size: 14px;
+}

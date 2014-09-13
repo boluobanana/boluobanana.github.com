@@ -1,0 +1,92 @@
+<div title="Promotion">
+
+	<div class="bar-header" title="header">
+
+		<h2>优惠</h2>
+		<button class="botton-left-near" >
+			<i class="iconfont icon-message">&#xe625</i>
+		</button>
+		<button  class="botton-left">
+			<i class="iconfont icon-message">&#xe605</i>
+		</button>
+	</div>
+
+	<div class="content-detail" title="detial">
+
+		<h1>￥120<span>￥150</span></h1>
+		<button>
+			立即购买
+		</button>
+
+		<ul class="list-detail">
+			<li>{{promotion.name}}</li>
+			<li>{{promotion.extData.introduction}}</li>
+			<li>{{promotion.startTime}}至{{promotion.endTime}}有效期</li>
+		</ul>
+		
+
+	</div>
+	<!-- <div class="tabs-header">
+		<a href="">
+			<button class="button button-header-back"><i class="iconfont icon-left">&#xe617</i><h1>优惠信息</h1></button>
+		</a>
+		<button class="button button-header-left" ><i class="iconfont icon-message"style="font-size:34px;margin-left:-5px;">&#xe625</i></button>
+		<button class="button button-header-right" ng-click="postFavorite()"><i class="iconfont icon-message"style="font-size:34px;margin-left:-3px;">&#xe605</i></button>
+	</div>
+	
+	<div class="row-title btn-hover">
+		<h1>￥120<span>￥150</span></h1>
+		<button class="button button-small button-user" ng-click="buyPromotion()" ng-class="{active: haveBuy}">立即购买</button>
+	</div>
+
+	<div class="ul-bg">
+		<ul class="list-detail">
+			<li class="item clear-border-top" style="font-size:14px;padding-top:10px;">{{promotion.name}}</li>
+			<li class="item"style="font-size:14px;padding-top:10px;">{{promotion.extData.introduction}}</li>
+			<li class="item clear-border-bottom" style="font-size:14px;padding-top:10px;">{{promotion.startTime}}至{{promotion.endTime}}有效期</li>
+		</ul>
+	</div>
+	
+
+	<div class="row-ticket" ng-show="isShow()">
+		<div class="row-ticket-title">
+			<img ng-src="{{imgUrl + subsidy.extData.logo}}" alt="" width="40" height="40">
+			<h2>{{subsidy.name}}</h2>
+			<h3>￥{{subsidy.vMoney}}</h3>
+			<p>{{subsidy.startTime}}—{{subsidy.endTime}}</p>
+		</div>
+		<div class="row-ticket-content">
+			<p>优生活千元<span>红包</span>等你拿！</p>
+			<button class="button button-small button-user" ng-click="buyPromotion()" ng-class="{active: haveBuy}" style="margin-right:5px;">{{buyState}}</button>
+		</div>
+	</div> -->
+
+	<!-- 幸运大转盘-->
+	<!-- <div class="row-ticket" style="margin-top:10px;">
+		<div class="row-ticket-content row-ticket-content-bg btn-hover"  style="height:110px;padding:0px;">
+			<img src="img/zhuan.png" style="width:100%;height:120px;">
+			<a href="#/shop-interaction/game/F05F4144-38EC-4DF6-9D5D-5363 02D4B1F6BD2725/detail">
+				<button class="button button-small button-user" style="margin-top:55px;margin-right:5px;" ng-click="goInteraction()">马上进入</button>
+			</a>
+		</div>
+	</div> -->
+	<!--end-->
+
+	<!-- <div class="column-title margin-top">
+		<img src="img/prot1.png" alt="" width="30" height="30" class="margin-5">
+		<h1>商家信息</h1>
+	</div>
+	<div class="column-list position-relative">
+		<a href="#/tab/shop">
+			<img ng-src ="{{imgUrl + shop.extData.breviaryImg}}" alt="" width="120" height="90">
+			<h1>{{shop.name}}</h1>
+			<h2>
+				<img src="img/shop-vip.png" alt="" width="45" height="20">
+				<i class="iconfont icon-right" style="color:#939499;float:right;">&#xe620</i>
+			</h2>
+			<p>
+				<i class="iconfont icon-star">&#xe623&#xe623&#xe623&#xe623&#xe623</i>
+			</p>
+		</a>
+	</div> -->
+</div>
