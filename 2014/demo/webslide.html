@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>web轮播</title>
+	<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			background: #ccc;
+			overflow: hidden;
+		}
+		#canvas{
+			height: 100%;
+			width: 100%;
+			overflow: hidden;
+		}
+		ul, li{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			overflow: hidden;
+		}
+		li{
+			position: absolute;
+			display: -webkit-box;
+			-webkit-box-pack :center;
+			-webkit-bok-align :center;
+		}
+	</style>
+</head>
+<body>
+	<div id="canvas">
+		
+	</div>
+	<script type="text/javascript">
+		var list = [{
+			height: 348,
+			width: 540,
+			src: "../AngularJs/test08/imgaes/NO1.jpg"
+		},
+		{
+			height: 348,
+			width: 540,
+			src: "../AngularJs/test08/imgaes/NO2.jpg"
+		},
+		{
+			height: 348,
+			width: 540,
+			src: "../AngularJs/test08/imgaes/NO3.jpg"
+		},
+		{
+			height: 348,
+			width: 540,
+			src: "../AngularJs/test08/imgaes/NO4.jpg"
+		},
+		{
+			height: 348,
+			width: 540,
+			src: "../AngularJs/test08/imgaes/NO5.jpg"
+		},
+		{
+			height: 348,
+			width: 540,
+			src: "../AngularJs/test08/imgaes/NO6.jpg"
+		}];
+
+		function Slider (opts) {
+			this.wrap = opts.dom;
+			this.list = opts.list;
+
+			//构造三部曲
+			this.init();
+			this.renderDOM();
+			this.bindDom();
+		}
+
+		Slider.prototype.init = function() {
+			//算出窗口的长宽比
+			this.radio = window.innerHeight/window.innerWidth;
+
+			this.scalew = window.innerWidth;
+
+			//当前图片的索引
+			this.idx = 0;
+		};
+
+		Slider.prototype.renderDOM = function() {
+			var wrap = this.wrap;
+			var data = this.list;
+			var len = data.length;
+			var scale = this.scaleW;
+
+			this.outer = document.createElement('ul');
+			for (var i = 0; i < len.length; i++) {
+				var li = document.createElement('li');
+				var item = data[i];
+
+				li.style.width = scale + 'px';
+				li.style.webkitTransform = 'translate3d('+ i*scale +'px, 0 ,0)';
+
+				if (item) {
+					if (item['height'] / item['width'] > this.radio) {
+						li.innerHTML = '<img height = " '+ window.innerHeight + '" src="'+ item['src'] +'">';
+					}else{
+						li.innerHTML = '<img height = " '+ window.innerWidth + '" src="'+ item['src'] +'">';
+					};
+				};
+				this.outer.appendChild(li);
+			};
+
+			this.outer.style.cssText = 'width' + this.scaleW + 'px';
+
+			warp.style.height = width.innerHeight + 'px';
+			warp.appendChild(this.outer);
+
+		};
+
+		new Slider({
+			'dom'  : document.getElementById('canvas'),
+			'list' : list
+		})
+	</script>
+</body>
+</html>
