@@ -39,32 +39,32 @@
 		var list = [{
 			height: 348,
 			width: 540,
-			src: "../AngularJs/test08/imgaes/NO1.jpg"
+			src: "../AngularJs/test08/images/NO1.jpg"
 		},
 		{
 			height: 348,
 			width: 540,
-			src: "../AngularJs/test08/imgaes/NO2.jpg"
+			src: "../AngularJs/test08/images/NO2.jpg"
 		},
 		{
 			height: 348,
 			width: 540,
-			src: "../AngularJs/test08/imgaes/NO3.jpg"
+			src: "../AngularJs/test08/images/NO3.jpg"
 		},
 		{
 			height: 348,
 			width: 540,
-			src: "../AngularJs/test08/imgaes/NO4.jpg"
+			src: "../AngularJs/test08/images/NO4.jpg"
 		},
 		{
 			height: 348,
 			width: 540,
-			src: "../AngularJs/test08/imgaes/NO5.jpg"
+			src: "../AngularJs/test08/images/NO5.jpg"
 		},
 		{
 			height: 348,
 			width: 540,
-			src: "../AngularJs/test08/imgaes/NO6.jpg"
+			src: "../AngularJs/test08/images/NO6.jpg"
 		}];
 
 		function Slider (opts) {
@@ -94,7 +94,7 @@
 			var scale = this.scaleW;
 
 			this.outer = document.createElement('ul');
-			for (var i = 0; i < len.length; i++) {
+			for (var i = 0; i < len; i++) {
 				var li = document.createElement('li');
 				var item = data[i];
 
@@ -113,9 +113,16 @@
 
 			this.outer.style.cssText = 'width' + this.scaleW + 'px';
 
-			warp.style.height = width.innerHeight + 'px';
-			warp.appendChild(this.outer);
+			wrap.style.height = window.innerHeight + 'px';
+			wrap.appendChild(this.outer);
 
+		};
+
+		Slider.prototype.bindDom = function() {
+			var self = this;
+			var scale = self.scaleW;
+			var outer = self.outer;
+			var len = '';
 		};
 
 		new Slider({
