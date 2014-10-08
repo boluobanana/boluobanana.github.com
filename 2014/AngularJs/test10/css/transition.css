@@ -1,0 +1,123 @@
+.page{
+	margin: 0;
+	padding: 200px;
+	bottom: 0;
+	text-align: center;
+	width: 100%;
+	top: 0;
+	position: absolute;
+}
+.page h1{
+	font-size: 60px;
+}
+.page a{
+	margin-top: 50px;
+}
+.hello{
+	background-color: #00d0bc;
+	color: #fff;
+}
+.list{
+	background-color: #e59400;
+	color: #fff;
+}
+
+@keyframes rotateFull{
+	0%{
+		transform: rotateZ(0deg);
+	}
+	20%{
+		transform: rotateZ(10deg);
+		animation-timing-function: ease-out;
+	}
+	40%{
+		transform: rotateZ(17deg);
+	}
+	60%{
+		transform: rotateZ(16deg);
+	}
+	100%{
+		transform: translateY(100%) rotateZ(17deg);
+	}
+}
+@keyframes slideOutLeft{
+	to{
+		transform: translateX(-100%);
+	}
+}
+@keyframes rotateOutNewspaper{
+	to{
+		transform: translateZ(-3000px) rotateZ(360deg);
+		opacity: 0;
+	}
+}
+@keyframes scaleUp{
+	from{
+		opacity: 0.3;
+		-webkit-transform:scale(0.8);
+	}
+}
+@keyframes slideInRight{
+	form{
+		transform: translateX(100%);
+	}
+	to{
+		transform: translateX(0%);
+	}
+}
+@keyframes slideInUp{
+	form{
+		tansform: translateY(100%);
+	}
+	to{
+		tansform: translateY(0%);
+	}
+}
+@keyframes test{
+	from{
+		opacity: 1;
+	}
+	to
+	{
+		opacity: 0;
+	}
+}
+.ng-enter{
+	z-index: 8888;
+}
+.ng-leave{
+	z-index: 9999;
+}
+.hello.ng-enter{
+	-webkit-animation: test 0.5s both ease-out;
+	-o-animation: scaleUp 0.5s both ease-in;
+	animation: scaleUp 0.5s both ease-in;
+}
+.hello.ng-leave{
+	-webkit-transform-origin:0% 0%;
+	-webkit-animation: test 1s both ease-out;
+}
+.list.ng-enter{
+	-webkit-animation: test 0.5s both ease-out;
+}
+.list.ng-leave{
+	-webkit-animation: test 0.5s both ease-tou;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

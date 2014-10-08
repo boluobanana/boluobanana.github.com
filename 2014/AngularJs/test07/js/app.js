@@ -1,20 +1,21 @@
-var banana = angular.module('banana',[
+var banana = angular.module('banana', [
 	'ngRoute',
 	'bananaControllers'
 ]);
 
 banana.config(['$routeProvider',
-	function  ($routeProvider) {
+	function($routeProvider) {
 		$routeProvider.
-		when('/bananas',{
+		when('/bananas', {
 			templateUrl: 'banana-list.html',
 			controller: 'BananaListCtrl'
 		}).
-		when('/bananas/:bananaId',{
+		when('/bananas/:bananaId', {
 			templateUrl: 'banana-detail.html',
 			controller: 'BananaDetailCtrl'
 		}).
 		otherwise({
 			redirectTo: '/bananas'
 		})
-	}])
+	}
+])
