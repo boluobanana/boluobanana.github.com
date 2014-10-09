@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>link函数</title>
+	<script src="../angular-1.2.23/angular.js"></script>
+	<script src="controller.js"></script>
+</head>
+<body>
+	<div ng-controller="MyCtrl">
+		<loader howToLoad="loadData()">滑动显示!!!</loader>
+		<hello>aaswww</hello>
+	</div>
+	<div>
+		<loader>滑动显示!!!</loader>
+	</div>
+	<div ng-controller="MyCtrl2">
+		<loader howToLoad="loadData2()">滑动显示!!!</loader>
+		<hello>aaswww</hello>
+	</div>
+</body>
+</html>
