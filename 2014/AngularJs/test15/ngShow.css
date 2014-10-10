@@ -1,0 +1,16 @@
+.showBox{
+	background-color: #000;
+	color: #fff;
+	width: 200px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+}
+.showCent{
+	border: 1px solid black;
+	width: 198px;
+	height: 38px;
+	color: #000;
+	text-align: center;
+	line-height: 40px;
+}
