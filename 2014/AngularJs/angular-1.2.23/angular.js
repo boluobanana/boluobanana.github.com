@@ -20863,6 +20863,7 @@ var ngShowDirective = ['$animate', function($animate) {
         line-height:20px;
         opacity:1;
         padding:10px;
+
         border:1px solid black;
         background:white;
       }
