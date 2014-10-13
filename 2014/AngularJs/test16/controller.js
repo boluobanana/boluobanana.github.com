@@ -1,7 +1,7 @@
 var myApp = angular.module('myApp', []);
 
 myApp.controller('MyCtrl', ['$scope', function($scope){
-	$scope.title = "来看看我的宝贝吧！";
+	$scope.title = "showBaby";
 }])
 myApp.directive('hello',function(){
 	return{
@@ -9,16 +9,16 @@ myApp.directive('hello',function(){
 		transclude: true,
 		template: '<div>'
 				+ '<div class="showBox">{{title}}</div>'
-				+ '<div class="showCent" id="showBox">我是宝贝</div>'
+				+ '<div class="showCent" id="showBox">baby</div>'
 				+ '</div>',
 		link :function(scope,element,attrs){
 			element.bind('mouseenter', function(){
 				var showCent = element[0].firstChild.lastChild;
-				showCent.style.display = 'none';
+				showCent.style.height = 38 +'px';
 			});
 			element.bind('mouseout', function(){
 				var showCent = element[0].firstChild.lastChild;
-				showCent.style.display = 'block';
+				showCent.style.height = 0 + 'px';
 			});
 
 		}

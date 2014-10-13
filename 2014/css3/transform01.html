@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>正方体</title>
+    <link rel="stylesheet" href="transform01.css">
+    <script src="transform01.js"></script>
+</head>
+<body>
+    <div class="box" id="box">
+        <div class="block" id="block"></div>
+    </div>
+    <form>
+        tranformX
+        <input type="range" min="-100" max="100" name="tranformX" id="tX" value="0" onchange="route()">
+        <br>
+        tranformY
+        <input type="range" min="-100" max="100" name="tranformY" id="tY" value="0" onchange="route()">
+        <br>
+        tranformZ
+        <input type="range" min="-100" max="100" name="tranformZ" id="tZ" value="0" onchange="route()">
+    </form>
+</body>
+<script>
+    var valueX = document.getElementById('tX');
+    var blcok = document.getElementById('block');
+    console.log(valueX);
+</script>
+</html>
