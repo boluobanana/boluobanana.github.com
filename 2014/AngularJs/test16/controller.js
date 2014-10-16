@@ -14,11 +14,11 @@ myApp.directive('hello',function(){
 		link :function(scope,element,attrs){
 			element.bind('mouseenter', function(){
 				var showCent = element[0].firstChild.lastChild;
-				showCent.style.height = 38 +'px';
+				showCent.className = 'showCent show';
 			});
 			element.bind('mouseout', function(){
 				var showCent = element[0].firstChild.lastChild;
-				showCent.style.height = 0 + 'px';
+				showCent.className = 'showCent';
 			});
 
 		}

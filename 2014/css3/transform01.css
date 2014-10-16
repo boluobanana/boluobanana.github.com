@@ -7,9 +7,9 @@ tml, body, div, span,
 
 .box{
     margin:40px auto;
-    -webkit-transform-style:-webkit-preserve-3d;
-    -webkit-prespective: 800;
-    -webkit-prespective-origin: 50% 50%;
+    -webkit-transform-style:preserve-3d;    
+    -webkit-perspective:600;
+    -webkit-perspective-origin: 50% 50%;
     
 }
 .block{
@@ -17,6 +17,12 @@ tml, body, div, span,
     height:300px;
     background-color:#c98;
     margin:0 auto;
+    -webkit-transform-origin:left bottom;
+    text-align: center;
+}
+.block h1{
+    font-size: 300px;
+    line-height: 300px
 }
 form{
     text-align:center;

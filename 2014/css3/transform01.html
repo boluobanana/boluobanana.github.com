@@ -7,17 +7,19 @@
 </head>
 <body>
     <div class="box" id="box">
-        <div class="block" id="block"></div>
+        <div class="block" id="block">
+            <h1>A</h1>
+        </div>
     </div>
     <form>
-        tranformX
-        <input type="range" min="-100" max="100" name="tranformX" id="tX" value="0" onchange="route()">
-        <br>
         tranformY
-        <input type="range" min="-100" max="100" name="tranformY" id="tY" value="0" onchange="route()">
+        <input type="range" min="-360" max="360" name="tranformX" id="tX" value="0" onchange="route()">
+        <br>
+        tranformX
+        <input type="range" min="-360" max="360" name="tranformY" id="tY" value="0" onchange="route()">
         <br>
         tranformZ
-        <input type="range" min="-100" max="100" name="tranformZ" id="tZ" value="0" onchange="route()"
+        <input type="range" min="-360" max="360" name="tranformZ" id="tZ" value="0" onchange="route()"
         >
     </form>
 </body>
