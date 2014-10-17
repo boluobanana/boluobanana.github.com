@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉菜单</title>
+	<style>
+		.box{
+			background-color: #ace;
+			width: 100px;height: 30px;
+			text-align: center;
+			line-height: 30px;
+		}
+		.center{
+			-webkit-transform: scale(0);
+			-webkit-transition:all .5s ease-in .1s;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="box" onclick="clickShow()">
+		click Me!
+	</div>
+	<div class="center" id="center">
+		<ul>
+			<li>lalala</li>
+			<li>hahaha</li>
+			<li>gogogo</li>
+		</ul>
+	</div>
+</body>
+<script>
+	function clickShow () {
+		var center = document.getElementById('center');
+		if (center.style.webkitTransform == "translateY(0px) scale(1)") {
+			center.style.webkitTransform = "translateY(0px) scale(0)";
+		} else{
+			center.style.webkitTransform = "translateY(0px) scale(1)";
+		};
+		
+	}
+</script>
+</html>
