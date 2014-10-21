@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cn">
 <head>
 	<meta charset="UTF-8">
 	<title>下拉菜单</title>
@@ -11,13 +11,15 @@
 			line-height: 30px;
 		}
 		.center{
-			-webkit-transform: scale(0);
-			-webkit-transition:all .5s ease-in .1s;
+			-webkit-transform:translateY(0px) scale(1);
+			-webkit-transition:all 0.5s ease-in .1s;
+			height: 0px;
+			overflow: hidden;
 		}
 	</style>
 </head>
 <body>
-	<div class="box" id="box" onclick="clickShow()">
+	<div role="button" class="box" id="box" onclick="clickShow()" onmouseenter="git()">
 		click Me!
 	</div>
 	<div class="center" id="center">
@@ -27,6 +29,15 @@
 			<li>gogogo</li>
 		</ul>
 	</div>
+	<!-- <div style="float:left">
+		<p>aaaaaaaaaaaaaaaa</p>
+	</div>
+	<div><p>wwwwwwwwwwww</p></div>
+	<p>aaaaaaaa</p>
+	<p>aaaaaaaa</p>
+	<p>aaaaaaaa</p>
+	<p>aaaaaaaa</p> -->
+
 </body>
 <script>
 	function clickShow () {
@@ -37,6 +48,10 @@
 			center.style.webkitTransform = "translateY(0px) scale(1)";
 		};
 		
+	}
+	function git(){
+		var center = document.getElementById('center');
+		center.style.height = 50+ 'px';
 	}
 </script>
 </html>
