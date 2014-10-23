@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>随机事件</title>
+	<style>
+		.show{
+			margin: 0 auto;
+			width: 1200px;
+			margin-top: 100px;
+			height: 348px;
+		}
+		.show1{
+			-webkit-animation: show1 2s ease-out 0s;
+			-moz-animation: show1 2s ease-out 0s;
+			-o-animation: show1 2s ease-out 0s;
+			animation: show1 2s ease-out 0s;
+			transform-origin:0 0;
+			-webkit-transform-orgin:0 0;
+			-moz-transform-origin:0 0;
+			-o-transform-origin:0 0;
+		}
+		.show2{
+			-webkit-animation: show2 2s ease-out 0s;
+			-moz-animation: show2 2s ease-out 0s;
+			-o-animation: show2 2s ease-out 0s;
+			animation: show2 2s ease-out 0s;
+		}
+		
+
+		@keyframes show1{
+			0%{transform:rotate(0deg);}
+			10%{transform:rotate(40deg);}
+			20%{transform:rotate(60deg);}
+			30%{transform:rotate(80deg);}
+			40%{transform:rotate(100deg);}
+			50%{transform:rotate(150deg);}
+			60%{transform:rotate(200deg);}
+			70%{transform:rotate(220deg);}
+			80%{transform:rotate(300deg);}
+			90%{transform:rotate(330deg);}
+			100%{transform:rotate(360deg);}
+		}
+		@-webkit-keyframes show1{
+			0%{-webkit-transform:rotate(0deg);}
+			10%{-webkit-transform:rotate(40deg);}
+			20%{-webkit-transform:rotate(60deg);}
+			30%{-webkit-transform:rotate(80deg);}
+			40%{-webkit-transform:rotate(100deg);}
+			50%{-webkit-transform:rotate(150deg);}
+			60%{-webkit-transform:rotate(200deg);}
+			70%{-webkit-transform:rotate(220deg);}
+			80%{-webkit-transform:rotate(300deg);}
+			90%{-webkit-transform:rotate(330deg);}
+			100%{-webkit-transform:rotate(360deg);}
+		}
+		@-moz-keyframes show1{
+			0%{-moz-transform:rotate(0deg);}
+			10%{-moz-transform:rotate(40deg);}
+			20%{-moz-transform:rotate(60deg);}
+			30%{-moz-transform:rotate(80deg);}
+			40%{-moz-transform:rotate(100deg);}
+			50%{-moz-transform:rotate(150deg);}
+			60%{-moz-transform:rotate(200deg);}
+			70%{-moz-transform:rotate(220deg);}
+			80%{-moz-transform:rotate(300deg);}
+			90%{-moz-transform:rotate(330deg);}
+			100%{-moz-transform:rotate(360deg);}
+		}
+		@-o-keyframes show1{
+			0%{-o-transform:rotate(0deg);}
+			10%{-o-transform:rotate(40deg);}
+			20%{-o-transform:rotate(60deg);}
+			30%{-o-transform:rotate(80deg);}
+			40%{-o-transform:rotate(100deg);}
+			50%{-o-transform:rotate(150deg);}
+			60%{-o-transform:rotate(200deg);}
+			70%{-o-transform:rotate(220deg);}
+			80%{-o-transform:rotate(300deg);}
+			90%{-o-transform:rotate(330deg);}
+			100%{-o-transform:rotate(360deg);}
+		}
+		@-webkit-keyframes show2{
+			0%{transform:scale(1);}
+			10%{-webkit-transform:scale(1.2);}
+			20%{-webkit-transform:scale(1.4);}
+			30%{-webkit-transform:scale(1.6);}
+			40%{-webkit-transform:scale(1.8);}
+			50%{-webkit-transform:scale(2);}
+			60%{-webkit-transform:scale(1.8);}
+			70%{-webkit-transform:scale(1.6);}
+			80%{-webkit-transform:scale(1.4);}
+			90%{-webkit-transform:scale(1.2);}
+			100%{-webkit-transform:scale(1);}
+		}
+	</style>
+	
+</head>
+<body>
+	<div class="show" id="show">
+		<img src="NO3.jpg" alt="pic">
+		<img src="NO3.jpg" alt="pic">
+		<img src="NO3.jpg" alt="pic">
+		<img src="NO3.jpg" alt="pic">
+	</div>
+	
+
+
+	<script>
+		window.onload = function(){
+			var show = document.getElementById('show');
+			var showImg = show.getElementsByTagName('img');
+			for (var i = 0; i < showImg.length; i++) {
+				showImg[i].onclick = function(){
+					return showB(this);
+				}
+			}
+		}	
+		function showB (aaa) {
+			var s = Math.random();
+			var a;
+			if (s > 0.5) {
+				a = 1;
+			} else{
+				a = 2;
+			};
+			console.log(a);
+			// setTimeout(clear(img)
+			// 	,2000);
+			var img = aaa;
+			if(!img.className){
+				switch(a){
+					case 1: show1(img);a=0;break;
+					case 2: show2(img);a=0;break;
+				}
+				setTimeout(function(){
+					return clear(img);
+				},2000);
+			}
+		}
+
+		function show1(img){
+			img.className = "show1";
+		}
+		function show2(img){
+			img.className = "show2"
+		}
+		function clear(img){
+			img.className = "";
+		}
+	</script>
+</body>
+</html>

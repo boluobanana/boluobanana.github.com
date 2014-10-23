@@ -82,7 +82,28 @@
 			95%  {transform: translateX(-20px)}
 			100%  {transform: translateX(20px)}
 		}
-		/*div span {
+		@-o-keyframes around{
+			0%   {transform: translateX(0);}
+			5%  {transform: translateX(-20px)}
+			10%  {transform: translateX(20px)}
+			15%  {transform: translateX(-20px)}
+			20%  {transform: translateX(20px)}
+			25%  {transform: translateX(-20px)}
+			30%  {transform: translateX(20px)}
+			35%  {transform: translateX(-20px)}
+			40%  {transform: translateX(20px)}
+			45%  {transform: translateX(-20px)}
+			50%  {transform: translateX(20px)}
+			55%  {transform: translateX(-20px)}
+			60%  {transform: translateX(20px)}
+			75%  {transform: translateX(-20px)}
+			70%  {transform: translateX(20px)}
+			85%  {transform: translateX(-20px)}
+			80%  {transform: translateX(20px)}
+			95%  {transform: translateX(-20px)}
+			100%  {transform: translateX(20px)}
+		}
+		div span {
 		  	display: block;
 		  	width: 20px;
 		 	height: 20px;
@@ -90,8 +111,8 @@
 		  	-webkit-animation:around 5s ease-in 1s;
 		  	animation:around 5s ease-in 1s;
 		  	-moz-animation:around 5s ease-in 1s;
-		  	-webkit-animation-iteration-count:infinite;
-		}*/
+		  	
+		}
 	</style>
 </head>
 <body>
@@ -107,5 +128,6 @@
 	var s = document.getElementsByTagName('table');
 	console.log(s[0].textContent);
 	console.log(s[0].innerText);
+	alert(s[0].textContent);
 </script>
 </html>
