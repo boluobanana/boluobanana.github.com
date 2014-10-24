@@ -16,7 +16,7 @@
 			-o-animation: show1 2s ease-out 0s;
 			animation: show1 2s ease-out 0s;
 			transform-origin:0 0;
-			-webkit-transform-orgin:0 0;
+			-webkit-transform-origin:0 0;
 			-moz-transform-origin:0 0;
 			-o-transform-origin:0 0;
 		}
@@ -103,51 +103,47 @@
 		<img src="NO3.jpg" alt="pic">
 		<img src="NO3.jpg" alt="pic">
 	</div>
+	<div id="aaa">aaa</div>
 	
 
 
 	<script>
 		window.onload = function(){
 			var show = document.getElementById('show');
+			
 			var showImg = show.getElementsByTagName('img');
 			for (var i = 0; i < showImg.length; i++) {
-				showImg[i].onclick = function(){
-					return showB(this);
-				}
+				showImg[i].onclick =(function(idx){
+					return function(){
+						showB(this);
+						console.log(idx);
+					}
+				})(i);
 			}
+			
+			// for (var i = 0; i < showImg.length; i++) {
+			// 	showImg[i].onclick = function(){
+			// 		showB(this);
+			// 		console.log(i);
+			// 	}
+			// };
 		}	
 		function showB (aaa) {
-			var s = Math.random();
-			var a;
-			if (s > 0.5) {
-				a = 1;
-			} else{
-				a = 2;
-			};
-			console.log(a);
-			// setTimeout(clear(img)
-			// 	,2000);
+			var s = parseInt(Math.random()*2);
+			var args = ['show1','show2']
 			var img = aaa;
-			if(!img.className){
-				switch(a){
-					case 1: show1(img);a=0;break;
-					case 2: show2(img);a=0;break;
-				}
+			
+			if (!img.className) {
+				img.className = args[s];
 				setTimeout(function(){
-					return clear(img);
+					img.className = "";
 				},2000);
-			}
+			} 
 		}
+		
 
-		function show1(img){
-			img.className = "show1";
-		}
-		function show2(img){
-			img.className = "show2"
-		}
-		function clear(img){
-			img.className = "";
-		}
+		
+		
 	</script>
 </body>
 </html>

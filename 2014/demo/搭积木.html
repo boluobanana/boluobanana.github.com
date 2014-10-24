@@ -1,21 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>搭积木</title>
-	<style>
-		body{
-			background-color: #EBFCD2;
-		}
-		.body{
-			width: 960px;height: 900px;
-			background-color: #6FFF9D;
-			margin: 0 auto;
-			margin-top: 100px;
-		}
-	</style>
-</head>
-<body>
-	<div class="body"></div>
-</body>
+<html>
+    <head>
+        <title>搭积木</title>
+        <style type="text/css" >
+            html,body
+            {
+                height:100%;
+                width:100%;
+                padding:0;
+                margin:0;
+                background-color: #000;
+            }
+            .centent{
+            	width: 768px;height: 960px;
+            	background-color: rgba(129, 242, 252, 0.35);
+            	margin: 0 auto;
+            	margin-top: 100px;
+            }
+            .candidate{
+            	display: -webkit-box;
+            	padding: 4px;
+            	
+            }
+            .col{
+				-webkit-box-flex:1;
+				background-color: #78DD9C;
+				height: 128px;width: 128px;
+				margin: 8px;
+				padding-top: 10px;
+            }
+            span{
+            	position: absolute;
+            }
+            .box{
+            	background-color: #C78B67;
+            	margin: 8px;
+            	margin-left: 12px;
+            	height: 783px;
+            	width: 745px;
+            }
+            .triangle{
+				top: 140px;left: 83px;
+            	border-bottom: 75px solid #000;
+				border-left: 52px solid transparent; 
+            	border-right: 52px solid transparent;
+
+            }
+            .triangle2{
+            	display: block;
+            	top: 160px;
+            	border-bottom: 51px solid #000;
+				border-left: 55px solid transparent; 
+            	border-right: 56px solid transparent;
+
+            }
+            .recatangular{
+            	display: block;
+            	left: 361px;top: 140px;
+            	width: 60px;height: 90px;
+            	background-color: #000;
+            }
+            .square{
+            	display: block;
+            	width: 80px;height: 80px;
+            	background-color: #000;
+            	left:475px; 
+            	top: 140px;
+            }
+            .long{
+				display: block;
+				width: 100px;height: 20px;
+				background-color: #000;
+				top: 170px;margin-left: 5px;
+            }
+            .trapezoid {
+
+				border-bottom: 58px solid #000;
+				border-left: 36px solid transparent;
+				border-right: 36px solid transparent;
+				height: 0;
+				width: 38px;
+				display: block;
+				top: 155px;
+				
+				}  
+        </style>
+    </head>
+    <body>
+        <div class="centent" id="centent">
+        	<div class="candidate" id="candidate">
+        		<div class="col"><span class="triangle"></span></div>
+        		<div class="col"><span class="triangle2"></span></div>
+        		<div class="col"><span class="recatangular"></span></div>
+        		<div class="col"><span class="square"></span></div>
+        		<div class="col"><span class="long"></span></div>
+        		<div class="col"><span class="trapezoid"></span></div>
+        	</div>
+        	<div class="box">
+        		
+        	</div>
+        </div>
+    </body>
+    <script>
+    	var content = document.getElementById('centent'),
+    		candidate = document.getElementById('candidate');
+    		focus,
+    		flag = false;
+    	function down (e){
+    		console.log(e.offsetY);
+    		console.log(e.clientY);
+    		flag = true;
+    		focus = e
+    		console.log(e.target);
+    	}
+    	function move(e){
+    		
+    		if (flag == true) {
+    			focus.target.style.left = (e.clientX - focus.offsetX) + 'px';
+    			console.log("focusOffsetY="+focus.offsetY);
+    			console.log("focusOffsetX="+focus.offsetX);
+    			focus.target.style.top = (e.clientY - focus.offsetY) +'px';
+    		};
+    		
+    	}
+    	function up(e){
+    		flag = false;
+    		focus = '';
+    	}
+    	candidate.addEventListener('mousedown',down);
+    	content.addEventListener('mousemove',move);
+    	content.addEventListener('mouseup',up);
+    	
+
+    </script>
 </html>
