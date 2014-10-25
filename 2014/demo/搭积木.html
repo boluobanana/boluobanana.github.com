@@ -16,6 +16,7 @@
             	background-color: rgba(129, 242, 252, 0.35);
             	margin: 0 auto;
             	margin-top: 100px;
+            	position: relative;
             }
             .candidate{
             	display: -webkit-box;
@@ -40,7 +41,8 @@
             	width: 745px;
             }
             .triangle{
-				top: 140px;left: 83px;
+				margin-left: 4px;
+				top: 34px;
             	border-bottom: 75px solid #000;
 				border-left: 52px solid transparent; 
             	border-right: 52px solid transparent;
@@ -48,7 +50,7 @@
             }
             .triangle2{
             	display: block;
-            	top: 160px;
+            	top: 50px;
             	border-bottom: 51px solid #000;
 				border-left: 55px solid transparent; 
             	border-right: 56px solid transparent;
@@ -56,7 +58,8 @@
             }
             .recatangular{
             	display: block;
-            	left: 361px;top: 140px;
+            	margin-left: 24px;
+            	top: 30px;
             	width: 60px;height: 90px;
             	background-color: #000;
             }
@@ -64,14 +67,14 @@
             	display: block;
             	width: 80px;height: 80px;
             	background-color: #000;
-            	left:475px; 
-            	top: 140px;
+            	margin-left: 16px;
+            	top: 40px;
             }
             .long{
 				display: block;
 				width: 100px;height: 20px;
 				background-color: #000;
-				top: 170px;margin-left: 5px;
+				top: 70px;margin-left: 5px;
             }
             .trapezoid {
 
@@ -81,9 +84,15 @@
 				height: 0;
 				width: 38px;
 				display: block;
-				top: 155px;
+				top: 48px;
 				
 				}  
+				.abs{
+					width: 100px;height: 100px;
+					position: absolute;
+					left: 100px;top: 100px;
+					background-color: red;
+				}
         </style>
     </head>
     <body>
@@ -100,6 +109,9 @@
         		
         	</div>
         </div>
+        <div class="abs">
+        	
+        </div>
     </body>
     <script>
     	var content = document.getElementById('centent'),
@@ -107,14 +119,11 @@
     		focus,
     		flag = false;
     	function down (e){
-    		console.log(e.offsetY);
-    		console.log(e.clientY);
     		flag = true;
     		focus = e
-    		console.log(e.target);
+    		console.log(e);
     	}
-    	function move(e){
-    		
+    	function move (e){
     		if (flag == true) {
     			focus.target.style.left = (e.clientX - focus.offsetX) + 'px';
     			console.log("focusOffsetY="+focus.offsetY);
@@ -123,7 +132,8 @@
     		};
     		
     	}
-    	function up(e){
+    	function up (e){
+
     		flag = false;
     		focus = '';
     	}
