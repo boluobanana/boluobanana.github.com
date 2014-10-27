@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>搭积木</title>
+        <meta charset= "utf-8">
         <style type="text/css" >
             html,body
             {
@@ -20,11 +21,13 @@
             }
             .candidate{
             	display: -webkit-box;
+            	display: -moz-box;
             	padding: 4px;
             	
             }
             .col{
 				-webkit-box-flex:1;
+				-moz-box-flex:1;
 				background-color: #78DD9C;
 				height: 128px;width: 128px;
 				margin: 8px;
@@ -87,12 +90,7 @@
 				top: 48px;
 				
 				}  
-				.abs{
-					width: 100px;height: 100px;
-					position: absolute;
-					left: 100px;top: 100px;
-					background-color: red;
-				}
+
         </style>
     </head>
     <body>
@@ -109,37 +107,71 @@
         		
         	</div>
         </div>
-        <div class="abs">
-        	
-        </div>
     </body>
     <script>
-    	var content = document.getElementById('centent'),
-    		candidate = document.getElementById('candidate');
-    		focus,
-    		flag = false;
-    	function down (e){
-    		flag = true;
-    		focus = e
-    		console.log(e);
-    	}
-    	function move (e){
-    		if (flag == true) {
-    			focus.target.style.left = (e.clientX - focus.offsetX) + 'px';
-    			console.log("focusOffsetY="+focus.offsetY);
-    			console.log("focusOffsetX="+focus.offsetX);
-    			focus.target.style.top = (e.clientY - focus.offsetY) +'px';
-    		};
-    		
-    	}
-    	function up (e){
+    	
+    	
+    	
+    	
+    	(function(){
+    		window.onload = function(){
+    			var flag = false,
+    				content = document.getElementById('centent');
 
-    		flag = false;
-    		focus = '';
-    	}
-    	candidate.addEventListener('mousedown',down);
-    	content.addEventListener('mousemove',move);
-    	content.addEventListener('mouseup',up);
+    			content.onmousedown = function(e){
+    				flag = true;
+    				var tar = e.target;
+    				if (e.target.nodeName == 'SPAN') {
+    					var dispX =e.clientX - tar.offsetLeft;
+    					 	dispY =e.clientY - tar.offsetTop;
+
+    					function move(e){
+    						
+    						if(flag){
+    							tar.style.left = (e.clientX - dispX) +'px';
+    							tar.style.top = (e.clientY - dispY) +'px';
+    						}
+    					}
+    					content.addEventListener('mousemove',move);
+    					content.addEventListener('mouseup',function(){
+    					flag = false;
+    					
+    					})
+    				}else{
+    					console.log(2);
+    				};
+    			}
+    		}
+    		// var content = document.getElementById('centent'),
+    		// candidate = document.getElementById('candidate')
+    		// focus,
+    		// flag = false;
+    		// function down (e){
+    		// 	flag = true;
+	    	// 	focus = e;
+	    	// 	console.log(e);
+										
+	    	// }
+    	 //    function move (e){
+
+    	 //    	var pageX = content.offsetLeft,
+    	 //    		pageY = content.offsetTop;
+    	    		
+	    	// 	if (flag == true) {
+	    	// 		focus.target.style.left = (e.clientX - focus.offsetX - pageX) + 'px';
+	    	// 		focus.target.style.top = (e.clientY - focus.offsetY - pageY) +'px';
+	    	// 	};	
+    		// }
+	    	// function up (e){
+
+	    	// 	flag = false;
+	    	// 	focus = '';
+	    	// }
+	    	// candidate.addEventListener('mousedown',down);
+	    	// content.addEventListener('mouseup',up);
+	    	// content.addEventListener('mousemove',move);
+	    })(window);
+    	
     	
 
     </script>
