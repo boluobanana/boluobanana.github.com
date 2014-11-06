@@ -14,23 +14,56 @@
 			margin: 0 auto;
 			margin-top: 100px;
 		}
+		.button{
+			width: 100px;height: 40px;
+			background-color: #BAFAAD;
+			font-size: 16px;
+			border-radius: 15px;
+			margin-top: 20px;
+			margin-left: 6px;
+		}
+		.button1{
+			margin-left: 100px;
+		}
 	</style>
 </head>
 <body>
 	<canvas id="canvas" class="canvas" width="800" height="600">A drawing of somethings</canvas>
+	<button class="button button1" id="button1">清屏</button>
+	<button class="button" id="button2">上一步</button>
+	<button class="button" id="button3">下一步</button>
 </body>
 <script>
 	var canvas = document.getElementById('canvas');
+
 	if (canvas.getContext) {
 		var context = canvas.getContext('2d'),
 			x,
 			y,
-			r = 20;
+			r = 20,
+			count = 0
+			history = [];
+
+		var button1 = document.getElementById('button1');
 		canvas.addEventListener('mousedown',function(e){
-			console.log(e);
+			// console.log(e);
 			x=e.offsetX;
 			y=e.offsetY;
+			history[0] = '2';
+			history.push("James");
+			console.log(history);
+			for (var i = 0; i < history.length; i++) {
+				console.log(history[i]);
+			};
 			star(context,x,y,r);
+			count++;
+			if (count == 30) {
+				alert("你输出的星星太多超过30个，被清除")
+				clear();
+			};
+		});
+		button1.addEventListener('mouseup',function() {
+			clear();
 		})
 		
 		// //画实心的正方形
@@ -103,29 +136,44 @@
 		// context.stroke();
 
 		//画五角星
-		
+		function star (context,x,y,r) {
+			var context = context,
+				x = x,
+				y = y,
+				r = r;
+
+			context.beginPath();
+			context.strokeStyle = 'red';
+
+			context.moveTo(x-r,y);
+			context.lineTo(x+r*0.809, y-r*0.588);
+
+			context.moveTo(x-r/4*1.236, y-2*r*0.4755);
+			context.lineTo(x-r/4*1.236, y+2*r*0.4755);
+
+			context.moveTo(x-r/4*1.236, y+2*r*0.4755);
+			context.lineTo(x+r*0.809, y-r*0.588);
+
+			context.moveTo(x-r,y);
+			context.lineTo(x+r*0.809, y+r*0.588);
+
+			context.moveTo(x+r*0.809, y+r*0.588);
+			context.lineTo(x-r/4*1.236, y-2*r*0.4755);
+			context.stroke();
+
+		};
+		function clear(){
+			context.clearRect(0,0,context.canvas.width,context.canvas.height);
+			count = 0;
+		}
 	};
-	function star (context,x,y,r) {
-		context.rotate(18*Math.PI/180)
-		context.beginPath();
-		context.strokeStyle = 'red';
-
-		context.moveTo(x-r,y);
-		context.lineTo(x+r*0.809, y-r*0.588);
-
-		context.moveTo(x-r/4*1.236, y-2*r*0.4755);
-		context.lineTo(x-r/4*1.236, y+2*r*0.4755);
-
-		context.moveTo(x-r/4*1.236, y+2*r*0.4755);
-		context.lineTo(x+r*0.809, y-r*0.588);
-
-		context.moveTo(x-r,y);
-		context.lineTo(x+r*0.809, y+r*0.588);
-
-		context.moveTo(x+r*0.809, y+r*0.588);
-		context.lineTo(x-r/4*1.236, y-2*r*0.4755);
-		context.stroke();
+	window.onload = function(){
+		var a = [];
+		a[0] = '1';
+		a.push('2');
+		console.log(a);
 	}
+	
 
 </script>
 </html>
