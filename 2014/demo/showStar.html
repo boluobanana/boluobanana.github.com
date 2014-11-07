@@ -35,37 +35,36 @@
 </body>
 <script>
 	var canvas = document.getElementById('canvas');
-
 	if (canvas.getContext) {
 		var context = canvas.getContext('2d'),
 			x,
 			y,
 			r = 20,
-			count = 0
-			history = [];
+			count = 0,
+			mark = [];
 
 		var button1 = document.getElementById('button1');
-		canvas.addEventListener('mousedown',function(e){
-			// console.log(e);
-			x=e.offsetX;
-			y=e.offsetY;
-			history[0] = '2';
-			history.push("James");
-			console.log(history);
-			for (var i = 0; i < history.length; i++) {
-				console.log(history[i]);
-			};
-			star(context,x,y,r);
-			count++;
-			if (count == 30) {
-				alert("你输出的星星太多超过30个，被清除")
-				clear();
-			};
-		});
+		canvas.addEventListener('mousedown',down);
+		document.addEventListener('mouseup',function(){
+				canvas.removeEventListener('mousemove',down);
+			})
 		button1.addEventListener('mouseup',function() {
 			clear();
 		})
 		
+		function down(e){
+			x=e.offsetX;
+			y=e.offsetY;
+			mark.push(x,y);
+			star(context,x,y,r);
+			count++;
+			// if (count == 30) {
+			// 	alert("你输出的星星太多超过30个，被清除")
+			// 	clear();
+			// };
+			canvas.addEventListener('mousemove',down);
+
+		}
 		// //画实心的正方形
 		// context.fillStyle = '#ff0000';
 		// context.fillRect(10,10,50,50);
