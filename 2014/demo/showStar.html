@@ -58,12 +58,19 @@
 			mark.push(x,y);
 			star(context,x,y,r);
 			count++;
-			// if (count == 30) {
-			// 	alert("你输出的星星太多超过30个，被清除")
-			// 	clear();
-			// };
 			canvas.addEventListener('mousemove',down);
-
+			// if (count == 10) {
+			// 	if (confirm('你的星星太多了!')) {
+			// 		clear();
+			// 		document.removeEventListener('mousemove',down);
+			// 		console.log(document.removeEventListener)
+			// 		return;
+			// 	}else{
+			// 		clear();
+			// 		document.removeEventListener('mousemove',down);
+			// 		return;
+			// 	}
+			// };
 		}
 		// //画实心的正方形
 		// context.fillStyle = '#ff0000';
@@ -136,6 +143,7 @@
 
 		//画五角星
 		function star (context,x,y,r) {
+			
 			var context = context,
 				x = x,
 				y = y,
@@ -159,19 +167,12 @@
 			context.moveTo(x+r*0.809, y+r*0.588);
 			context.lineTo(x-r/4*1.236, y-2*r*0.4755);
 			context.stroke();
-
 		};
 		function clear(){
 			context.clearRect(0,0,context.canvas.width,context.canvas.height);
 			count = 0;
 		}
 	};
-	window.onload = function(){
-		var a = [];
-		a[0] = '1';
-		a.push('2');
-		console.log(a);
-	}
 	
 
 </script>
