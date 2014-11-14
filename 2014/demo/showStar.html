@@ -36,41 +36,88 @@
 <script>
 	var canvas = document.getElementById('canvas');
 	if (canvas.getContext) {
+
 		var context = canvas.getContext('2d'),
 			x,
 			y,
 			r = 20,
 			count = 0,
-			mark = [];
+			mark = [],
+			agrmUp = [],
+			agrmDown = [],
+			dropData;
 
-		var button1 = document.getElementById('button1');
+		var button1 = document.getElementById('button1'),
+			button2 = document.getElementById('button2'),
+			button3 = document.getElementById('button3');
+
+		//画布事件处理
 		canvas.addEventListener('mousedown',down);
-		document.addEventListener('mouseup',function(){
-				canvas.removeEventListener('mousemove',down);
-			})
-		button1.addEventListener('mouseup',function() {
-			clear();
-		})
-		
+		canvas.addEventListener('mouseup',getMark);
+		document.addEventListener('mouseup',removeEvent);
+
+		//button事件
+		button1.addEventListener('mouseup',clear);
+		button2.addEventListener('mouseup',reDrawUp);
+		button3.addEventListener('mouseup',reDrawDown);
+		//点击事件
 		function down(e){
+
+			x=e.offsetX;
+			y=e.offsetY;
+			mark.push(x,y);
+			star(context,x,y,r);
+			canvas.addEventListener('mousemove',draw);
+		}
+
+		//画五角星事件
+		function draw(e){
+
 			x=e.offsetX;
 			y=e.offsetY;
 			mark.push(x,y);
 			star(context,x,y,r);
 			count++;
-			canvas.addEventListener('mousemove',down);
-			// if (count == 10) {
-			// 	if (confirm('你的星星太多了!')) {
-			// 		clear();
-			// 		document.removeEventListener('mousemove',down);
-			// 		console.log(document.removeEventListener)
-			// 		return;
-			// 	}else{
-			// 		clear();
-			// 		document.removeEventListener('mousemove',down);
-			// 		return;
-			// 	}
-			// };
+			canvas.addEventListener('mousemove',draw);
+		}
+
+		//删除监听draw
+		function removeEvent(){
+
+				canvas.removeEventListener('mousemove',draw);
+			}
+		
+		//历史记录
+		function getMark(){
+
+			agrmUp.push(mark);
+			mark = [];
+		}
+
+		//上一步
+		function reDrawUp(){
+
+			dropData = agrmUp.pop();
+			agrmDown.push(dropData);
+			context.clearRect(0,0,context.canvas.width,context.canvas.height);
+			for (var i = 0; i < agrmUp.length; i++) {
+				for (var j = 0; j< agrmUp[i].length; j=j+2) {
+					star(context,agrmUp[i][j],agrmUp[i][j+1],r);
+				}
+			};
+		}
+
+		//下一步
+		function reDrawDown(){
+
+			agrmUp.push(agrmDown[0]);
+			console.log(agrmDown);
+			context.clearRect(0,0,context.canvas.width,context.canvas.height);
+			for (var i = 0; i < agrmUp.length; i++) {
+				for (var j = 0; j< agrmUp[i].length; j=j+2) {
+					star(context,agrmUp[i][j],agrmUp[i][j+1],r);
+				}
+			};
 		}
 		// //画实心的正方形
 		// context.fillStyle = '#ff0000';
@@ -143,7 +190,7 @@
 
 		//画五角星
 		function star (context,x,y,r) {
-			
+
 			var context = context,
 				x = x,
 				y = y,
@@ -169,8 +216,11 @@
 			context.stroke();
 		};
 		function clear(){
+
 			context.clearRect(0,0,context.canvas.width,context.canvas.height);
 			count = 0;
+			mark = [];
+			agrm = [];
 		}
 	};
 	
