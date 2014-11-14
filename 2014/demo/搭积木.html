@@ -61,7 +61,7 @@
             }
             .recatangular{
             	display: block;
-            	margin-left: 24px;
+            	left: 293px;
             	top: 30px;
             	width: 60px;height: 90px;
             	background-color: #000;
@@ -70,14 +70,14 @@
             	display: block;
             	width: 80px;height: 80px;
             	background-color: #000;
-            	margin-left: 16px;
+            	left: 408px;
             	top: 40px;
             }
             .long{
 				display: block;
 				width: 100px;height: 20px;
 				background-color: #000;
-				top: 70px;margin-left: 5px;
+				top: 70px;left: 524px;
             }
             .trapezoid {
 
@@ -103,7 +103,7 @@
         		<div class="col"><span class="long"></span></div>
         		<div class="col"><span class="trapezoid"></span></div>
         	</div>
-        	<div class="box">
+        	<div class="box" id="box">
         		
         	</div>
         </div>
@@ -115,11 +115,12 @@
     	
     	(function(){
     		window.onload = function(){
-    			var flag = false,
-    				content = document.getElementById('centent');
 
+    			var content = document.getElementById('centent');
+    				
     			content.onmousedown = function(e){
-    				flag = true;
+    				
+    				var flag = true;
     				var tar = e.target;
     				if (e.target.nodeName == 'SPAN') {
     					var dispX =e.clientX - tar.offsetLeft;
@@ -127,49 +128,22 @@
 
     					function move(e){
     						
-    						if(flag){
+    						if(flag&&tar){
     							tar.style.left = (e.clientX - dispX) +'px';
     							tar.style.top = (e.clientY - dispY) +'px';
     						}
     					}
+
     					content.addEventListener('mousemove',move);
+    					//removeEventListener 移除监听
     					content.addEventListener('mouseup',function(){
     					flag = false;
-    					
+    					tar = null;
     					})
-    				}else{
-    					console.log(2);
-    				};
+    				}
     			}
     		}
-    		// var content = document.getElementById('centent'),
-    		// candidate = document.getElementById('candidate')
-    		// focus,
-    		// flag = false;
-    		// function down (e){
-    		// 	flag = true;
-	    	// 	focus = e;
-	    	// 	console.log(e);
-										
-	    	// }
-    	 //    function move (e){
-
-    	 //    	var pageX = content.offsetLeft,
-    	 //    		pageY = content.offsetTop;
-    	    		
-	    	// 	if (flag == true) {
-	    	// 		focus.target.style.left = (e.clientX - focus.offsetX - pageX) + 'px';
-	    	// 		focus.target.style.top = (e.clientY - focus.offsetY - pageY) +'px';
-	    	// 	};	
-    		// }
-	    	// function up (e){
-
-	    	// 	flag = false;
-	    	// 	focus = '';
-	    	// }
-	    	// candidate.addEventListener('mousedown',down);
-	    	// content.addEventListener('mouseup',up);
-	    	// content.addEventListener('mousemove',move);
+			
 	    })(window);
     	
     	
