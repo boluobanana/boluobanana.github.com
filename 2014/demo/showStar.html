@@ -99,6 +99,7 @@
 
 			dropData = agrmUp.pop();
 			agrmDown.push(dropData);
+			console.log(agrmDown);
 			context.clearRect(0,0,context.canvas.width,context.canvas.height);
 			for (var i = 0; i < agrmUp.length; i++) {
 				for (var j = 0; j< agrmUp[i].length; j=j+2) {
@@ -110,8 +111,8 @@
 		//下一步
 		function reDrawDown(){
 
-			agrmUp.push(agrmDown[0]);
-			console.log(agrmDown);
+			agrmUp.shift(agrmDown[0]);
+			console.log(agrmUp);
 			context.clearRect(0,0,context.canvas.width,context.canvas.height);
 			for (var i = 0; i < agrmUp.length; i++) {
 				for (var j = 0; j< agrmUp[i].length; j=j+2) {
@@ -119,7 +120,45 @@
 				}
 			};
 		}
-		// //画实心的正方形
+		
+
+		//画五角星
+		function star (context,x,y,r) {
+
+			var context = context,
+				x = x,
+				y = y,
+				r = r;
+
+			context.beginPath();
+			context.strokeStyle = 'red';
+
+			context.moveTo(x-r,y);
+			context.lineTo(x+r*0.809, y-r*0.588);
+
+			context.moveTo(x-r/4*1.236, y-2*r*0.4755);
+			context.lineTo(x-r/4*1.236, y+2*r*0.4755);
+
+			context.moveTo(x-r/4*1.236, y+2*r*0.4755);
+			context.lineTo(x+r*0.809, y-r*0.588);
+
+			context.moveTo(x-r,y);
+			context.lineTo(x+r*0.809, y+r*0.588);
+
+			context.moveTo(x+r*0.809, y+r*0.588);
+			context.lineTo(x-r/4*1.236, y-2*r*0.4755);
+			context.stroke();
+		};
+		function clear(){
+
+			context.clearRect(0,0,context.canvas.width,context.canvas.height);
+			count = 0;
+			mark = [];
+			agrm = [];
+		}
+
+
+		//画实心的正方形
 		// context.fillStyle = '#ff0000';
 		// context.fillRect(10,10,50,50);
 		// context.fillStyle = 'rgba(0,0,255,0.5)';
@@ -187,43 +226,10 @@
 		// context.moveTo(x+r*0.809, y-r*0.588);
 		// context.lineTo(x-r/4*1.236, y-2*r*0.4755);
 		// context.stroke();
-
-		//画五角星
-		function star (context,x,y,r) {
-
-			var context = context,
-				x = x,
-				y = y,
-				r = r;
-
-			context.beginPath();
-			context.strokeStyle = 'red';
-
-			context.moveTo(x-r,y);
-			context.lineTo(x+r*0.809, y-r*0.588);
-
-			context.moveTo(x-r/4*1.236, y-2*r*0.4755);
-			context.lineTo(x-r/4*1.236, y+2*r*0.4755);
-
-			context.moveTo(x-r/4*1.236, y+2*r*0.4755);
-			context.lineTo(x+r*0.809, y-r*0.588);
-
-			context.moveTo(x-r,y);
-			context.lineTo(x+r*0.809, y+r*0.588);
-
-			context.moveTo(x+r*0.809, y+r*0.588);
-			context.lineTo(x-r/4*1.236, y-2*r*0.4755);
-			context.stroke();
-		};
-		function clear(){
-
-			context.clearRect(0,0,context.canvas.width,context.canvas.height);
-			count = 0;
-			mark = [];
-			agrm = [];
-		}
 	};
 	
 
 </script>
 </html>
+
+
