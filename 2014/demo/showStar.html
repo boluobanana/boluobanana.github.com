@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cn">
 <head>
 	<meta charset="UTF-8">
 	<title>出现星星</title>
@@ -32,6 +32,7 @@
 	<button class="button button1" id="button1">清屏</button>
 	<button class="button" id="button2">上一步</button>
 	<button class="button" id="button3">下一步</button>
+	<button class="button" id="button4">掉落</button>
 </body>
 <script>
 	var canvas = document.getElementById('canvas');
@@ -54,7 +55,7 @@
 		//画布事件处理
 		canvas.addEventListener('mousedown',down);
 		canvas.addEventListener('mouseup',getMark);
-		document.addEventListener('mouseup',removeEvent);
+		document.addEventListener('mouseup',function(){canvas.removeEventListener('mousemove',draw);});
 
 		//button事件
 		button1.addEventListener('mouseup',clear);
@@ -82,10 +83,10 @@
 		}
 
 		//删除监听draw
-		function removeEvent(){
+		// function removeEvent(){
 
-				canvas.removeEventListener('mousemove',draw);
-			}
+		// 		canvas.removeEventListener('mousemove',draw);
+		// 	}
 		
 		//历史记录
 		function getMark(){
@@ -110,15 +111,18 @@
 
 		//下一步
 		function reDrawDown(){
-
-			agrmUp.shift(agrmDown[0]);
-			console.log(agrmUp);
-			context.clearRect(0,0,context.canvas.width,context.canvas.height);
-			for (var i = 0; i < agrmUp.length; i++) {
-				for (var j = 0; j< agrmUp[i].length; j=j+2) {
-					star(context,agrmUp[i][j],agrmUp[i][j+1],r);
-				}
+			if (agrmDown[agrmDown.length-1]) {
+				agrmUp.push(agrmDown[agrmDown.length-1]);
+				agrmDown.pop();
+				console.log(agrmUp);
+				context.clearRect(0,0,context.canvas.width,context.canvas.height);
+				for (var i = 0; i < agrmUp.length; i++) {
+					for (var j = 0; j< agrmUp[i].length; j=j+2) {
+						star(context,agrmUp[i][j],agrmUp[i][j+1],r);
+					}
+				};
 			};
+			
 		}
 		
 
