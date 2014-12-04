@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta charset="UTF-8">
+	<title>不开心~</title>
+	<style>
+		.div1{
+			height: 2000px;width: 600px;
+			margin: 500px auto;
+			background-color: #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="div1"></div>
+</body>
+<script>
+	(function () {
+		function Siye(name,age,job){
+			this.name = name;
+			this.age = age;
+			this.job = job;
+		};
+		var obj = document.getElementsByTagName('div');
+		var top = obj.getBoundingClientRect().top //元素顶端到可见区域顶端的距离
+		var se = document.documentElement.clientHeight //浏览器可见区域高度。
+		if(top <= se ) {
+		 alert('我看见啦');
+		}
+	})(window);
+</script>
+</html>
