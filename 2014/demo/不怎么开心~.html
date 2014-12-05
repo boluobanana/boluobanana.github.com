@@ -4,15 +4,38 @@
 	<meta charset="UTF-8">
 	<title>不开心~</title>
 	<style>
+		body{
+			margin: 0;
+		}
 		.div1{
 			height: 2000px;width: 600px;
 			margin: 500px auto;
 			background-color: #000;
 		}
+		.button1{
+			position: fixed;
+			width: 100px;height: 40px;
+			display: none;
+		}
+		.div2{
+			position: fixed;
+			top: 0;
+			width: 100%;
+			height: 70px;
+			background-color: #C23A3A;
+		}
+		p{
+			color: #fff;
+		}
 	</style>
 </head>
 <body>
-	<div class="div1"></div>
+	<div class="div2" id="div2"><h1>test!!!!</h1></div>
+	<button class="button1" id="button1">点一下</button>
+	<div class="div1" id="div1">
+		<p>test</p>
+	</div>
+
 </body>
 <script>
 	(function () {
@@ -21,12 +44,53 @@
 			this.age = age;
 			this.job = job;
 		};
-		var obj = document.getElementsByTagName('div');
-		var top = obj.getBoundingClientRect().top //元素顶端到可见区域顶端的距离
-		var se = document.documentElement.clientHeight //浏览器可见区域高度。
-		if(top <= se ) {
-		 alert('我看见啦');
+		var $ = function(id){
+			return document.getElementById(id);
 		}
+		var test = $('div2');
+		console.log(test.childNodes);
+		//监听函数
+		function addHandler(el, type, fn){  
+        if(window.attachEvent){  
+             //ie事件名称前增加on开头  
+            addHandler = function(el, type, fn){  
+                 el.attachEvent("on" + type, fn);  
+            }   
+        }else{  
+             //记得加上第三个参数，由于ie下没有事件捕捉，所以ff设置为事件冒泡保持一致  
+             addHandler = function(el, type, fn){  
+                 el.addEventListener(type, fn, false);  
+            }  
+        }  
+       	addHandler(el, type, fn); //第一次调用  
+		}
+
+		var btn = document.getElementById('button1');
+
+		var obj = document.getElementById('div1');
+
+		addHandler(document, 'mousewheel', solidMouse);
+		addHandler(document, 'DOMMouseScroll', solidMouse);
+		btn.onclick = function(){
+
+						var top = obj.getBoundingClientRect().top; //元素顶端到可见区域顶端的距离
+						var se = document.documentElement.clientHeight //浏览器可见区域高度。
+
+					}
+
+		function solidMouse(){
+			var top = obj.getBoundingClientRect().top; //元素顶端到可见区域顶端的距离
+			var se = document.documentElement.clientHeight //浏览器可见区域高度。
+			if(top <= 30){
+				btn.style.display = 'block';
+
+			}else{
+				btn.style.display = 'none';
+			}
+			// console.log(top)
+		}
+		
+
 	})(window);
 </script>
 </html>
