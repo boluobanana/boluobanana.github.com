@@ -1,0 +1,129 @@
+<!DOCTYPE html >
+	<html lang = "ZH-CN" >
+	<head >
+	<meta charset = "UTF-8" >
+	<title> beautiful wave </title> 
+	<style type = "text/css" >
+	body {
+		background-color: #000;
+	}
+	.contain{
+		height: 510px;
+		width: 700px;
+		margin: 0 auto;
+		clear: both;
+		margin-top: 50px;
+		overflow: hidden;
+	}
+	.cir{
+		float: left;
+		height: 10px;
+		width: 10px;
+		border: 5px solid #1c1c1c;
+		border-radius: 50%;
+		background-color: #808687;
+		cursor: pointer;
+	}
+	.clear{
+		clear: both;
+	}
+	@-webkit-keyframes wave{
+		0% {-webkit-transform:translateY(0); 
+			background-color:#808687;
+		}
+		50% {
+			-webkit-transform: translateY(-15px);
+			background-color: #f700ff;
+		}
+		100% {
+				-webkit-transform: translateY(0);
+				background-color: #808687;
+		}
+	}
+	.wave{
+        -webkit-animation:wave 2s linear;
+	}
+    </style>
+</head>
+<body>
+<script type= "text/javascript" >
+	//事件代理
+	function myAddEvent(obj, ev, fn) {
+		if (obj.attachEvent) {
+			obj.attachEvent("on" + ev, fn); //支持IE
+		} else {
+			obj.addEventListener(ev, fn, false); //非IE
+		}
+	}
+	//创建div
+	function create(pos){
+		var contain = document.getElementById("contain");
+		for(var pos = 0, length1 =500; pos < length1; pos++){
+			var od=document.createElement("div");
+			od.style.margin="4px";
+			od.className="cir";
+			od.id="card"+pos;
+			contain.appendChild(od);	
+
+		}
+		var ospan=document.createElement("br");
+		ospan.className="clear";
+		contain.appendChild(ospan);
+	}
+	//添加wave样式
+	function addClass(id){
+		var cardId=document.getElementById("card"+id);
+		cardId.className="wave cir";
+		setTimeout(function() {
+			cardId.className ="cir";
+		}, 2000);
+	}
+	function expendWare(id){
+		var a,b,c,d;
+		a = parseInt(id)+1;
+		b = parseInt(id)-1;
+		c = parseInt(id)+25;
+		d = parseInt(id)-25;
+
+		addClass(a);
+		addClass(b);
+		addClass(c);
+		addClass(d);
+	}
+	//wave功能
+	function startwave(ev,id){
+		addClass(id);
+		
+		setTimeout(function(){
+			expendWare(id);
+		},200);
+
+		// setTimeout(function(){
+		// 	startwave(ev,id);
+		// },1000);
+	}
+	function oncl(){
+		myAddEvent(contain, "click", function(ev) {
+				var oEvent = ev || event;
+				var oTarge = oEvent.target || oEvent.srcElement;
+				if (oTarge && oTarge.nodeName.toLowerCase() == "div") {
+					var ob=oTarge.id;
+                    ob=ob.substring(4);	
+                    startwave(oEvent,ob);
+				} 
+			});
+	}
+    //主程序
+	window.onload = function() {
+		var contain = document.getElementById("contain");
+		function flip(pos){
+			create(pos);
+			oncl();
+		};
+		flip();
+	} 
+</script> 
+	<div class = "contain" id = "contain" >
+	</div> 
+	</body> 
+</html>

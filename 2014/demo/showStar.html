@@ -55,7 +55,9 @@
 		//画布事件处理
 		canvas.addEventListener('mousedown',down);
 		canvas.addEventListener('mouseup',getMark);
-		document.addEventListener('mouseup',function(){canvas.removeEventListener('mousemove',draw);});
+		document.addEventListener('mouseup',function(){
+			canvas.removeEventListener('mousemove',draw);
+		});
 
 		//button事件
 		document.addEventListener('click',editCell);

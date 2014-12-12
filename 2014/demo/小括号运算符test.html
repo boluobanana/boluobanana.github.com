@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>小括号运算符test</title>
+</head>
+<body>
+	<h1>小括号运算符</h1>
+</body>
+<script>
+	(function () {
+		var dis,dip = 'data';
+		// var factory = ('data1', 'data2',function(data1,data2){
+		// 	alert(data2);
+		// 	console.log(data1);
+		// })
+		// factory(1,2);
+
+		function factory2 (data1,data2,out){
+			var num = data1 + data2;
+			out(num);
+			return function(data1,data2){
+				num = data1 + data2;
+				console.log(num);
+			}
+		}
+
+		factory2(1,2, function(num){
+			console.log(num)
+		});
+
+		
+		data3 = 'data';
+		var banana = ('data3',['data4', function(data4){
+			alert(data4);
+			this.push(data3);
+		}])
+		
+		banana[1](1);
+		console.log(banana);
+
+
+		var siye = function(){
+
+			if (dip == 'data') {
+				return alert('true');
+			};
+			alert('11111');
+		}
+		siye();
+
+		function siye2 (agr1, agr2){
+			
+			return function(){
+				var sum = agr1 + agr2 + sum;
+				console.log(sum)
+			}
+			
+		}
+		
+		var f = siye2(3,3);//其实现在这个就等于一个函数指针，指向这个函数
+		f();//就像一个函数console.log() 有了()就会运算
+		f();
+		console.log('shall i can log first');
+		// console.log(siye2(3,3));
+		// function fn(url, callback){
+		//     var httpRequest;　　　　//创建XHR
+		//     httpRequest = window.XMLHttpRequest ? new XMLHttpRequest() :　　　//针对IE进行功能性检测
+		// 　　　　window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHTTP") : undefined;
+		    
+		//     httpRequest.onreadystatechange = function(){
+		//       if(httpRequest.readystate === 4 && httpRequest.status === 200){　　//状态判断
+		//           callback.call(httpRequest.responseXML);  
+		//        }
+		//     };
+		//     httpRequest.open("GET", url);
+		//     httpRequest.send();
+		// }
+
+		// fn("text.xml", function(){　　　　//调用函数
+		//    console.log(this); 　　//此语句后输出
+		// });
+
+		// console.log("this will run before the above callback.");　　//此语句先输出
+	})(window)
+</script>
+</html>
