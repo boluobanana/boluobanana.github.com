@@ -7,13 +7,33 @@ a { text-decoration: none;}
 a:hover { text-decoration: none;}
 
 body {
-	background: url(../images/index_bg.png) no-repeat center 0 ;
+	background: url(../images/index_bg.jpg) no-repeat center 0 ;
 	background-attachment: fixed;
+	background-size: cover;
 }
-#body {
+/*#body {
 	width: 1024px;
 	margin: 200px auto;
-}
+}*/
 a {
 	color: #653488;
+}
+.foreword{
+	background: rgba(192, 223, 182, 0.81);
+	height: 700px;width: 97%;
+	margin: 20px 0 0 20px;
+	-webkit-animation: bit 3s ease-out;
+	-moz-animation: bit 3s ease-out;
+	animation: bit 3s ease-out;
+	opacity: 0.8;
+}
+@-webkit-keyframes bit{
+	0%{opacity: 0}
+	100%{opacity: 0.8}
+}
+.foreword p {
+	font-size: 30px;
+	/*text-indent: 30px;*/
+	color: #0B073A;
+	font-family: cursive;
 }
