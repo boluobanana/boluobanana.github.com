@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Valentine's Day for my love --siye</title>
+	<link rel="stylesheet" href="Valentine.css">
+	
+</head>
+<body>
+	<div class="first" id = "first">
+		<div class="fp" id="fp">
+			<p class="p1">亲爱的,这是我们第一个情人节</p>
+			<p class="p2">虽然我现在不在你的身边，但我的思念却未曾停止过</p>
+			<p class="p3">想与你一起游玩，去享受美食，去看或熟悉或陌生的风景</p>
+			<p class="p4">不管干啥，与你一起就好</p>
+			<p class="p5">——皮卡丘</p>
+		</div>
+	</div>
+	<div class="page" id="page">
+		<div class="pic1">
+			<img src="img/img001.jpg" alt="01" title="高冷的四爷^^" name="01" class="full">
+		</div>
+		<div class="pic2">
+			<img src="img/img02.jpg" alt="02" class="full" name="02" title="化妆了的四爷^^">
+		</div>
+		<div class="pic3">
+			<img src="img/img03.png" alt="03" class="full" title="笑的好甜的四爷^^" name="03">
+		</div>
+		<div class="pic4">
+			<img src="img/img08.jpg" alt="" class="full" title="拥有完美侧脸的四爷^^" name="04">
+		</div>
+		<div class="pic7">
+			<img src="img/img01.png" alt="" class="full" title="女王的小花花" name="05">
+		</div>
+		
+		<div class="pic6">
+			<img src="img/img06.png" alt="" class="full" title="女王的正脸^^" name="06">
+		</div>
+		<div class="pic5">
+			<img src="img/img05.png" alt="" class="full" title="学习中的女王大人" name="07">
+		</div>
+		
+		<div class="clear">
+			<br>
+		</div>
+	</div>
+	<div class="secondBg" id="secondBg">
+		<div id="pic01">
+			<p title="pic01">嗯~ 这是我第一次给你拍的照片。也是第一次与你靠这么近~</p>
+		</div>
+		<div id="pic02">
+			<p>哎哟~不错哦~从朋友圈看到这么美丽的你，从此迷失在你完美的侧脸~</p>
+		</div>
+		<div id="pic03">
+			<p>没错，我偷拍了你 不过那天你也偷拍了我，嗯~所以我其实还想拍更多~</p>
+		</div>
+		<div id="pic04">
+			<p>好吧。又是一张偷拍的照片，谁让你那么好看让我总是想拍呢 - -~</p>
+		</div>
+		<div id="pic05">
+			<p>爱你，虽然我一直不看好你的自拍照，不过在我美图之下好像还挺养眼的呢 0 0.</p>
+		</div>
+		<div id="pic06">
+			<p>花花~第一次收到别人送的花~好开心好开心！！！</p>
+		</div>
+		<div id="pic07">
+			<p>没有错，我又在偷拍你，而且 你应该都没有见过这张吧^ ^</p>
+		</div>
+	</div>
+
+</body>
+<script>
+	(function  () {
+		var q = document.getElementById('first'),
+			qq = document.getElementById('fp').childNodes,
+			len = qq.length,
+			page = document.getElementById('page'),
+			secondBg = document.getElementById('secondBg');
+			var cou = 2;
+			var count = setInterval(function(){
+				
+				for(var i =0;i<len;i++){
+					if (qq[i].className == 'p'+cou) {
+						qq[i].style.display = 'block';
+					};
+				}
+				cou++;
+				if(cou == 8){
+					q.style.display = 'none';
+					page.style.display = 'block'
+					clearInterval(count);
+				}
+			},2000)
+		page.addEventListener('mouseover',function(e) {
+				switch(e.target.name){
+					case '01':
+						secondBg.className = 'secondBg black01';
+						document.getElementById('pic01').style.display = 'block';
+						break;
+					case '02':
+						secondBg.className = 'secondBg black02';
+						document.getElementById('pic02').style.display = 'block';
+						break;
+					case '03':
+						secondBg.className = 'secondBg black03';
+						document.getElementById('pic03').style.display = 'block';
+						break;
+					case '04':
+						secondBg.className = 'secondBg black03';
+						document.getElementById('pic04').style.display = 'block';
+						break;
+					case '06':
+						secondBg.className = 'secondBg black04';
+						document.getElementById('pic05').style.display = 'block';
+						break;
+					case '05':
+						secondBg.className = 'secondBg black01';
+						document.getElementById('pic06').style.display = 'block';
+						break;
+					case '07':
+						secondBg.className = 'secondBg black04';
+						document.getElementById('pic07').style.display = 'block';
+						break;
+				}
+		})	
+		page.addEventListener('mouseout',function(e) {
+				switch(e.target.name){
+					case '01':
+						secondBg.className = 'secondBg';
+						document.getElementById('pic01').style.display = 'none';
+						break;
+					case '02':
+						secondBg.className = 'secondBg';
+						document.getElementById('pic02').style.display = 'none';
+						break;
+					case '03':
+						secondBg.className = 'secondBg';
+						document.getElementById('pic03').style.display = 'none';
+						break;
+					case '04':
+						secondBg.className = 'secondBg';
+						document.getElementById('pic04').style.display = 'none';
+						break;
+					case '06':
+						secondBg.className = 'secondBg';
+						document.getElementById('pic05').style.display = 'none';
+						break;
+					case '05':
+						secondBg.className = 'secondBg';
+						document.getElementById('pic06').style.display = 'none';
+						break;
+					case '07':
+						secondBg.className = 'secondBg';
+						document.getElementById('pic07').style.display = 'none';
+						break;
+				}
+		})	
+	}
+	)(window)
+</script>
+</html>
