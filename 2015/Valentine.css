@@ -145,7 +145,9 @@ body{
 	float: left;
 }
 .secondBg p{
-	color: #fff;
+	color: #F2BABA;
+	text-shadow:0px 1px 6px #E9B0F9;
+	font-size: 22px;
 	float: left;
 	margin-left: 40px;
 	margin-top: 60px;
@@ -193,4 +195,14 @@ body{
 	width: 100%;
 	height: 50%;
 	display: block;
+}
+.foot{
+	height: 100px;
+	width: 400px;
+	margin-top: 300px;
+	float: right;
+	margin-right: 20px;
+}
+.foot{
+	color: #fff;
 }
