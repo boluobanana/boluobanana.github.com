@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>show and hid</title>
+	<style>
+		.hid{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li class="hid">6</li>
+		<li class="hid">7</li>
+		<li class="hid">8</li>
+		<li class="hid">9</li>
+		<li class="hid">10</li>
+	</ul>
+	<a href="javascript:void(0)" >more</a>
+</body>
+<script>
+	(function() {
+		var lessMore = document.getElementsByTagName('a'),
+			lis = document.getElementsByTagName('ul')[0].getElementsByTagName('li'),
+			len = lis.length,
+			argm = [];
+			;
+		for(var i = 0; i<len;i++){
+			if(lis[i].className == 'hid'){
+				argm.push(lis[i]);
+			}
+		}
+		lessMore[0].onclick=function(){	
+			if(lessMore[0].innerHTML == 'more'){
+				lessMore[0].innerHTML = 'less';
+				for(var i=0;i<argm.length;i++){
+					argm[i].className = ''
+				}
+			}else{
+				lessMore[0].innerHTML = 'more';
+				for(var i=0;i<argm.length;i++){
+					argm[i].className = 'hid'
+				}
+			}
+		}
+	})(window)
+</script>
+</html>
