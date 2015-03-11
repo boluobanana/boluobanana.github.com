@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>创建和删除节点</title>
+	<style>
+		.dio{
+			background-color: #000;
+			width: 100px;height: 100px;
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+<script>
+	(function(){
+		var node = document.createElement('div');
+		node.className = "dio";
+		for(var i = 0; i<100; i++){
+			document.body.appendChild(node);
+		}
+	})(window)
+</script>
+</html>
