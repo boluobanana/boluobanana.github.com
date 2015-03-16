@@ -5,23 +5,29 @@
 	<title>创建和删除节点</title>
 	<style>
 		.dio{
-			background-color: #000;
+			background-color: #F4EA2E;
 			width: 100px;height: 100px;
-			margin: 0;
+			border-radius: 10px 60px 10px 60px;
+			margin: 2px;
 			padding: 0;
+			float: left;
 		}
 	</style>
 </head>
 <body>
-	
+	<div class="dio" id="dio1">11</div>
 </body>
 <script>
 	(function(){
-		var node = document.createElement('div');
-		node.className = "dio";
+		var frame = document.createDocumentFragment();
 		for(var i = 0; i<100; i++){
-			document.body.appendChild(node);
+			var node = document.createElement('DIV');
+			node.className = "dio";
+			node.id = 'node' + i;
+			node.appendChild(document.createTextNode(i));
+			frame.appendChild(node);
 		}
+		document.body.appendChild(frame);
 	})(window)
 </script>
 </html>
