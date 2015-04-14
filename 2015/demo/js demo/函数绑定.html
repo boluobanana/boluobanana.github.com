@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数绑定</title>
+</head>
+<body>
+	<button id="my-btn">aaa</button>
+</body>
+<script>
+	var addEvent = (function  () {
+		if (document.addEventListener) {
+			return function  (el, type,fn) {
+				el.addEventListener(type,fn,false);
+			};
+		} else{
+			return function  (el, type ,fn) {
+				el.attachEvent('on' + type, function(){
+					return fn.call(el, window.event);
+				})
+			}
+		};
+	})();
+	var handler = {
+		message: "Event handled",
+
+		handleClick: function () {
+			alert(this.message + ":" + event.type);
+		}
+	}
+	var btn = document.getElementById("my-btn");
+	addEvent(btn , "click", handler.handleClick.bind(handler));
+</script>
+</html>
