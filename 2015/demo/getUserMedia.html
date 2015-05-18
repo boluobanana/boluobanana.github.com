@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>调用浏览器摄像头test</title>
+	<style>
+		#button{
+			margin: 200px 0 0 100px;
+		}
+	</style>
+</head>
+<body>
+	<button id="button">click</button>
+	<div class="screen" id="screen">
+		
+	</div>
+	<form >
+		<input type="file" accept="image/*">cilck	
+	</form>
+	
+</body>
+<script src="ocrad.js"></script>
+<script>
+	var doc = document;
+	var btn = doc.getElementById('button');
+	btn.onclick = function(){
+
+		navigator.getMedia = ( navigator.getUserMedia ||
+                       navigator.webkitGetUserMedia ||
+                       navigator.mozGetUserMedia ||
+                       navigator.msGetUserMedia);
+		navigator.getMedia (
+
+		   // constraints
+		   {
+		      video: true,
+		      audio: false
+		   },
+
+		   // successCallback
+		   function(localMediaStream) {
+		      var video = document.querySelector('video');
+		      video.src = window.URL.createObjectURL(localMediaStream);
+		      video.onloadedmetadata = function(e) {
+		         // Do something with the video here.
+		         var img = document.createElement('img');
+		         img.src = video.src;
+		         doc.getElementById('screen').appendChild(img);
+		      };
+		   },
+
+		   // errorCallback
+		   function(err) {
+		    console.log("The following error occured: " + err);
+		   }
+
+		);
+	}
+	var fileinput = doc.getElementsByTagName('input')[0];
+	fileinput.addEventListener('change', function (e) {
+                        var f = fileinput.files[0]; // get selected file (camera capture)
+                        fr = new FileReader();
+                        
+
+                        fr.readAsDataURL(f); // get captured image as data URI
+                        fr.onload = function(fileEvent){
+                        	var img = document.createElement('img');
+                        	img.src = fileEvent.target.result;
+                        	document.body.appendChild(img);
+                        	var string = OCRAD(img);
+                        	alert(string);
+                        }
+                    });
+</script>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>请求apitest</title>
+</head>
+<body>
+	
+</body>
+<script src="../js库//JQUERY实现的拖动效果_files/jquery.min.js"></script>
+<script>
+	var data,tem;
+	
+	function createXHR(){
+		if (typeof XMLHttpRequest != "undefined") {
+			return new XMLHttpRequest();
+		} else if (typeof ActiveXobject != "undefined") {
+			if (typeof arguments.callee.activeString != "string") {
+				var versions = ["MSXML2.XMLHttp.6.0", "XSXML2.XMLHttp.3.0", "MSXML2.XMLHttp"],i,len;
+				for (i=0, len=versions.length; i < len; i++){
+					try{
+						new AcctiveXobject(versions[i]);
+						arguments.callee.activeXString = versions[i];
+						break;
+					}catch(ex){
+
+					}
+				}
+			};
+			return new ActiveXobject(arguments.callee.activeXString);
+		}else{
+			throw new Error("no XHR object available.")
+		}
+	}
+	function conlog(data){
+		console.log(JSON.parse(data));
+	}
+	function getData(callback){
+		var xhr = createXHR();
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState == 4){
+				if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+					data = xhr.responseText;
+					console.log(data);
+					if (callback) {
+						callback(data);
+					};
+					
+				} else {
+					alert('Resquest was unsuccessful: ' + xhr.status);
+				}
+			}
+		}
+		xhr.open("get", "http://0.0.0.0:3000/api/Accounts");
+		xhr.send(null);
+	}
+	
+	function sendData(data){
+		var xhr = createXHR();
+		// var tem  = JSON.parse(data);
+		// console.log(tem);
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState == 4){
+				if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+					console.log('success!');
+					getData(conlog)
+				} else {
+					alert('Resquest was unsuccessful: ' + xhr.status);
+				}
+			}
+		}
+		// tem[0].email = "heiblack@gmail.com";
+		xhr.open("post", "http://0.0.0.0:3000/api/Accounts");
+		xhr.send(data);
+	}
+	function deleteData(id){
+		var xhr = createXHR();
+		console.log(tem);
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState == 4){
+				if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+					console.log('delete success!');
+					getData(conlog)
+				} else {
+					alert('Resquest was unsuccessful: ' + xhr.status);
+				}
+			}
+		}
+		xhr.open("delete", "http://0.0.0.0:3000/api/Accounts/" + id);
+		xhr.send(null);
+	}
+	var tem = {
+		"email": "qqqqqq@qux.com",
+	    "createdAt": "2015-04-25T09:44:56.364Z",
+	    "lastModifiedAt": "2015-04-25T09:44:56.364Z",
+	    "brithday": "aaa",
+	    "id": "222222"
+	}
+	// getData(sendData);
+	// sendData(JSON.stringify(tem));
+	// getData(conlog);
+	$.ajax({
+		type: "POST",
+		url:"http://0.0.0.0:3000/api/Accounts",
+		data: tem,
+
+	}).done({
+		function(){
+			console.log('aaa');
+		}
+	})
+</script>
+</html>
+
+
+
+
+
+
+
+
