@@ -1,1 +1,0 @@
-function getTouchpoint(){ return 'DESKTOP';} function getTealiumURL(){ return '//tags.tiqcdn.com/utag/hm/cn/prod/utag.js';}

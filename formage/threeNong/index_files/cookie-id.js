@@ -1,1 +1,0 @@
-(typeof(eluminate3142) == 'function') && eluminate3142('50071428470853139922423');
