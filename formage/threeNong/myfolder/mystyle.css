@@ -1,0 +1,50 @@
+.bodypic{
+	width: 100%;
+	height: 600px;
+	background: url(../images/bigpicbg.jpg) no-repeat;
+	background-size: cover;
+}
+.header-global {
+	margin-bottom: 0 !important;
+}
+.hm-life-promotion{
+	margin-top: 0 !important;
+}
+.bodypic .center{
+	height: 600px;
+	width: 960px;
+	margin: 0 auto;
+	padding-top: 100px;
+}
+.center .centRow {
+	width: 500px;
+	margin: 0 auto;
+}
+.fammer,.business{
+	width: 200px;
+	height: 80px;
+	border-radius: 10px;
+	opacity: 0.5;
+	float: left;
+	font-size: 20px;
+	border: 2px solid #eee;
+	line-height: 80px;
+	text-align: center;
+	font-weight: bold;
+}
+.center .centRow .business{
+	margin-left: 50px;
+}
+.fammer:hover{
+	background-color: #fff;
+	opacity: 0.7;
+	
+}
+.business:hover{
+	background-color: #fff;
+	opacity: 0.7;
+}
+.campaign-slide-text-inner h3,.campaign-slide-text-inner h2,.campaign-slide-text-inner p{
+	color: #fff !important;
+}
+
