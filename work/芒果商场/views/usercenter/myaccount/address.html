@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/styles/bootstrap.min.css">
+	
+	
+	
+	<title>address</title>
+	<style>
+		body{
+			
+		}
+		input{
+			text-indent: 6px;
+		}
+		.uc-title{
+			color: #79bb0b;
+			text-indent: 20px;
+			border-bottom: 2px solid #79bb0b;
+			line-height: 34px;
+		}
+		.centent{
+			width: 100%;
+			
+			padding-top: 8px;
+		}
+		thead th{
+			background-color: #79bb0b;
+		}
+		th:nth-of-type(3){
+			width: 330px;
+		}
+		table{
+			border: 1px solid #ddd;
+			text-align: center;
+		}
+		th{
+			text-align: center;
+			color: #fff;
+		}
+		.btn-green{
+			background-color: #79bb0b;
+			color: #fff;
+		}
+		.centent input[type="tel"]{
+			
+			margin-right: 10px;
+			width: 290px;
+			height: 40px;
+
+		}
+		.centent input[name="tell"]{
+			
+			margin-right: 10px;
+			width: 200px;
+			height: 40px;
+
+		}
+		.centent input[name="xaddress"]{
+			
+			margin-right: 10px;
+			width: 360px;
+			height: 40px;
+		}
+		
+	
+		.newaddress{
+			margin-left: 20px;
+		}
+		.left{
+			float: left;
+			width: 100px;
+			height: 40px;
+			line-height: 40px;
+			margin-left: 20px;
+		}
+		.right{
+			float: left;
+		}
+		.sbToggle{
+			position: relative;
+			float: left;
+			margin: 1px 20px 0 -10px;
+		}
+		.selectadd{
+			float: left;
+		}
+		.setaddress{
+			border: 1px solid #ddd;
+			width: 80px;height: 38px;
+			float: left;
+			text-align: center;
+			line-height: 38px;
+		}
+		.btn-save{
+			width: 120px;height: 36px;
+			background-color: #79bb0b;
+			color: #fff;
+		}
+		.row{
+			margin: 10px 0;
+		}
+		.form-group{
+			float: left;
+			margin-right: 15px;
+		}
+		#showAdd{
+			line-height: 40px;
+			margin-right: 10px;
+		}
+		#addEdit,#addDel{
+			cursor:pointer;
+		}
+
+		button a{
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div class="uc-title">
+			收货地址管理
+		</div>
+		<div class="centent" style="display:block">
+			<div style="color:red;text-indent:20px;">
+			(收货地址上线100个)
+			</div>
+			<table class="table" id="addTbody">
+			<form action="">
+				<thead>
+					<tr>
+						<th>收货人姓名</th>
+						<th>地址</th>
+						<th>手机号</th>
+						<th>是否默认</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				
+				<tbody >
+					<tr>
+						<td id="addName"></td>
+						<td id="addDetial"></td>
+						<td id="addPhone"></td>
+						<td><input type="radio" name="default"></td>
+						<td>
+						<div style="color:red;float:left;" id="addDel">删除</div>
+						 <div style="float:left;">|</div>
+						<div style="color:red;float:left;" id="addEdit">编辑</div></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>
+							<div class="btn btn-green" id="addAddrs">新增收货地址</div>
+						</td>
+						<td></td>
+					</tr>
+				</tfoot>
+				
+			</form>
+				
+			</table>
+		</div>
+		<div class="centent" id="centent-two" style="display:none">
+			<div class="newaddress">
+				<form action="" method="get">
+					<div class="row">
+						<div class="left">
+							收货人姓名:
+						</div>
+						
+						<div class="right">
+							<input type="text" name="username" placeholder="请填写收货人姓名" id="username">
+						</div>
+					</div>
+					<div class="row">
+						<div class="left">&nbsp;</div>
+						<div class="right">
+							<input type="radio" name="sex" checked="" id="male"> 先生
+							<input type="radio" name="sex" id="female"> 女生
+						</div>
+					</div>
+
+					<div class="row margin">
+					<div class="left">所在地区</div>
+					<div class="right">
+						<form action="#" id="formAdd">
+							<div>
+                            	<div class="form-group">
+                                
+	                                <div class="input-container normal-selectbox">
+	                                 	<select id="Province" class="form-control" >
+	                                        <option value="0">-请选择省份-</option>
+	                                    </select>
+	                            	</div>
+                                </div>          	
+                                <div class="form-group">
+                                    
+                                    <div class="input-container normal-selectbox">
+                                        <select id="city" class="form-control">
+                                                <option value="0">-请选择城市-</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    
+                                    <div class="input-container normal-selectbox">
+                                        <select id="county" class="form-control">
+                                                <option value="0">-请选择地区-</option>
+                                        </select>
+                                    </div>
+                                </div>
+                        	</div>
+                        </form>
+					</div>
+				</div>
+					
+					<div class="row">
+						<div class="left">详细地址:</div>
+						<div class="right" id="showAdd">
+						还未选择地址
+						</div>
+						<input type="text" placeholder="请直接填写街道等详细信息" name="xaddress" id="xaddress">
+					</div>
+					<div class="row">
+						<div class="left">手机号码:</div>
+						<div class="right">
+							
+							<input type="text" placeholder="11位手机号" name="tell" id="telNumber">
+							或者 固定电话：
+							<input type="text" placeholder="区号-电话号码-分区号（可选" name="tell" id="areNumber">
+						</div>
+					</div>
+					<div class="row">
+						<div class="left">
+							<input type="radio">
+							设置为默认地址
+						</div>
+						
+					</div>
+					
+					
+					
+					<button class="btn-save btn" id="saveBtn">保存</button>
+
+				</form>
+			</div>
+			
+		</div>
+	</div>
+</body>
+	<script src="/scripts/js/jquery-1.8.2.min.js"></script>
+    <script src="/scripts/BaseJs/nature.head.js"></script>
+    <script src="/scripts/BaseJs/nature.ajax.js"></script>
+    <script src="/scripts/BaseJs/nature.QuickPager2.0.js"></script>
+    <script src="/scripts/usercenter/myaccount/putaddress.js"></script>
+    <script src="/scripts/usercenter/myaccount/address.js"></script>
+</html>

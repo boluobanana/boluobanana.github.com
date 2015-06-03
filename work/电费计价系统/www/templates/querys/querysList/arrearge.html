@@ -1,0 +1,24 @@
+<ion-view>
+    <ion-header-bar align-title="center" class="bar bar-header bar-calm">
+        <div>
+        <a href="javascript:history.back()">
+            <button class="button icon-left ion-chevron-left button-clear " >
+            </button>
+        </a>    
+            <h1 class="title">欠费报表</h1>
+        </div>
+    </ion-header-bar>
+    <ion-content scroll="false" class="bgcolor-denglu" on-swipe-right="onSwipeRight()">
+       <div class="list">
+
+         <a class="item item-icon-left" href="#/{{unpayList.id}}/querysDetail" ng-repeat="unpayList in unpayLists">
+            {{unpayList.userName}}
+            <span class="adress">{{unpayList.address}}</span>
+            <span class="item-note unpay">
+              {{unpayList.charge}}$
+            </span>
+          </a>
+
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <title>国家生态原产地保护产品商城</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <!-- Favicon and Apple Icons -->
+    <link rel="icon" type="image/png" href="/images/icons/icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png"></head>
+<body>
+    <!--wrapper-->
+    <div id="wrapper">
+        <section id="loginContent">
+            <div class="login-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-3 col-xs-12 ">
+                            <a href="index.html">
+                                <img src="../../images/login-user.png" alt="logo" width="485" height="84" style="vertical-align:middle;display:inline">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="login-content">
+                <div class="container">
+                    <div class="row top">
+                        <div class=" col-md-6 col-sm-6 col-xs-12"> <font>找回密码</font>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <span>
+                                <a href="/views/login/login.html" style="background:#79BB0B;color:#FFFFFF;padding:5px 10px">登录</a>
+                                <a href="/views/login/signup.html" style="background:#F35A42;color:#FFFFFF;padding:5px 10px">注册</a>
+                            </span>
+                        </div>
+                        <!-- End .col-md-12 --> </div>
+                    <!-- End .row -->
+                    <div class="row bottom">
+                        <div class="form-horizontal" style="width:100%;background:#FFFFFF;float:left;padding:80px 250px">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">帐号</label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="username" placeholder="用户帐号"></div>
+                                        <label class="col-md-4 control-label" style="text-align:left">请填写您需要找回的帐号</label>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">手机号</label>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="phone" placeholder="手机号"></div>
+                                        <label class="col-md-4 control-label" style="text-align:left">请填写您注册时填写的手机号</label>
+                                    </div>
+                                </div> -->
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">验证码</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" id="verifycode" palceholder=""></div>
+                                        <label class="col-md-6 control-label" style="text-align:left">
+                                            <button id="getSMS" class="btn-custom">免费获取验证码</button>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">密码</label>
+                                        <div class="col-md-10">
+                                            <input type="password" class="form-control" id="password" placeholder="设置密码"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">确认密码</label>
+                                        <div class="col-md-10">
+                                            <input type="password" class="form-control" id="repassword" placeholder="输入同一密码"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div class="col-md-offset-3 col-md-4">
+                                            <button class="btn-custom" style="width:100%" id="findpsw">提交</button>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <!-- End .row --> </div>
+            </div>
+
+            <!-- End .row --> </div>
+    <div class="login-bottom">
+        <div class="row">
+            <div class="col-md-12 col-sm-6 col-xs-12">
+                <p>关于我们 - 联系我们 - 加入我们 - 生态商城 - 帮助中心 - 网站地图</p>
+                <p>国家生态原产地保护产品商城 版权所有 &copy; 2015 北京XXXXX有限公司 京ICP备：14050587号</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End wrapper>
+<!--scroll-top-->
+<a href="#" id="scroll-top" title="Scroll to Top"> <i class="fa fa-angle-up"></i>
+</a>
+<!-- End scroll-top -->
+<script src="scripts/js/jquery-1.11.1.min.js"></script>
+<script src="scripts/findpsw/findpsw.js"></script>
+</body>
+</html>

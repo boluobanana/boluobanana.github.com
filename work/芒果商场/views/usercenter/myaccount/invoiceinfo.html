@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/styles/bootstrap.min.css">
+
+	<title>invoiceinfo</title>
+	<style>
+		body{
+			
+		}
+		.uc-title{
+			color: #79bb0b;
+			text-indent: 20px;
+			border-bottom: 2px solid #79bb0b;
+			line-height: 34px;
+		}
+		.centent{
+			width: 100%;
+			text-align: left;
+			padding-top: 30px;
+			padding-left: 20px;
+		}
+		.btn-green{
+			width: 120px;height: 36px;
+			background-color: #79bb0b;
+			color: #fff;
+		}
+		.list-one{
+			height: 40px;
+			background-color: rgb(244,244,244);
+			line-height: 40px;
+			padding-left: 6px;
+			margin-bottom:14px;
+		}
+		.list-one span{
+			margin-left: 10px;
+		}
+		.list-one a{
+			margin-left: 10px;
+			color: #79bb0b;
+		}
+		.list-two{
+			height: 40px;
+			line-height: 40px;
+			padding-left: 6px;
+			margin-bottom:14px; 
+		}
+		.list-two span{
+			margin-left: 10px;
+		}
+		.list-three{
+			height: 40px;
+			line-height: 40px;
+			padding-left: 6px;
+			margin-bottom:6px; 
+		}
+		.list-three span{
+			margin-left: 10px;
+		}
+		.list-four{
+			height: 40px;
+			margin-bottom: 40px;
+		}
+		.list-four div{
+			float: left;
+		}
+		.list-four big{
+			float: left;
+			font-size: 14px;
+			color: red;
+		}
+		#company-name {
+			line-height: 34px;
+			display: none;
+
+		}
+		#company-name input{
+			height: 34px;
+			width: 500px;
+		}
+		#company-name span{
+			line-height: 34px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div class="uc-title">
+			发票信息
+		</div>
+		<div class="centent" >
+			<div id="centent">
+				<div class="list-one" id="list-one">
+					<input type="radio" name="inovice">
+					<span id="invo"></span>
+					<span id="head"></span>
+					<span id="cent"></span>
+					<a href="javascript:void(0)" id="invoDel">删除</a>
+				</div>
+			</div>
+			<div class="list-two">
+				<input type="radio" name="inovice">
+				    <span>使用新的发票</span>
+			</div>
+			<div class="list-three">
+				选择发票
+				<span><input type="radio" checked=""></span>
+				<span>普通发票</span>
+			</div>
+			<div class="list-three">
+				<span style="padding-left:20px;">温馨提示:我们将根据你订阅的商品的全称和型号开具体内容并随单发送</span>
+			</div>
+			<div class="list-three">
+				<span style="padding-left:20px;">发票抬头</span>
+				<span><input type="radio" name="head" id="company"></span>
+				<span>公司</span>
+				<span><input type="radio"  name="head" checked="" id="person"></span>
+				<span>个人</span>
+			</div>
+			<div class="list-three" id="list-three">
+				<!-- <span style="padding-left:20px;">发票内容</span>
+				<span>
+					<input type="radio" name="content" checked="" value="lp,礼品">
+				</span>
+				<span>礼品</span>
+				<span>
+					<input type="radio" name="content" value="ryp,日用品">
+					</span>
+				<span>日用品</span>
+				<span>	
+					<input type="radio" name="content" value="cj,厨具">
+				</span>
+				<span>厨具</span>
+				<span>
+					<input type="radio" name="content" value="sp,食品">
+				</span>
+				<span>食品</span>
+				<span>
+					<input type="radio" name="content" value="js,酒水">
+				</span>
+				<span>酒水</span>
+				<span>
+					<input type="radio" name="content" value="yl,饮料">
+				</span>
+				<span>饮料</span> -->
+				<div id="company-name">
+					<span style="padding-left:20px;">公司名字: </span>
+					<input type="text" class="company-name">
+				</div>
+			</div>
+			<div class="list-four">
+				<big>发票抬头：</big>
+				<div>
+					<span>1使用优选卡、优惠券、一卡通、智慧卡支付的金额不予以开具发票<br>	
+					</span>
+					<span>2优选配送商品发票随商品一同配送，产地直供商品发票会在您签收订单后补寄给您。</span>
+				</div>
+			</div>
+			
+			<button class="btn btn-green" id="save">
+				保存配送信息
+			</button>
+			<a href="javascript:void(0)" style="margin-left:10px;color:red;text-decoration:underline">暂不需要发票</a>
+		</div>
+	</div>
+</body>
+	<script src="/Scripts/js/jquery-1.8.2.min.js"></script>
+    <script src="/Scripts/BaseJs/nature.head.js"></script>
+    <script src="/Scripts/BaseJs/nature.ajax.js"></script>
+    <script src="/Scripts/BaseJs/nature.QuickPager2.0.js"></script>
+    <script src="/scripts/usercenter/myaccount/invoiceinfo.js"></script>
+</html>

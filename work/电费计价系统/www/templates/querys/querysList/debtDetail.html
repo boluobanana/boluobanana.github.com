@@ -1,0 +1,42 @@
+<ion-view>
+	<ion-header-bar align-title="center" class="bar bar-header bar-calm">
+		<div>
+  			<a class="button icon-left ion-chevron-left button-clear "
+        href="javascript:history.back()"></a>
+  			<h1 class="title">欠费报表</h1>
+		</div>
+	</ion-header-bar>
+    <ion-content scroll="true" class="bgcolor-denglu" on-swipe-right="onSwipeRight()">
+        <ul class="list">
+            <li class="firstitem">
+                <a onclick="noopen(this)">
+                  <div class="onemargin">
+                    表号 <span id="importent"></span><i class="ion-ios-arrow-forward buttonright" ></i>
+                  </div>
+                </a>
+              <div class="firstspan"></div>
+            </li>
+             <li class="seconditem">
+                <a onclick="noopen(this)">
+                  <div class="onemargin">
+                    电表数 <span id="importent"></span><i class="ion-ios-arrow-forward buttonright" ></i>
+                  </div>
+                </a>
+              <div class="firstspan"></div>
+             </li>
+            <li class="seconditem">
+                <a onclick="noopen(this)">
+                  <div class="onemargin">
+                    查表日期 <span id="importent"></span><i class="ion-ios-arrow-forward buttonright" ></i>
+                  </div>
+                </a>
+              <div class="firstspan"></div>
+            </li>                                                
+        </ul>         
+          <div class="biaoti">备注</div>
+            <form class="texta">
+              <textarea cols="6" rows="6" style="width:100%;"></textarea>
+            </form>
+        
+    </ion-content>	
+</ion-view>

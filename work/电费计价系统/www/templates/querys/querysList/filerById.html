@@ -1,0 +1,99 @@
+<ion-view>
+	<ion-header-bar align-title="center" class="bar bar-header bar-calm">
+		<div>
+  			<a class="button icon-left ion-chevron-left button-clear "
+        href="javascript:history.back()"></a>
+  			<h1 class="title">表号查询</h1>
+		</div>
+	</ion-header-bar>
+    <ion-content scroll="true" class="bgcolor-denglu" on-swipe-right="onSwipeRight()">
+        <ul class="list">
+            <li class="firstitem">
+                <a ng-click="action()">
+                  <div class="onemargin">
+                    电表号 <span id="importent" class="editPoint">{{value}}</span><i class="ion-ios-arrow-forward buttonright" ></i>
+                  </div>
+                </a>
+              <div class="firstspan"></div>
+            </li>                                                
+        </ul>         
+          <div class="btnDone">
+          <button class="button button-calm " style="width:100%" ng-click="openModal()">
+            确定
+          </button>
+        </div>
+         
+        
+    </ion-content>
+    <div class="backtrop" id="backtropId">
+          
+          <div class="alert">
+            <p>请输入电表号</p>
+            <input type='text' placehoder='请输入电表号' ng-model="value">
+            <button class="button bt" ng-click="hide()">取消</button>
+            <button class="button bt2" ng-click="hide()">确定</button>
+          </div>
+    </div> 
+    <script id="my-modal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-calm">
+        <a class="button icon-left button-clear detailClose" ng-click="closeModal()">关闭</a>
+          <h1 class="title">电表详情</h1>
+        </ion-header-bar>
+        <ion-content scroll="true" class="bgcolor-denglu">
+            <ul class="list">
+                <li class="firstitem">
+                    
+                      <div class="onemargin">
+                        表号 <span id="importent" class="editPoint">{{data.id}}</span>
+                      </div>
+                    
+                  <div class="firstspan"></div>
+                </li>
+                <li class="firstitem">
+                    
+                      <div class="onemargin">
+                        用户名 <span id="importent" class="editPoint">{{data.userName}}</span>
+                      </div>
+                    
+                  <div class="firstspan"></div>
+                </li>
+                 <li class="seconditem">
+                    
+                      <div class="onemargin">
+                        抄表时间 <span id="importent" class="editPoint">{{data.updataTime}}</span>
+                      </div>
+                    
+                  <div class="firstspan"></div>
+                 </li>
+                <li class="seconditem">
+                    
+                      <div class="onemargin">
+                        表数 <span id="importent" class="editPoint">{{data.ammeterValue}}</span>
+                      </div>
+                    
+                  <div class="firstspan"></div>
+                </li>
+                
+                <li class="seconditem">
+                    
+                      <div class="onemargin">
+                        费用 <span id="importent" class="editPoint">{{data.charge}}</span>
+                      </div>
+                    
+                  <div class="firstspan"></div>
+                </li>  
+                <li class="seconditem">
+                    
+                      <div class="onemargin">
+                        用电量 <span id="importent" class="editPoint">{{data.monthPower}}</span>
+                      </div>
+                    
+                  <div class="firstspan"></div>
+                </li>                                                                                       
+            </ul>         
+              
+        </ion-content>
+      </ion-modal-view>
+    </script>
+</ion-view>

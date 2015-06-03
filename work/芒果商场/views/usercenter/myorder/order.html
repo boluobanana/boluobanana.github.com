@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>用户的订单列表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/font-awesome.min.css">
+    <link rel="stylesheet" href="/styles/prettyPhoto.css">
+    <link rel="stylesheet" href="/styles/owl.carousel.css">
+
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+
+    <link rel="stylesheet" href="/styles/revslider-bottom.css">
+    <link rel="stylesheet" href="/styles/jquery.selectbox.css">
+    <link rel="stylesheet" href="/styles/pager.css">
+
+    <style type="text/css">
+        .sep-row {
+            background-color: #ffffff;
+            border-right: 0px;
+            padding: 1px;
+        }
+        .main-tab-container{
+            display:inline-block;
+        }
+    </style>
+    <script src="/scripts/js/jquery-1.8.2.min.js"></script>
+    <script src="/scripts/BaseJs/nature.head.js"></script>
+    <script src="/scripts/BaseJs/nature.ajax.js"></script>
+    <script src="/scripts/BaseJs/nature.QuickPager2.0.js"></script>
+    <script type="text/javascript" src="/scripts/usercenter/myorder/order.js"></script>
+    <script type="text/javascript" src="/scripts/usercenter/myorder/ordershoppingcart.js"></script>
+
+</head>
+<body>
+    <div id="wrapper">
+        <div class="main-tab-container carousel-wrapper">
+            <ul id="products-tabs-list" class="tab-style-2 clearfix">
+                <li class="active">
+                    <a href="#3" data-toggle="tab" id="bestsellerstab">全部订单</a>
+                </li>
+                <li class="">
+                    <a href="#1" data-toggle="tab">待支付</a>
+                </li>
+                <li class="">
+                    <a href="#2" data-toggle="tab" id="featuredtab">待收货</a>
+                </li>
+                
+            </ul>
+            <!-- <div style="width: 200px; float: right; position: relative; top: -70px;right: 10px;">
+            <input type="search" class="form-control" id="inputSuccess1" width="100px"></div>
+
+        <div style="clear: both;"></div>
+        -->
+    </div>
+    <div class="search">
+        <div class="form-group search-form">
+            <input type="text" class="form-control" placeholder="订单号/商品名称">
+            <span class="search-img">
+                <img src="/images/search.png"></span>
+        </div>
+    </div>
+
+    <div id="divQuickPage"></div>
+
+    <div class="col-md-12 table-responsive">
+        <table class="table cart-table" id="orderList">
+            <thead>
+                <tr>
+                    <th class="table-title" style="width:500px;">商品信息</th>
+                    <th class="table-title">价格</th>
+                    <th class="table-title">状态</th>
+                    <th class="table-title">操作</th>
+                </tr>
+                <tr class="sep-row" style="height: 5px;">
+                    <th colspan="4" style="height: 3px;padding: 0px;background-color: #ffffff;border-left: 0px;"></th>
+                </tr>
+            </thead>
+            <tbody id="orderItemList">
+                
+                <tr>
+                    <td class="item-name-col" id="product">
+                        <div id="productList">
+                            <a href="#"></a>
+                        </div>
+                    </td>
+                    <td class="item-price-col">
+                        <span class="item-price-special" id="price">¥{价格}</span>
+                    </td>
+                    <td id="status">{状态}</td>
+                    <td class="item-total-col">
+
+                        <span class="item-price-special" >
+                            <a href="orderItem.html" id="lookorder">查看订单</a>
+                        </span>
+                        <a href="javascript:;" class="close-button" id="deletecart0"></a>
+                    </td>
+                </tr>
+                <tr class="lastTr">
+                    <td colspan="5" style="text-align: left; height: 45px; padding: 15px;" id="orderCode">订单编号：{订单编号} &nbsp; 下单时间：{下单时间} &nbsp; 收货人：{收货人}</td>
+                </tr>
+                <tr class="sep-row" style="border-left: 0px solid #ffffff; height: 10px; padding: 0px;">
+                    <td colspan="4" style="border-left: 0px solid #ffffff;height: 10px;padding: 0px;"></td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+    <!-- <div id="divNoOrder" style="text-align:center;width:850px;height:550px;padding-top:150px;">
+    <img src="../../../images/usercenter/noorder.jpg">
+    <br>
+    <span id="noOrder"></span>
+    <a target="_top" href="/views/sale/sale.html">去逛逛</a>
+</div>
+-->
+<div id="divQuickPage1"></div>
+
+</div>
+</body>
+</html>

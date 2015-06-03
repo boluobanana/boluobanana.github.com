@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>奖品信息</title>
+
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/font-awesome.min.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/responsive.css">
+    <link rel="stylesheet" href="/styles/pager.css">
+<body>
+    <div id="wrapper">
+        <div class="row">
+            <div class="col-md-4 selectbox">
+               <div class="btn-group">
+                    <button type="button" class="btn btn-default">按未领取排序</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <img src="/images/selectbox.png">
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-4 selectbox">
+            <div class="btn-group">
+                    <button type="button" class="btn btn-default">按领取排序</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <img src="/images/selectbox.png">
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-4 search">
+                <div class="form-group search-form">
+                    <input type="text" class="form-control" placeholder="奖品名称">
+                    <span class="search-img">
+                        <img src="/images/search.png">
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 table-responsive">
+                <table class="table cart-table" >
+                    <thead>
+                        <tr>
+                            <th class="table-title">奖品信息</th>
+                            <th class="table-title">提供商</th>
+                            <th class="table-title">互动</th>
+                            <th class="table-title">状态</th>
+                            <th class="table-title">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="prizeList" >
+                        <tr id="prizeItem">
+                            <td class='item-name-col' id="prizeImg">
+                                <figure><img src="" style='height:80px;width:80px;' alt='奖品名称'>
+                                </figure>
+                            </td>
+                            <!-- <td class='item-name-col' id="prizeInfo"></td> -->
+                            <td class='item-name-col' id="supplyInfo"></td>
+                            <td class='item-name-col' id="playInfo"></td>
+                            <td class='item-name-col' id="status"></td>
+                            <td class='item-name-col' id="favOption">
+                                <span class="item-price-special" id="view">查看</span>
+                            </td> 
+
+                        </tr>
+                        <tr id="prizeItemData" class="lastTr">
+                            <td colspan="5" class="lastTd" style="text-align: left; height: 65px; padding: 15px;" id="prizeCode">奖品名称：<span id="prizeInfo"></span> 获奖时间：<span id="prizeTime"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="divQuickPage"></div>
+    </div>
+<script src="/scripts/js/jquery-1.8.2.min.js"></script>
+<script src="/scripts/BaseJs/nature.head.js"></script>
+<script src="/scripts/BaseJs/nature.ajax.js"></script>
+<script src="/scripts/BaseJs/nature.QuickPager2.0.js"></script>
+<script src="/scripts/usercenter/prizes/prizes.js"></script>
+</body>
+</html>

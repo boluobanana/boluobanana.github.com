@@ -1,0 +1,26 @@
+
+<ion-view>
+    <ion-header-bar align-title="center" class="bar bar-header bar-calm">
+        <div>
+        <a href="javascript:history.back()">
+            <button class="button icon-left ion-chevron-left button-clear " >
+            </button>
+        </a>    
+            <h1 class="title">未抄报表</h1>
+        </div>
+    </ion-header-bar>
+    <ion-content scroll="false" class="bgcolor-denglu" on-swipe-right="onSwipeRight()">
+       <div class="list">
+
+          <a class="item item-icon-left" href="#/{{uncheckedList.id}}/querysDetail" ng-repeat="uncheckedList in uncheckedLists">
+            {{uncheckedList.userName}}
+            <span class="adress">{{uncheckedList.address}}</span>
+            <span class="item-note">
+              {{uncheckedList.charge}}$
+            </span>
+          </a>
+
+
+        </div>
+    </ion-content>
+</ion-view>

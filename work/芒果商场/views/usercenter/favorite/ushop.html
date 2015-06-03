@@ -1,0 +1,113 @@
+<html>
+<head>
+	<title></title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="/styles/bootstrap.min.css">
+        <link rel="stylesheet" href="/styles/style.css">
+        <link rel="stylesheet" href="/styles/pager.css">
+</head>
+<body style="background-color:#fff;">
+	<div class="fbox">
+		<div class="ftitle">
+			收藏的优店
+		</div>
+		<div class="search">
+			<div class="form-group search-form">
+                <input type="text" class="form-control" placeholder="收藏的优店">
+                <span class="search-img">
+                    <img src="/images/search.png">
+                </span>
+            </div>
+		</div>
+	</div>
+    <div>
+		<table class="table" id="favoriteList">
+			<thead>
+				<tr>
+					<!-- <th style="width:50px;">
+						<input type="checkbox" name="select" value="Option1" onclick="if(this.checked==true) { checkAll('select'); } else { clearAll('select'); }" >
+					</th> -->
+					<th>
+			        	优店名称
+					</th>
+					<th colspan="2">
+						等级
+					</th>
+					<th colspan="2">
+						收藏时间
+					</th>
+					<th colspan="2">
+						操作
+					</th>
+				</tr>
+			</thead>
+			<tbody id="favoriteItemList">
+				<tr>
+					<!-- <td style="border-right:0 !important">
+						<input type="checkbox"  name="select" value="Option" id="moren">
+					</td> -->
+					<td style="border-right:0 !important" id="productName"> 
+					</td>
+					<td colspan="2" style="border-right:0 !important" id="productId">
+					</td>
+					<td colspan="2" style="border-right:0 !important" id="favDate">
+					</td>
+					<td class="red" style="border-right:0 !important" id="shopOption">
+						<a href="#" id="add">进入</a>
+						<a href="#" id="delFav">删除</a>
+					</td>
+				</tr>
+			</tbody>
+			<!-- <tfoot>
+				<tr>
+					<td colspan="8 style="border-right:0 !important"" style="text-align:right;">
+						<button type="button" class="btn btn-success btn-sm" id="delete">删除</button>
+					</td>
+				</tr>
+			</tfoot> -->
+		</table>
+		<div id="divQuickPage"></div>
+	</div>
+	<!-- <div id="cSelect" class="cdiv">
+		<div class="cTitle">
+			<span>提示消息</span>
+		</div>
+		<center>
+			<div style="padding: 25px 0;">
+				请选择优店！
+			</div>
+		</center>
+		<center>
+			<button type="button" class="btn btn-success btn-sm">确定</button>
+		</center>
+	</div>
+	<div id="cDelete" class="cdiv">
+		<div class="cTitle">
+			<span>消息确认</span>
+		</div>
+		<center>
+			<div style="padding: 25px 0;">
+				你确定要删除该优店吗？
+			</div>
+		</center>
+		<center>
+			<button type="button" class="btn btn-success btn-sm">确定</button>
+			<button type="button" class="btn btn-success btn-sm">取消</button>
+		</center> -->
+
+
+	<script type="text/javascript">
+		/*document.getElementById("delete").onclick=function(){
+			document.getElementById("cDelete").style.display="block";
+			}
+		document.getElementById("#").onclick=function(){
+		document.getElementById("c#").style.display="block";
+		}*/
+	</script>
+</body>
+	<script src="/Scripts/js/jquery-1.8.2.min.js"></script>
+    <script src="/Scripts/BaseJs/nature.head.js"></script>
+    <script src="/Scripts/BaseJs/nature.ajax.js"></script>
+    <script src="/Scripts/BaseJs/nature.QuickPager2.0.js"></script>
+    <script src="/Scripts/usercenter/favorite/ushop.js"></script>
+</html>

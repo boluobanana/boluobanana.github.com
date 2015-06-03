@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/styles/bootstrap.min.css">
+
+	<title>changepsw</title>
+	<style>
+		body{
+			height: 550px;
+		}
+		input{
+			text-indent: 6px;
+		}
+		.uc-title{
+			color: #79bb0b;
+			text-indent: 20px;
+			border-bottom: 2px solid #79bb0b;
+			line-height: 34px;
+		}
+		.centent{
+			width: 100%;
+			text-align: center;
+			padding-top: 30px;
+		}
+		.centent input[type="password"]{
+			margin-left: 16px;
+			margin-right: 10px;
+			width: 290px;
+			height: 40px;
+        }
+		.centent span[class="glyphicon glyphicon-eye-open"]{
+			display: inline-block;
+			margin: 0 20px 0 -40px;
+			font-size: 16px;
+		}
+		.centent span[class="glyphicon glyphicon-ok-sign"]{
+			font-size: 18px;
+			line-height: 18px;
+			color: #79bb0b;
+		}
+		.margen{
+			margin: 10px auto;
+			width: 242px;
+			text-align: left;
+		}
+		.margen span{
+			display: none;
+		}
+		.uc-title{
+			color: #79bb0b;
+			text-indent: 20px;
+			border-bottom: 2px solid #79bb0b;
+			line-height: 34px;
+		}
+		.cententdiv{
+			width: 100%;
+			text-align: center;
+		}
+		.cententdiv input[type="tel"]{
+			margin-left: 18px;
+			margin-right: 10px;
+			width: 290px;
+			height: 40px;
+
+		}
+		.cententdiv input[type="text"]{
+			margin-left: 16px;
+			margin-right: 10px;
+			width: 180px;
+			height: 40px;
+		}
+		.cententdiv span[class="glyphicon glyphicon-ok-sign"]{
+			font-size: 16px;
+			line-height: 18px;
+			color: #79bb0b;
+		}
+		.margen{
+			margin: 10px auto;
+			width: 242px;
+			text-align: left;
+		}
+		.btn-get{
+			background-color: rgb(255,94,77);
+			width: 100px;height: 40px;
+			margin-right: 28px;
+			color: #fff;
+		}
+		#subBtn{
+			height: 40px;
+			width: 100px;
+			background-color: #79bb0b;
+		}
+		#getMSM{
+			padding: 8px 12px;
+		}
+	</style>
+
+</head>
+<body>
+	<div>
+		<div class="uc-title">修改密码</div>
+		<div class="centent">
+			当前密码
+			<input type="password" name="oldpassword" placeholder="" id="oldpsw">
+			<span class="glyphicon glyphicon-eye-open"></span>
+			<span class="glyphicon glyphicon-ok-sign"></span>
+			<br>
+			<div class="margen">
+				<span style="color:red">密码格式不正确！</span>
+				<br></div>
+			重置密码
+			<input type="password" name="newpassword" placeholder="6-18位,字母区分大小写" id="newpsw">
+			<span class="glyphicon glyphicon-eye-open"></span>
+			<span class="glyphicon glyphicon-ok-sign"></span>
+			<br>
+			<div class="margen">
+				<span style="color:red">请输入你的用户名！</span>
+				<br></div>
+			确认密码
+			<input type="password" name="newpassword" placeholder="请再次输入设置的密码" id="surepsw">
+			<span class="glyphicon glyphicon-eye-open"></span>
+			<span class="glyphicon glyphicon-ok-sign"></span>
+			<br>
+			<div class="margen">
+				<span style="color:red">输入密码不一致！</span>
+				<br>
+			</div>
+			<input type="button" class="btn btn-get" value="提交" id="subBtn"></div>
+	</div>
+
+</body>
+	<script src="/scripts/js/jquery-1.8.2.min.js"></script>
+	<script src="/scripts/BaseJs/nature.head.js"></script>
+	<script src="/scripts/BaseJs/nature.ajax.js"></script>
+	<script src="/scripts/BaseJs/nature.QuickPager2.0.js"></script>
+	<script src="/scripts/usercenter/myaccount/changepsw.js"></script>
+
+</html>

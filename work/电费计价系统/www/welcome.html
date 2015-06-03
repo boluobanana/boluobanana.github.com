@@ -1,0 +1,37 @@
+<!--登陆-->
+<ion-view>
+    <ion-header-bar align-title="center" class="bar bar-header bar-calm">
+        <div>
+            <h1 class="title">登录</h1>
+        </div>
+    </ion-header-bar>
+    <ion-content scroll="false" class="bgcolor-denglu">
+        <div class="list list-inset" style="margin-top:15%;">
+          <label class="item-input">
+            <i class="iconfont">&#xe60c</i>
+            <div class="suojin">
+              <input type="text" ng-model="username"placeholder="请输入用户名">
+            </div>
+          </label>
+        </div>
+        <div class="list list-inset">
+          <label class="item-input">
+            <i class="iconfont">&#xe60d</i>
+            <div class="suojin">
+              <input type="password" ng-model="password" placeholder="请输入密码" style="font-size:20px;">
+            </div>
+          </label>
+        </div>
+        <a href="#/list" onclick="return login()">
+          <button class="button button-block button-positive " >
+          登录
+          </button>
+        </a>
+        <div class="backtrop" id="backtrop">
+          <div class="alt">
+            <p>账户或密码错误!</p>
+            <button class="button button-light" onclick="hide()">OK</button>
+          </div>
+        </div>
+    </ion-content>
+</ion-view>

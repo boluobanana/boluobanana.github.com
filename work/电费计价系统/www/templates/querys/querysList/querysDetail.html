@@ -1,0 +1,122 @@
+<ion-view>
+    <ion-header-bar align-title="center" no-tap-scroll="true" class="bar bar-header bar-calm">
+        <div>
+        <a href="javascript:history.back()">
+            <button class="button icon-left ion-chevron-left button-clear " >
+            </button>
+        </a>    
+            <h1 class="title">未抄报表</h1>
+        </div>
+    </ion-header-bar>
+<ion-content scroll="true" class="bgcolor-denglu" on-swipe-right="onSwipeRight()">
+        <ul class="list">
+            <li class="firstitem">
+                
+                  <div class="onemargin">
+                    表号 <span id="importent" class="editPoint">{{data.id}}</span>
+                  </div>
+                
+              <div class="firstspan"></div>
+            </li>
+            <li class="firstitem">
+                    
+                      <div class="onemargin">
+                        用户名 <span id="importent" class="editPoint">{{data.userName}}</span>
+                      </div>
+                    
+                  <div class="firstspan"></div>
+                </li>
+             <li class="seconditem">
+                
+                  <div class="onemargin">
+                    抄表时间 <span id="importent" class="editPoint">{{data.updataTime}}</span>
+                  </div>
+                
+              <div class="firstspan"></div>
+             </li>
+            <li class="seconditem">
+                
+                  <div class="onemargin">
+                    表数 <span id="importent" class="editPoint">{{data.ammeterValue}}</span>
+                  </div>
+                
+              <div class="firstspan"></div>
+            </li>
+            
+            <li class="seconditem">
+                
+                  <div class="onemargin">
+                    费用 <span id="importent" class="editPoint">{{data.charge}}</span>
+                  </div>
+                
+              <div class="firstspan"></div>
+            </li>  
+            <li class="seconditem">
+                
+                  <div class="onemargin">
+                    用电量 <span id="importent" class="editPoint">{{data.monthPower}}</span>
+                  </div>
+                
+              <div class="firstspan"></div>
+            </li>                                                                                       
+        </ul>         
+          <div class="biaoti">备注</div>
+            <form class="texta">
+              <textarea cols="6" rows="6" style="width:100%;"></textarea>
+            </form>
+        
+    </ion-content>  
+
+
+
+<!--     <ion-content scroll="false" class="bgcolor-denglu">
+   <div class="list">
+
+      <a class="item item-icon-left" ng-click="action()">
+        TOM
+        <span class="item-note">
+          -10$
+        </span>
+      </a>
+
+      <a class="item item-icon-left item-icon-right" ng-click="openModal()" >
+        ELL
+        <span class="item-note">
+          -10$
+        </span>
+      </a>
+      <a class="item item-icon-left item-icon-right" ng-click="openPopover($event)">
+        aaaaaa
+        <span class="item-note">
+          -10$
+        </span>
+      </a>
+     
+    </div>
+</ion-content> -->
+<!--     <script id="my-modal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-calm">
+          <h1 class="title">My Modal title</h1>
+        </ion-header-bar>
+        <ion-content class="jump">
+          Hello!
+          <button ng-click="closeModal()" class="button">
+            hide!
+          </button>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+
+
+    <script id="my-popover.html" type="text/ng-template">
+      <ion-popover-view>
+        <ion-header-bar class="bar bar-header bar-calm">
+          <h1 class="title">My Popover Title</h1>
+        </ion-header-bar>
+        <ion-content>
+          Hello!
+        </ion-content>
+      </ion-popover-view>
+    </script>-->
+</ion-view>

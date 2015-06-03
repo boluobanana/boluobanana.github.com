@@ -1,0 +1,123 @@
+<html>
+<head>
+	<title></title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="/styles/bootstrap.min.css">
+        <link rel="stylesheet" href="/styles/style.css">
+        <link rel="stylesheet" href="/styles/pager.css">
+</head>
+<body style="background-color:#fff">
+	<div class="fbox">
+		<div class="ftitle">
+			收藏的商品
+		</div>
+		<div class="search">
+			<div class="form-group search-form">
+                <input type="text" class="form-control" placeholder="收藏的商品">
+                <span class="search-img">
+                    <img src="/images/search.png">
+                </span>
+            </div>
+		</div>
+	</div>
+    <div>	
+		<table class="table" style="background-color:#F2F2F2;" id="favoriteList">
+			<thead>
+				<tr>
+					<!-- <th style="width:50px;">
+					 <input type="checkbox" name="select" value="Option1" onclick="if(this.checked==true) { checkAll('select'); } else { clearAll('select'); }" >
+					</th> -->
+					<th>
+						 商品名称
+					</th>
+					<th colspan="2" >
+						价格
+					</th>
+					<th colspan="2" >
+						编号
+					</th>
+					<th colspan="2" >
+						收藏时间
+					</th>
+					<th colspan="2" >
+						操作
+					</th>
+				</tr>
+			</thead>
+			<tbody id="favoriteItemList">
+				<tr>
+					<!-- <td style="border-right:0 !important">
+					 <input type="checkbox"  name="select" value="Option" id="moren">
+					</td> -->
+					<td style="border-right:0 !important" id="productName">
+						 
+					</td>
+					<td colspan="2" style="border-right:0 !important" id="productPrice">
+						
+					</td>
+					<td colspan="2" style="border-right:0 !important" id="productId">
+						
+					</td>
+					<td colspan="2" style="border-right:0 !important" id="favDate">
+						
+					</td>
+					<td class="red" style="border-right:0 !important" id="favOption"> 
+						<a href="#" id="add">直接购买</a>
+						<a href="#" id="delFav">删除</a>
+					</td>
+				</tr>
+			</tbody>
+			<!-- <tfoot>
+				<tr>
+					<td colspan="10" style="text-align:right">
+						<button type="button" class="btn btn-success btn-sm" id="add">添加购物车</button>
+						<button type="button" class="btn btn-success btn-sm" id="delete">删除</button>
+					</td>
+				</tr>
+			</tfoot> -->
+		</table>
+		<div id="divQuickPage"></div>
+	</div>
+	<!-- <div id="cAdd" class="cdiv">
+		<div class="cTitle">
+			<span>提示消息</span>
+		</div>
+		<center>
+			<div style="padding: 25px 0;">
+				请选择商品！
+			</div>
+		</center>
+		<center>
+			<button type="button" class="btn btn-success btn-sm">确定</button>
+		</center>
+	</div>
+	<div id="cDelete" class="cdiv">
+		<div class="cTitle">
+			<span>消息确认</span>
+		</div>
+		<center>
+			<div style="padding: 25px 0;">
+				你确定要删除该商品吗？
+			</div>
+		</center>
+		<center>
+			<button type="button" class="btn btn-success btn-sm">确定</button>
+			<button type="button" class="btn btn-success btn-sm">取消</button>
+		</center>
+	</div> -->
+<script type="text/javascript">
+	/*document.getElementById("delete").onclick=function(){
+		document.getElementById("cDelete").style.display="block";
+		}
+	document.getElementById("add").onclick=function(){
+		document.getElementById("cAdd").style.display="block";
+		}*/
+</script>
+</body>
+	<script src="/scripts/js/jquery-1.8.2.min.js"></script>
+    <script src="/scripts/BaseJs/nature.head.js"></script>
+    <script src="/scripts/BaseJs/nature.ajax.js"></script>
+    <script src="/scripts/BaseJs/nature.QuickPager2.0.js"></script>
+    <script src="/scripts/usercenter/favorite/commodity.js"></script>
+    <!-- // <script src="/scripts/usercenter/favorite/favhoppingcart.js"></script> -->
+</html>

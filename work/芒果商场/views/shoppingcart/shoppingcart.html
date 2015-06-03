@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <title>青芒果商城</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/prettyPhoto.css">
+    <link rel="stylesheet" href="styles/owl.carousel.css">
+    <link rel="stylesheet" href="styles/revslider-bottom.css">
+    <link rel="stylesheet" href="styles/jquery.selectbox.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+
+    <!-- Favicon and Apple Icons -->
+    <link rel="icon" type="image/png" href="/images/icons/icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png"></head>
+<body>
+    <div id="wrapper">
+        <header id="header" class="header6">
+            <div id="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="header-top-left">
+                                <ul id="top-links" class="clearfix">
+                                    <li>
+                                        <a href="http://www.upp188.com" title="">
+                                            <span class="hide-for-xs">生态原产地产品保护网</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End .header-top-left -->
+                            <div class="header-top-right">
+                                <div class="header-text-container pull-right">
+                                    <p class="header-text" id="welcome">欢迎来到青芒果商城！</p>
+                                    <p class="header-link">
+                                        <a href="#" id="username">&nbsp;&nbsp;</a>
+                                        <a href="/views/login/login.html"><i class="fa fa-key"></i>&nbsp;&nbsp;退出</a>
+                                    </p>
+                                    <p class="header-link" id="wlogin">
+                                        <a href="/views/login/login.html">登录</a>&nbsp;或&nbsp;<a href="/views/login/signup.html">注册</a>
+                                    </p>
+                                </div>
+                                <!-- End .pull-right --> </div>
+                            <!-- End .header-top-right --> </div>
+                        <!-- End .col-md-12 --> </div>
+                    <!-- End .row --> </div>
+                <!-- End .container --> </div>
+            <!-- End #header-top -->
+
+            <div id="inner-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-12 logo-container">
+                            <h1 class="logo clearfix">
+                                <a href="index.html" title="首页">
+                                    <img src="/images/logo.png" alt="青芒果商城" style="margin:-25px 0 0 25px"></a>
+                            </h1>
+                        </div>
+                        <!-- End .col-md-3 -->
+                        <div class="col-md-9 col-sm-9 col-xs-12 header-inner-right">
+                            <div class="header-inner-right-wrapper clearfix">
+                                <div class="dropdown-cart-menu-container pull-right">
+                                    <div class="btn-group dropdown-cart">
+                                        <a href="/shoppingCart">
+                                            <button type="button" class="btn btn-custom dropdown-toggle" data-toggle="dropdown">
+                                                <span class="cart-menu-icon"></span>
+                                                购物车
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <!-- End .btn-group --> </div>
+                                <!-- End .dropdown-cart-menu-container -->
+
+                                <div id="quick-access">
+                                    <form class="form-inline quick-search-form" role="form" action="#">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="查找卖品"></div>
+                                        <!-- End .form-inline -->
+                                        <button type="submit" id="quick-search" class="btn btn-custom"></button>
+                                    </form>
+                                </div>
+                                <!-- End #quick-access -->
+
+                                <!-- <div class="header-box contact-infos pull-right">
+                                    <ul>
+                                        <li>
+                                            <img src="/images/weixin.png" alt="微信" style="width:20px;height:15px;margin:0 9px 0-30px">官方微信</li>
+                                        <li>
+                                            <span class="header-box-icon header-box-icon-email"></span>
+                                            <a href="mailto:venedor@gmail.com">官方邮箱</a>
+                                        </li>
+                                    </ul>
+                                </div> -->
+                                <!-- End .contact-infos -->
+
+                                <!-- <div class="header-box contact-phones pull-right clearfix">
+                                    <span class="header-box-icon header-box-icon-earphones"></span>
+                                    <ul class="pull-left">
+                                        <li>+(404) 158 14 25 78</li>
+                                        <li>+(404) 851 21 48 15</li>
+                                    </ul>
+                                </div> -->
+                                <!-- End .contact-phones --> </div>
+                            <!-- End .header-inner-right-wrapper --> </div>
+                        <!-- End .col-md-7 --> </div>
+                    <!-- End .row --> </div>
+                <!-- End .container -->
+
+                <div id="main-nav-container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 clearfix">
+
+                                <nav id="main-nav">
+                                    <div class="menu-table">
+                                        <ul class="menu clearfix">
+                                            <li>
+                                                <a class="active" href="/index.html">首页</a>
+                                            </li>
+                                            <li class="mega-menu-container">
+                                                <a href="/views/sale/sale.html">限时特卖</a>
+                                                <!-- End .mega-menu -->
+                                            </li>
+                                            <li>
+                                                <a href="/views/proactivity/proactivity.html">推广活动</a>
+                                            </li>
+                                            <li>
+                                                <a href="/views/shops/shops.html">生态优店</a>
+                                            </li>
+                                           <!--  <li>
+                                                <a href="#">大宗购买</a>
+                                            </li> -->
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                            <!-- End .col-md-12 --> 
+                        </div>
+                        <!-- End .row --> 
+                    </div>
+                    <!-- End .container --> 
+                </div>
+                <!-- End #nav --> 
+            </div>
+            <!-- End #inner-header --> 
+        </header>
+        <!-- End #header -->
+        <!-- PC购物车步骤1 -->
+        <div id="breadcrumb-container">
+            <div class="container">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="/index.html">首页</a>
+                    </li>
+                    <li>
+                        <a href="/views/shoppingcart/shoppingcart.html">购物车</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <header class="content-title">
+                        <h1 class="title">购物车</h1>
+                        <p class="title-desc">仅本周，你可以使用免费送货</p>
+                    </header>
+                    <div class="xs-margin"></div>
+                    <!-- space -->
+                    <div class="row">
+                        <div class="col-md-12 table-responsive">
+                            <table class="table cart-table">
+                                <thead>
+                                    <tr>
+                                        <th class="table-title">产品名称</th>
+                                        <th class="table-title">产品代码</th>
+                                        <th class="table-title">单位价格</th>
+                                        <th class="table-title">数量</th>
+                                        <th class="table-title">小计</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="shoppingcart">
+
+                                    <!-- <tr ng-repeat="shoppingCart in shoppingCartData">
+                                    <td class="item-name-col">
+                                        <figure>
+                                            <a href="#">
+                                                <img ng-src="{{shoppingCart.extData.logo}}" style="height:150px" alt="Lowlands Lace Blouse"></a>
+                                        </figure>
+                                        <header class="item-name">
+                                            <a href="#"></a>
+                                        </header>
+                                        <ul ng-repeat="">
+                                            <li></li>
+                                        </ul>
+                                    </td>
+                                    <td class="item-code"></td>
+                                    <td class="item-price-col">
+                                        <span class="item-price-special">&yen;</span>
+                                    </td>
+                                    <td>
+                                        <div class="custom-quantity-input">
+                                            <input type="text" name="quantity" ng-model="shoppingCart.amount" ng-blur="changeAmount(shoppingCart)">
+                                            <a href="#" ng-click="addAmount(shoppingCart)" class="quantity-btn quantity-input-up"> <i class="fa fa-angle-up"></i>
+                                            </a>
+                                            <a href="#" ng-click="subtractAmount(shoppingCart)" class="quantity-btn quantity-input-down">
+                                                <i class="fa fa-angle-down"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="item-total-col">
+                                        <span class="item-price-special">&yen;</span>
+                                        <a href="#" class="close-button" ng-click="deleteShC(shoppingCart)"></a>
+                                    </td>
+                                </tr>
+                                -->
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <!-- End .col-md-12 -->
+             </div>
+            <!-- End .row -->
+            <div class="lg-margin"></div>
+            <!-- End .space -->
+
+            <div class="row">
+                <div class="col-md-8 col-sm-12 col-xs-12 lg-margin">
+                    <div class="tab-container left clearfix">
+                        <ul class="nav-tabs" style="height: 400px;">
+                            <li class="active">
+                                <a href="#freight" data-toggle="tab">运费估算</a>
+                            </li>
+                            <li>
+                                <a href="#discount" data-toggle="tab">运费说明</a>
+                            </li>
+                            <li>
+                                <a href="#additional" data-toggle="tab" style="border-bottom-color: transparent;">加价购</a>
+                            </li>
+
+                        </ul>
+                        <div class="tab-content clearfix">
+                            <div class="tab-pane active" id="freight">
+
+                                <form action="#" id="shipping-form">
+                                    <p class="shipping-desc">提示:请选择您的收货区域，查看更准确的信息</p>
+                                    <div class="col-md-12">
+                                        <img src="/images/logo.png" style="height:78px;" class="col-md-12" alt="生态商城logo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="select-country" class="control-label">省份&#42;</label>
+                                        <div class="input-container normal-selectbox">
+                                             <select id="Province" class="form-control" >
+                                                <option value="0">-请选择省份-</option>
+                                            <select>
+                                        </div>
+                                        <div class="xss-margin"></div>
+                                        <div class="form-group">
+                                            <label for="select-state" class="control-label">市&#42;</label>
+                                            <div class="input-container normal-selectbox">
+                                                <select id="city" class="form-control">
+                                                    <option value="0">-请选择城市-</option>
+                                                <select>
+                                            </div><!-- End .select-container -->
+                                        </div><!-- End .form-group -->
+                                        <!-- End .select-container --> 
+                                    </div>
+                                    <!-- End .form-group -->
+                                    <div class="xss-margin"></div>
+                                    <div class="form-group">
+                                        <label for="select-country" class="control-label">邮政编码&#42;</label>
+                                        <div class="input-container">
+                                            <input type="text" class="form-control" placeholder="邮政编码">
+                                        </div>
+                                    </div>
+                                    <!-- End .form-group -->
+                                    <div class="xss-margin"></div>
+                                    <p class="text-right">
+                                        <input type="button" class="btn btn-custom-2" value="获取快递费用" id="getCode">
+                                    </p>
+                                </form>
+
+                            </div>
+                            <!-- End .tab-pane -->
+
+                            <div class="tab-pane" id="discount">
+                                <p>2014年5月5日起,顺丰优选执行新的运费体系，免运费条件及运费收取规则如下:</p>
+                                <p>1.钻石卡用户全场免费运。</p>
+                                <p>
+                                    2.每笔订单金额
+                                    <99元时,不计订单中商品的重量，没单收取10元运费。
+                                </p>
+                                        <p>
+                                            3.每笔订单≥99元,且
+                                            <199元时，订单中商品重量10kg(含)以内部分,不计算运费。超过10kg的部分，每单收取10元运费。
+                                </p>
+                                <P>4.每笔订单金额≥199元时，不计订单中商品重量,免收全部运费。</P>
+                                <p>5.退换货政策保持不变(即:发生退换货时退、换、货运费收取由责任方承担)。</p>
+                            </div>
+                            <!-- End .tab-pane -->
+
+                            <div class="tab-pane" id="additional">
+                                <p>
+                                    <ul>
+                                        <li>
+                                            <p>已购满99元,再加0元可立即领取换购品</p>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="btn btn-custom">立即换购</a>
+                                        </li>
+                                        <li>
+                                            <p>已购满199元,再加0元可立即领取换购品</p>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="btn btn-custom-2">立即换购</a>
+                                        </li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    再买
+                                    <span style="color:#E82C0C">&yen;50.1</span>
+                                    即可享受&nbsp;国产水果&nbsp;超值满赠&nbsp;满99赠保鲜袋满199增密封罐&nbsp;满299赠维氏厨房套装满299元，加0元换购商品。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <table class="table total-table" id="amountcart">
+                        
+                    </table>
+                    <div class="md-margin"></div>
+                    <!-- End .space -->
+
+                    <!-- href跳转的继续购物页面 -->
+                    <a href="/index.html" class="btn btn-custom-2" ng-click="">继续购物</a>
+                    <a href="javascript:;" class="btn btn-custom" id="settlementShC">&nbsp;&nbsp;&nbsp;&nbsp;结账&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                </div>
+            </div>
+            <!-- End .row -->
+            <div class="md-margin2x"></div>
+            <!-- Space -->
+
+            <div class="purchased-items-container carousel-wrapper">
+                <header class="content-title">
+                    <div class="title-bg">
+                        <h2 class="title">推荐商品</h2>
+                    </div>
+                    <!-- End .title-bg -->
+                    <p class="title-desc">注意推荐商品超过500元,你可以得到折扣购买后。</p>
+                </header>
+
+                <div class="carousel-controls">
+                    <div class="carousel-btn carousel-btn-prev"></div>
+                    <!-- End .carousel-prev -->
+                    <div class="carousel-btn carousel-btn-next carousel-space"></div>
+                    <!-- End .carousel-next -->
+                </div>
+                <!-- End .carousel-controllers -->
+                <div class="purchased-items-slider owl-carousel" id="buyShop"></div>
+            <!-- End .purchased-items-container -->
+            </div>
+        </div>
+            <!-- End #content -->
+        </div>
+        <footer id="footer">
+            <div id="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12 widget">
+                            <div class="title-bg">
+                                <h3>最受欢迎</h3>
+                            </div>
+                            <!-- End .title-bg -->
+
+                            <div class="footer-popular-slider flexslider footerslider">
+                                <ul class="slides" id="hotsellcommodityoffoot">
+                                    
+                                </ul>
+                            </div>
+                            <!-- End Footerpouplar-slider -->
+                            <div class="md-margin visible-xs"></div>
+                            <!-- space -->
+                        </div>
+                        <!-- End .col-md-4 -->
+
+                        <div class="col-md-4 col-sm-4 col-xs-12 widget">
+                            <div class="title-bg">
+                                <h3>精选</h3>
+                            </div>
+                            <!-- End .title-bg -->
+
+                            <div class="footer-featured-slider flexslider footerslider">
+                                <ul class="slides" id="selectcommodityoffoot">
+                                </ul>
+                            </div>
+                            <!-- End Footerpouplar-slider -->
+                            <div class="md-margin visible-xs"></div>
+                            <!-- space -->
+                        </div>
+                        <!-- End .col-md-4 -->
+
+                        <div class="col-md-4 col-sm-4 col-xs-12 widget">
+                            <div class="title-bg">
+                                <h3>特卖</h3>
+                            </div>
+                            <!-- End .title-bg -->
+
+                            <div class="footer-specials-slider flexslider footerslider">
+                                <ul class="slides" id="sellcommodityoffoot">
+                                </ul>
+                            </div>
+                            <!-- End Footerpouplar-slider -->
+
+                        </div>
+                        <!-- End .col-md-4 -->
+                    </div>
+                    <!-- End .row -->
+                </div>
+                <!-- End .container -->
+            </div>
+            <!-- End #footer-top -->
+
+            <div id="inner-footer">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4 col-xs-12 widget">
+                            <h3>购物指南</h3>
+                            <ul class="links">
+                                <li>
+                                    <a href="#">积分制度</a>
+                                </li>
+                                <li>
+                                    <a href="#">会员介绍</a>
+                                </li>
+                                <li>
+                                    <a href="#">购物流程</a>
+                                </li>
+                                <li>
+                                    <a href="#">常见问题</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End .widget -->
+
+                        <div class="col-md-3 col-sm-4 col-xs-12 widget">
+                            <h3>配送服务</h3>
+                            <ul class="links">
+                                <li>
+                                    <a href="#">配送政策</a>
+                                </li>
+                                <li>
+                                    <a href="#">开箱验货</a>
+                                </li>
+                                <li>
+                                    <a href="#">配送运费</a>
+                                </li>
+                                <li>
+                                    <a href="#">配送范围</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End .widget -->
+
+                        <div class="col-md-3 col-sm-4 col-xs-12 widget">
+                            <h3>支付方式</h3>
+
+                            <ul class="contact-list">
+                                <li><a href="/infomation">货到付款</a></li>
+                                <li>在线支付</li>
+                                <li>优选卡</li>
+                                <li>发票制度</li>
+                            </ul>
+                        </div>
+                        <!-- End .widget -->
+                        <!-- <div class="clearfix visible-sm"></div> -->
+
+                        <div class="col-md-3 col-sm-12 col-xs-12 widget">
+                            <h3>售后服务</h3>
+
+                            <ul class="contact-list">
+                                <li>退款说明</li>
+                                <li>退换货流程</li>
+                                <li>退换货政策</li>
+                                <li>隐私条款</li>
+                            </ul>
+
+
+                        </div>
+                        <!-- End .widget -->
+                    </div>
+                    <!-- End .row -->
+                </div>
+                <!-- End .container -->
+
+            </div>
+            <!-- End #inner-footer -->
+
+            <div id="footer-bottom">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 footer-text-container" style="text-align:center">
+                            <p>&copy; 2014 Powered by Company&trade;. All Rights Reserved.</p>
+                        </div>
+                        <!-- End .col-md-5 -->
+                    </div>
+                    <!-- End .row -->
+                </div>
+                <!-- End .container -->
+            </div>
+            <!-- End #footer-bottom -->
+
+        </footer>
+
+    </div>
+    <!-- End #footer -->
+    <a href="#" id="scroll-top" class="scroll-top" title="Scroll to Top"><img src="images/toTop1.png" style="width:40px;height:40px" alt="图片为加载"></a>
+    <!-- <a href="#" id="scroll-top" title="Scroll to Top"><i class="fa fa-angle-up"></i></a> -->
+    <!-- End #scroll-top -->
+
+    <!-- END -->
+    <script src="scripts/js/jquery-1.11.1.min.js"></script>
+    <script src="scripts/js/bootstrap.min.js"></script>
+    <script src="scripts/js/smoothscroll.js"></script>
+    <script src="scripts/js/jquery.debouncedresize.js"></script>
+    <script src="scripts/js/retina.min.js"></script>
+    <script src="scripts/js/jquery.placeholder.js"></script>
+    <script src="scripts/js/jquery.hoverIntent.min.js"></script>
+    <script src="scripts/js/twitter/jquery.tweet.min.js"></script>
+    <script src="scripts/js/jquery.flexslider-min.js"></script>
+    <script src="scripts/js/owl.carousel.min.js"></script>
+    <script src="scripts/js/jflickrfeed.min.js"></script>
+    <script src="scripts/js/jquery.prettyPhoto.js"></script>
+    <script src="scripts/js/jquery.selectbox.min.js"></script>
+    <script src="scripts/js/main.js"></script>
+    <script src="scripts/shoppingcart/shoppingcart.js"></script>
+
+</body>
+    </html>

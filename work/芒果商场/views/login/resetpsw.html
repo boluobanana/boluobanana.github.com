@@ -1,0 +1,58 @@
+<div class="login-content">
+    <div class="container">
+        <div class="row top">
+            <div class=" col-md-6 col-sm-6 col-xs-12">
+                <font>找回密码</font>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <span>
+                    <a href="/login/index" style="background:#79BB0B;color:#FFFFFF;padding:5px 10px">登录</a>
+                    <a href="/login/signup" style="background:#F35A42;color:#FFFFFF;padding:5px 10px">注册</a></span>                    
+                </span>
+            </div>
+            <!-- End .col-md-12 -->
+        </div>
+        <!-- End .row -->
+        <div class="row bottom">
+            <div style="width:100%;background:#FFFFFF;float:left;padding:80px 250px">
+                <form class="form-horizontal" role="form">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">帐号</label>
+                            <div class="col-md-10" style="padding-top:5px">
+                                <!-- <input type="text" class="form-control" ng-model="userName" placeholder="帐号"> -->
+                                {{userName}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">手机号</label>
+                            <div class="col-md-10" style="padding-top:5px">
+                                <!-- <input type="text" class="form-control" ng-model="userName" placeholder="帐号"> -->
+                                {{phone}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">重置密码</label>
+                            <div class="col-md-10">
+                                <input type="password" class="form-control" ng-model="password" id="password" placeholder="重置密码">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">确认密码</label>
+                            <div class="col-md-10">
+                                <input type="password" class="form-control" ng-model="repassword" id="repassword" placeholder="确认密码">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- End .row -->
+    </div>
+</div>

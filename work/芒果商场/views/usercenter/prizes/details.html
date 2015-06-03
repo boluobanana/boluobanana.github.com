@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        body
+        {
+        	font-family: "Microsoft YaHei";
+        	font-size: 15px;
+        }
+        *
+        {
+        	padding: 0;
+        	margin: 0;
+        }
+        li
+        {
+        	list-style: none;
+        }
+        a
+        {
+        	text-decoration: none;
+        }
+        .container
+        {
+        	width: 818px;
+        	height: 350px;
+        	border: 1px solid #e0e0e0;
+        	margin-left: 30px;
+        	overflow: hidden;
+        }
+        .box1
+        {
+        	width: 818px;
+        	height: 35px;
+        	text-align: center;
+        	border-bottom: 1px solid #e0e0e0;
+        	background-color: #fafafa;
+        }
+        .box1 > ul > li
+        {
+        	line-height: 35px;
+        	padding: 0 20px;
+
+        }
+        .box1 > ul > li > a:hover
+        {
+        	color: #fe796a;
+        }
+        span
+        {
+        	color: #fe796a;
+        }
+        .box2
+        {
+        	width: 400px;
+        	height: 50px;
+        	float: left;
+        	
+        }
+        .box3{
+            width: 100px;
+            height: 50px;
+            float: right;
+            
+        }
+        .box3 > a
+        {
+            width: 60px;
+            padding: 0 20px;
+            display: block;
+            background-color: #7bae23;
+            color: #fff;   
+            float: right; 
+            line-height: 35px;  
+        }
+        .box3 > a:hover
+        {
+        	background-color: #e0e0e0;
+        	color: #7bae23;
+        }
+        .box4
+        {
+        	width: 780px;
+        	height: 50px;
+            margin: 20px 25px;
+        }
+        .box5> ul > li
+        {
+        	line-height: 1.5em;
+        }
+        .box5
+        {
+        	margin: 25px;
+        }
+    </style>
+</head>
+<body>
+	<div  class="container">
+		<div class="box1">
+			<ul>
+				<li style="float:left;">奖品详情</li>
+				<li style="float:right;"><a href="prizes.html">返回奖品站</a></li>
+			</ul>
+		</div>
+		<div class="box4">
+		    <div class="box2">
+			    <ul>
+				    <li><h3>恭喜你！获得：<span id="prizeName"></span></h3></li>
+				    <li style="margin-top:10px;">由青芒果城提供的奖品，来自于互动游戏幸运大转盘</li>
+			    </ul>
+		    </div>
+		    <!-- <div class="box3"><a href="##">立即领取</a></div> -->
+		</div>
+		<div class="box5">
+			<ul>
+				<li><h3>奖品声明：</h3></li>
+			    <li style="margin-top:15px;">1.由青芒果城提供的奖品，来自于互动游戏幸运大转盘由青芒果城提供的奖品；</li>
+				<li>2.青芒果城提供的奖品来自于互动游戏幸商城提供的奖品；</li>
+				<li>3.芒果商城提供的奖品来自于互动游戏幸运大转盘由青芒果城提供的奖品</li>
+				<li>4.青芒果城提供的奖品来自于互动游戏幸商城提供的奖品；</li>
+				<li>5.青芒果城提供的奖品来自于互动游戏幸商城提供的奖品；</li>
+				<li>6.青芒果城提供的奖品来自于互动游戏幸商城提供的奖品；</li>
+			</ul>
+		</div>
+	</div>
+    <script src="/scripts/js/jquery-1.8.2.min.js"></script>
+    <script src="/scripts/BaseJs/nature.head.js"></script>
+    <script src="/scripts/BaseJs/nature.ajax.js"></script>
+    <script src="/scripts/BaseJs/nature.QuickPager2.0.js"></script>
+    <script src="/scripts/js/getUrlParam.js"></script>
+    <script src="/scripts/usercenter/prizes/detail.js"></script>
+</body>
+</html>

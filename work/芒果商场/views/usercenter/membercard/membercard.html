@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <script src="/scripts/js/jquery-1.11.1.min.js"></script>
+    <script src="/scripts/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/styles/pager.css">
+    <style type="text/css">
+        .tab-style-2 li a {
+            padding: 9.5px 30px !important;
+        }
+        .tab-style-2 li a:hover,
+        .tab-style-2 li a:focus {
+            background-color: #79bb0b !important;
+            color: #fff !important;
+        }
+        body {
+            height: 690px;
+        }
+        thead td {
+            background-color: rgb(250, 250, 250);
+        }
+        a {
+            text-decoration: none !important;
+        }
+        #products-tabs-list li a {
+            width: 186px;
+            border-radius: 0;
+            margin-right: -2px;
+            color: #000;
+            background-color: #fff;
+            text-align: center;
+        }
+        #products-tabs-list li {} .tab-style-2 {
+            border-bottom: 0px !important;
+        }
+        #twowmpic {
+            border: 1px solid #dcdcdc;
+            margin: 5px;
+            margin-left: 543px;
+            margin-right: 33px;
+            padding: 20px;
+        }
+        #twowmpicword {
+            margin: 2px;
+            margin-top: 10px;
+        }
+        #content {
+            padding-bottom: 50px;
+            overflow: hidden;
+        }
+        .member-jifen {
+            height: 100px;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+        .member-jifen .left {
+            float: left;
+            height: 100%;
+            width: 300px;
+            border-right: 1px solid #dcdcdc;
+            padding: 14px;
+            font-size: 16px;
+            line-height: 25px;
+        }
+        .member-jifen .right {
+            padding: 14px;
+            float: left;
+            height: 100%;
+            width: 448px;
+            line-height: 25px;
+            font-size: 16px;
+        }
+        .member-table-title {
+            border: 1px solid #dcdcdc;
+            margin-top: 10px;
+            padding: 4px 10px;
+            margin-bottom: -1px;
+        }
+        .member-table-title input {
+            float: right;
+        }
+        .member-table-title big {
+            font-weight: bold;
+        }
+        .set_table tbody tr td:first-child {
+            color: #79bb0b;
+        }
+        .search_input {
+            height: 28px;
+            float: right;
+        }
+        .search_input a {
+            display: block;
+            float: right;
+            height: 26px;
+            width: 26px;
+            border: 1px solid #aaa;
+            border-left: hidden;
+            background-color: #eee;
+        }
+        .search_input a img {
+            margin: 10px 8px;
+        }
+        .tab_tbody td {
+            margin-top: 50px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <section id="content">
+            <div class="col-md-6 col-sm-6 col-xs-12" style="width: 780px;">
+                <ul id="products-tabs-list" class="tab-style-2 clearfix">
+                    <li class="active">
+                        <a href="#all2" data-toggle="tab">会员等级</a>
+                    </li>
+                    <li>
+                        <a href="#latest2" data-toggle="tab">会员积分</a>
+                    </li>
+                    <li>
+                        <a href="#featured2" data-toggle="tab">会员说明</a>
+                    </li>
+                    <li>
+                        <!-- <a href="#featured4" data-toggle="tab">二维码</a> -->
+                        <a href="#featured4" data-toggle="tab">会员明细</a>
+                    </li>
+                    <!-- 后面添加的内容，配套JS没有增添 -->
+                </ul>
+                <div id="products-tabs-content" class="tab-content">
+                    <div class="tab-pane active" id="all2">
+                        <p style="font-weight:bold;color:#000;">会员级别</p>
+                        <p>青芒果商城会员分为5级，分别为：注册会员，普通会员，银卡会员，金卡会员和砖石会员。</p>
+                        <div style="margin-top:30px;">
+                            <p style="font-weight:bold;">会员等级标准（2015年5月1号生效）</p>
+                            <table width="780" class="table">
+                                <thead>
+                                    <tr>
+                                        <td>会员级别</td>
+                                        <td>升级条件</td>
+                                        <td>有效期</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>注册会员</td>
+                                        <td>注册成功即可获得</td>
+                                        <td>长期有效</td>
+                                    </tr>
+                                    <tr>
+                                        <td>普通会员</td>
+                                        <td>最近一年累计获得积分达到2000分</td>
+                                        <td>1年</td>
+                                    </tr>
+                                    <tr>
+                                        <td>银卡会员</td>
+                                        <td>验证邮箱成功，赠送积分</td>
+                                        <td>1年</td>
+                                    </tr>
+                                    <tr>
+                                        <td>金卡会员</td>
+                                        <td>最近一年累计获得积分达到8000分</td>
+                                        <td>1年</td>
+                                    </tr>
+                                    <tr>
+                                        <td>砖石卡会员</td>
+                                        <td>最近一年累计获得积分达到20000分</td>
+                                        <td>1年</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>
+                                <span style="color:red;font-weight:bold;">有效购物：</span> 订单签收7天内无退换货，订单状态变为“已关闭”，视为一次有效购物。
+                            </p>
+                        </div>
+                    </div>
+                    <!-- End .tab-pane -->
+
+                    <div class="tab-pane" id="latest2">
+                        <div class="member-jifen">
+                            <div class="left">
+                                可用青芒果商城积分
+                                <br> <b style="color:red;">100</b>
+                            </div>
+                            <div class="right">
+                                <span>如何赚积分！！！</span>
+                                <a style="float:right">积分规则></a>
+                                <br> 购物+（消费额）积分&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a style="color:#7bae23;">去购物</a>
+
+                            </div>
+                        </div>
+
+                        <div class="member-table-title">
+                            <big>积分明细</big>
+                            <div class="search_input">
+                                <input type="text" placeholder="最近三个月" style="float:left">
+                                <a href="##">
+                                    <img src="1.png">
+                                </a>
+                            </div>
+                        </div>
+                        <table width="780" class="table set_table">
+                            <thead>
+                                <tr>
+                                    <td>积分变化</td>
+                                    <td>变动原因</td>
+                                    <td>变动时间</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>+50</td>
+                                    <td>验证邮箱成功，赠送积分</td>
+                                    <td>2014-12-18 14：51：43</td>
+                                </tr>
+                                <tr>
+                                    <td>+50</td>
+                                    <td>验证邮箱成功，赠送积分</td>
+                                    <td>2014-12-18 14：51：43</td>
+                                </tr>
+                                <tr>
+                                    <td>+10</td>
+                                    <td>验证邮箱成功，赠送积分</td>
+                                    <td>2014-12-18 14：51：43</td>
+                                </tr>
+                                <tr>
+                                    <td>+10</td>
+                                    <td>验证邮箱成功，赠送积分</td>
+                                    <td>2014-12-18 14：51：43</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <!-- End .tab-pane -->
+
+                    <div class="tab-pane" id="featured2">
+                        <ul>
+                            <li>青芒果商城会员分为5级，分别为：注册会员，普通会员，银卡会员，金卡会员和砖石会员</li>
+                            <li>会员级别的升降由系统自动处理，无需申请。</li>
+                            <li>会员级别由成长值决定，成长值越高会员等级越高，享受到的会员权益越大。</li>
+                        </ul>
+                        <p style="font-weight:bold;">会员权益</p>
+                        <table width="780" class="table">
+                            <thead>
+                                <tr>
+                                    <td>权益</td>
+                                    <td>注册会员</td>
+                                    <td>普通会员</td>
+                                    <td>银卡会员</td>
+                                    <td>金卡会员</td>
+                                    <td>砖石卡会员</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>积分兑换</td>
+                                    <td>无</td>
+                                    <td>可享</td>
+                                    <td>可享</td>
+                                    <td>可享</td>
+                                    <td>可享</td>
+                                </tr>
+                                <tr>
+                                    <td>会员日活动</td>
+                                    <td>无</td>
+                                    <td>无</td>
+                                    <td>可享</td>
+                                    <td>可享</td>
+                                    <td>可享</td>
+                                </tr>
+                                <tr>
+                                    <td>运费优惠</td>
+                                    <td>网站运费政策</td>
+                                    <td>网站运费政策</td>
+                                    <td>网站运费政策</td>
+                                    <td>网站运费政策</td>
+                                    <td>网站运费政策</td>
+                                </tr>
+                                <tr>
+                                    <td>购物积分加速</td>
+                                    <td>无</td>
+                                    <td>可享</td>
+                                    <td>可享</td>
+                                    <td>可享</td>
+                                    <td>可享</td>
+                                </tr>
+                                <tr>
+                                    <td>生日送现金券</td>
+                                    <td>无</td>
+                                    <td>10元</td>
+                                    <td>10元</td>
+                                    <td>10元</td>
+                                    <td>10元</td>
+                                </tr>
+                                <tr>
+                                    <td>生日月购享受双倍消费积分</td>
+                                    <td>无</td>
+                                    <td>无</td>
+                                    <td>可享</td>
+                                    <td>可享</td>
+                                    <td>可享</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>
+                            <span style="color:red;">备注：</span> 以上会员权益均由系统自动计算或发出，无需申请。
+                        </p>
+                        <p>
+                            <span style="color:red;">积分兑换：</span> 青芒果商城不定期推出的各种积分活动。
+                        </p>
+                        <ul style="margin-top:20px;">
+                            <li style="font-weight:bold;font-size:18px;">生日券获取说明</li>
+                            <li>
+                                1.请您在注册成功后，登陆进入“
+                                <span style="color: #79bb0b;">我的优选--账户信息</span> ”维护自己的生日；
+                            </li>
+                            <li>2.生日券将在您生日当天直接绑定到该账户内，并在赠送后发短信通知和站内信给您；</li>
+                            <li>3.当年若已赠过生日，再次修改圣体，将不重复赠送此券。</li>
+                        </ul>
+                        <p style="margin-top:20px;">
+                            <span style="font-weight:bold;font-size:18px;">会员日时间说明</span>
+                            </br>
+                            会员日为顺丰优选每月为会员策划的专项活动，活动时间为每月26日至28日3天，如活动3天遇到周末将会前后调整活动时间，请会员知悉。
+                        </p>
+                    </div>
+                    <!-- End .tab-pane -->
+                    <div class="tab-pane" id="featured4">
+                        <div id="divQuickPage"></div>
+                        <table width="780" class="table">
+                                <thead>
+                                    <tr>
+                                        <td style="text-align:left;">店铺名称</td>
+                                        <td style="text-align:middle;width:100px">会员等级</td>
+                                    </tr>
+                                </thead>
+                                <tbody id="mebList">
+                                    <!-- <tr><td style="text-align:left;vertical-align:middle !important;"></td><td style="text-align:middle;width:100px"></td></tr> -->
+                                </tbody>
+                            </table>
+                        <!-- <div id="twowmpic">
+                            <img src="2wm.png" />
+                            <center>
+                                <div id="twowmpicword"> <strong  style="color:#7bae23;">青芒果商城</strong>
+                                </div>
+                            </center>
+                        </div> -->
+                    </div>
+                </div>
+        </section>
+        </div>
+        <!-- End #content -->
+</body>
+<script src="/scripts/js/jquery-1.8.2.min.js"></script>
+<script src="/scripts/BaseJs/nature.head.js"></script>
+<script src="/scripts/BaseJs/nature.ajax.js"></script>
+<script src="/scripts/BaseJs/nature.QuickPager2.0.js"></script>
+<script src="/scripts/js/jquery.flexslider-min.js"></script>
+<script src="/scripts/usercenter/membercard/membercard.js"></script>
+
+</html>

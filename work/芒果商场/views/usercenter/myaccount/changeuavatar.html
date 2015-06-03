@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/styles/bootstrap.min.css">
+	<script src="/scripts/js/jquery-1.11.1.min.js"></script>
+	<title>changeuvavatar</title>
+	<style>
+		body{
+			height: 550px;
+		}
+		.uc-title{
+			color: #79bb0b;
+			text-indent: 20px;
+			border-bottom: 2px solid #79bb0b;
+			line-height: 34px;
+		}
+		.centent{
+			width: 100%;
+			padding-left: 20px;
+			padding-top: 30px;
+		}
+		.btn-1{
+			margin-top: 10px;
+			margin-bottom: 10px;
+			/*background-color: rgb(88,90,89);*/
+			width: 120px;
+			height: 36px;
+			color: #fff;
+		}
+		.btn-2{
+			clear: both;
+			width: 120px;
+			height: 36px;
+			color: #fff;
+			/*background-color: #79bb0b;*/
+			margin-top: 30px;
+		}
+		.btn:hover, .btn:focus {
+			color: #fff;
+		}
+		.cenLeft{
+			width: 50%;height: 230px;
+			float: left;
+			padding-right: 10px;
+			border-right: 1px solid #ddd;
+		}
+		.editDiv{
+			background-color: rgb(242,242,242);
+			width: 400px;
+			height: 200px;
+			margin-top: 10px;
+			border: 1px solid #ddd;
+			text-align: center;
+			padding-top: 16%;
+			font-size: 16px;
+			position: relative;
+			overflow: hidden;
+		}
+		.cenRight{
+			width: 50%;height: 230px;
+			float: left;
+			padding: 0 0px 0 20px;
+		}
+		h4{
+			margin-top: 0;
+		}
+		.miniLeft{
+			float: left;
+			width: 156px;
+			height: 138px;
+			padding-top: 6px;
+		}
+		.miniLeft > div{
+			background-color: rgb(242,242,242);
+			border:1px solid #ddd;
+			width: 100px;height: 100px;
+			color: rgb(173,173,173);
+			text-align: center;
+			padding-top: 40px;
+		}
+		.miniRight{
+			float: left;
+			width: 100px;
+			height: 138px;
+			padding-top: 6px;
+		}
+		.miniRight > div{
+			width: 50px;
+			height: 50px;
+			border: 1px solid #ddd;
+			background-color: rgb(242,242,242);
+			color: rgb(173,173,173);
+			text-align: center;
+			font-size: 12px;
+			padding-top: 10px;
+		}
+		.divCuter{
+			border: 4px solid #F9902A;
+			width: 100px;height: 100px;
+			position: absolute;
+			top: 50px; left: 130px;
+			display: block;
+		}
+		#bigPreview , #miniPreview{
+			overflow: hidden;
+			background-repeat: no-repeat;
+			
+		}
+		#bigPreview{
+			background-position: -130px -50px;
+		}
+		#miniPreview{
+			background-position: -65px -25px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+
+		<div class="uc-title">
+			头像照片
+		</div>
+		<div class="centent">
+		<input class="btn btn-1" id="upPic" onclick="readFile()" type="file">
+			本地上传
+		
+		<div>
+			<div class="cenLeft">
+				仅支持JPG、GIF、PNG图片文件，且文件小于5M
+				<div class="editDiv" id="output">
+				
+					选择你要上传的本地头像<br>
+					本地照片：选择一张本地图片编辑后成为头像
+				</div>
+			</div>
+			<div class="cenRight">
+				<h4>效果预览</h4>
+				你上传的图片将自动生成2种尺寸,请注意小尺寸的头像是否清晰
+				<div class="miniLeft">
+					<div id="bigPreview">
+						没有预览可用
+					</div>
+					100*100像素
+				</div>
+				<div class="miniRight">
+					<div id="miniPreview">
+						没有预览可用
+					</div>
+					50*50像素
+				</div>
+			</div>
+		</div>
+		<button class="btn btn-2" id="avaSave">
+			保存
+		</button>
+		</div>
+		
+	</div>
+</body>
+<script src="/Scripts/js/jquery-1.8.2.min.js"></script>
+<script src="/scripts/usercenter/myaccount/changeavatar.js"></script>
+</html>

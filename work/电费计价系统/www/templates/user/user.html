@@ -1,0 +1,36 @@
+<ion-view>
+    <ion-header-bar align-title="center" class="bar bar-header bar-calm">
+        <div>
+        <a href="javascript:history.back()">
+            <button class="button icon-left ion-chevron-left button-clear " ng-click="back()">
+            </button>
+        </a>    
+            <h1 class="title">客户信息管理</h1>
+        </div>
+    </ion-header-bar>
+    <ion-content scroll="false" class="bgcolor-denglu">
+        <div class="home">
+            <div class="list">
+                <a href="#/eleDetail">
+                    <div class="selects">
+                        <img src="img/xinxitou.png">
+                        <img src="img/biaohaochaxun.png" width="120px" ng-click="youhui();">
+                    </div>
+                </a>
+                <a href="#/newElec">
+                    <div class="selects">
+                        <img src="img/xinxitou.png">
+                        <img src="img/chaobiaobaobiao.png" width="120px" ng-click="youhui();">
+                    </div>
+                </a>
+                <a href="#/customCharge">
+                    <div class="selects">
+                        <img src="img/xinxitou.png">
+                        <img src="img/qianfeibaobiao.png" width="120px" ng-click="button();">
+                    </div>
+                </a>
+            </div>
+            <img class="full-image" src="img/cloud.png" id="home_cloud">
+        </div>
+    </ion-content>
+</ion-view>

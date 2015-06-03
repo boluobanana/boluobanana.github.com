@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <title>国家生态原产地保护产品商城</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/prettyPhoto.css">
+    <link rel="stylesheet" href="styles/owl.carousel.css">
+    <link rel="stylesheet" href="styles/revslider-bottom.css">
+    <link rel="stylesheet" href="styles/jquery.selectbox.css">
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+
+    
+    <!-- Favicon and Apple Icons -->
+    <link rel="icon" type="image/png" href="/images/icons/icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <!--- jQuery -->
+    <script src="scripts/js/jquery-1.11.1.min.js"></script>
+    <script src="scripts/js/modernizr.custom.js"></script>
+
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header" class="header6" ng-hide="$state.includes('login')">
+            <div id="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="header-top-left">
+                                <ul id="top-links" class="clearfix">
+                                    <li>
+                                        <a href="www.baidu.com" title="My Wishlist"><span class="hide-for-xs">生态原产地产品保护网</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End .header-top-left -->
+                            <div class="header-top-right">
+                                <div class="header-text-container pull-right">
+                                    <p class="header-text">欢迎来到国家生态原产地保护产品商城！</p>
+                                    <p class="header-link" ng-hide="flage">
+                                        <a href="#">{{user.userName}}&nbsp;&nbsp;</a>
+                                        <a href="/logout"><i class="fa fa-key"></i>&nbsp;&nbsp;退出</a>
+                                    </p>
+                                    <p class="header-link" ng-show="flage">
+                                        <a href="/login/index">登录</a>&nbsp;或&nbsp;<a href="/login/signup">注册</a>
+                                    </p>
+                                </div>
+                                <!-- End .pull-right -->
+                            </div>
+                            <!-- End .header-top-right -->
+                        </div>
+                        <!-- End .col-md-12 -->
+                    </div>
+                    <!-- End .row -->
+                </div>
+                <!-- End .container -->
+            </div>
+            <!-- End #header-top -->
+
+            <div id="inner-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-12 logo-container">
+                            <h1 class="logo clearfix">
+                                <span>Responsive eCommerce Template</span>
+                                <a href="index.html" title="Venedor eCommerce Template"><img src="/images/logo.png" alt="Venedor Commerce Template" style="margin:-25px 0 0 25px"></a>
+                            </h1>
+                        </div>
+                        <!-- End .col-md-3 -->
+                        <div class="col-md-9 col-sm-9 col-xs-12 header-inner-right">
+                            <div class="header-inner-right-wrapper clearfix">
+
+                                <div class="dropdown-cart-menu-container pull-right">
+                                    <div class="btn-group dropdown-cart">
+                                        <a href="/shoppingCart">
+                                            <button type="button" class="btn btn-custom dropdown-toggle" data-toggle="dropdown">
+                                                <span class="cart-menu-icon"></span> 购物车
+                                            </button>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-cart-menu pull-right clearfix" role="menu">
+                                            <p class="dropdown-cart-description">Recently added item(s).</p>
+                                            <ul class="dropdown-cart-product-list">
+                                                <li class="item clearfix">
+                                                    <a href="#" title="Delete item" class="delete-item"><i class="fa fa-times"></i></a>
+                                                    <a href="#" title="Edit item" class="edit-item"><i class="fa fa-pencil"></i></a>
+                                                    <figure>
+                                                        <a href="product.html">
+                                                            <img src="/images/products/thumbnails/item12.jpg" alt="phone 4">
+                                                        </a>
+                                                    </figure>
+                                                    <div class="dropdown-cart-details">
+                                                        <p class="item-name">
+                                                            <a href="product.html">Cam Optia AF Webcam </a>
+                                                        </p>
+                                                        <p>
+                                                            1x
+                                                            <span class="item-price">$499</span>
+                                                        </p>
+                                                    </div>
+                                                    <!-- End .dropdown-cart-details -->
+                                                </li>
+                                                <li class="item clearfix">
+                                                    <a href="#" title="Delete item" class="delete-item"><i class="fa fa-times"></i></a>
+                                                    <a href="#" title="Edit item" class="edit-item"><i class="fa fa-pencil"></i></a>
+                                                    <figure>
+                                                        <a href="product.html">
+                                                            <img src="/images/products/thumbnails/item13.jpg" alt="phone 2">
+                                                        </a>
+                                                    </figure>
+                                                    <div class="dropdown-cart-details">
+                                                        <p class="item-name">
+                                                            <a href="product.html">Iphone Case Cover Original</a>
+                                                        </p>
+                                                        <p>
+                                                            1x
+                                                            <span class="item-price">$499<span class="sub-price">.99</span></span>
+                                                        </p>
+                                                    </div>
+                                                    <!-- End .dropdown-cart-details -->
+                                                </li>
+                                            </ul>
+
+                                            <ul class="dropdown-cart-total">
+                                                <li><span class="dropdown-cart-total-title">Shipping:</span>$7</li>
+                                                <li>
+                                                    <span class="dropdown-cart-total-title">Total:</span>$1005<span class="sub-price">.99</span>
+                                                </li>
+                                            </ul>
+                                            <!-- .dropdown-cart-total -->
+                                            <div class="dropdown-cart-action">
+                                                <p>
+                                                    <a href="cart.html" class="btn btn-custom-2 btn-block">Cart</a>
+                                                </p>
+                                                <p>
+                                                    <a href="checkout.html" class="btn btn-custom btn-block">Checkout</a>
+                                                </p>
+                                            </div>
+                                            <!-- End .dropdown-cart-action -->
+
+                                        </div>
+                                        <!-- End .dropdown-cart -->
+                                    </div>
+                                    <!-- End .btn-group -->
+                                </div>
+                                <!-- End .dropdown-cart-menu-container -->
+
+                                <div id="quick-access">
+                                    <form class="form-inline quick-search-form" role="form" action="#">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="查找卖品">
+                                        </div>
+                                        <!-- End .form-inline -->
+                                        <button type="submit" id="quick-search" class="btn btn-custom"></button>
+                                    </form>
+                                </div>
+                                <!-- End #quick-access -->
+
+                                <div class="header-box contact-infos pull-right">
+                                    <ul>
+                                        <li><img src="/images/weixin.png" alt="微信" style="width:20px;height:15px;margin:0 9px 0-30px">官方微信</li>
+                                        <li>
+                                            <span class="header-box-icon header-box-icon-email"></span><a href="mailto:venedor@gmail.com">官方邮箱</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- End .contact-infos -->
+
+                                <div class="header-box contact-phones pull-right clearfix">
+                                    <span class="header-box-icon header-box-icon-earphones"></span>
+                                    <ul class="pull-left">
+                                        <li>+(404) 158 14 25 78</li>
+                                        <li>+(404) 851 21 48 15</li>
+                                    </ul>
+                                </div>
+                                <!-- End .contact-phones -->
+
+                            </div>
+                            <!-- End .header-inner-right-wrapper -->
+                        </div>
+                        <!-- End .col-md-7 -->
+                    </div>
+                    <!-- End .row -->
+                </div>
+                <!-- End .container -->
+
+                <div id="main-nav-container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 clearfix">
+
+                                <nav id="main-nav">
+                                    <div id="responsive-nav">
+                                        <div id="responsive-nav-button">
+                                            Menu <span id="responsive-nav-button-icon"></span>
+                                        </div>
+                                        <!-- responsive-nav-button -->
+                                    </div>
+                                    <div class="menu-table">
+                                        <ul class="menu clearfix">
+                                            <li>
+                                                <a class="active" href="index.html">首页</a>
+                                            </li>
+                                            <li class="mega-menu-container">
+                                                <a href="views/sale/sale.html">限时特卖</a>
+                                                <!-- End .mega-menu -->
+                                            </li>
+                                            <li>
+                                                <a href="views/proactivity/proactivity.html">推广活动</a>
+                                            </li>
+                                            <li>
+                                                <a href="views/shops/shops.html">生态优店</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">大宗购买</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </nav>
+
+                            </div>
+                            <!-- End .col-md-12 -->
+                        </div>
+                        <!-- End .row -->
+                    </div>
+                    <!-- End .container -->
+
+                </div>
+                <!-- End #nav -->
+            </div>
+            <!-- End #inner-header -->
+        </header>
+        <!-- End #header -->
+        <section id="content">
+            <div id="breadcrumb-container">
+                <div class="container">
+                    <ul class="breadcrumb">
+                        <li><a href="/index.html">首页</a></li>
+                        <li class="active">生态优店</li>
+                    </ul>
+                </div><!-- End .container -->
+            </div><!-- End .breadcrumb-container -->
+
+            <div id="breadcrumb-container" style="margin:-50px 0 20px 0;background:#FFFFFF">
+                <div class="container" >
+                    <div class="col-md-10 shop-head">
+                        <!-- <img src="../images/middle-banner-1.jpg" width="150px" alt="" style="display:inline;vertical-align:middle"> -->
+                        <div id="singleshop"></div>
+                        <div class="shop-nav">
+                            <ul >
+                                <li style="float:left;margin:-15px 25px 0 400px">
+                                    <a class="active" href="#" style="margin-right:25px">首页</a>|
+                                </li>
+                                <li style="float:left;margin:-15px 25px 0 0">
+                                    <a href="#" style="margin-right:25px">促销</a>|
+                                </li>
+                                <li style="float:left;margin:-15px 25px 0 0">
+                                    <a href="#shagnpin" style="margin-right:25px">商品</a>|
+                                </li>
+                                <li style="float:left;margin:-15px 25px 0 0">
+                                    <a href="#gushi" style="margin-right:25px">故事</a>|
+                                </li>
+                                <li style="float:left;margin:-15px 25px 0 0">
+                                    <a href="#temai" style="margin-right:25px">特卖</a>|
+                                </li>
+                                <li style="float:left;margin:-15px 25px 0 0">
+                                    <a href="#fenxiao">分销</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#"><img src="../images/weixin.png" width="25px" alt="" style="display:inline"></a>
+                        <a href="#"><img src="../images/微博.png" width="25px" alt="" style="display:inline"></a>
+                        <a href="#"><img src="../images/空间.png" width="25px" alt="" style="display:inline"></a>
+                        <a href="#"><img src="../images/豆瓣.png" width="25px" alt="" style="display:inline"></a>
+                        <a href="/sale">
+                            <div style="width:115px;background-color:red;margin:20px 0 0 0;color:#FFFFFF;text-align:center;padding:8px">进入特卖抢购 ></div>
+                        </a>
+                    </div>
+                </div><!-- End .container -->
+            </div><!-- End .breadcrumb-container -->
+            <div id="slider-rev-container">
+                <div id="slider-rev">
+                    <ul>
+                        <li data-transition="curtain-1" data-slotamount="15" data-masterspeed="400" data-saveperformance="on"  data-title="Discover Now">
+                            <img src="../images/revslider/dummy.png"  alt="slidebg1" data-lazyload="../images/DJGG1.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+                            <!-- <div class="tp-caption rev-title skewfromleft stt" data-x="700" data-y="220" data-speed="800" data-start="900" data-easing="Power3.easeIn" data-endspeed="300">Bags start at <span>$25.00</span></div>
+                            <div class="tp-caption rev-text sfl stl" data-x="700" data-y="270" data-speed="800" data-start="1300" data-easing="Power3.easeIn" data-endspeed="300">Pellentesque accumsan vitae ante ac vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean ut mi mauris. Quisque ultrices pretium dolor, a lacinia ante mollis eget.</div>
+                            
+                            <div class="tp-caption sfb stb" data-x="700" data-y="400" data-speed="1200" data-start="1800" data-easing="Power3.easeIn" data-endspeed="300">
+                                <a href="#" class="btn btn-custom-2">Discover Now</a>
+                            </div>
+                            <div class="tp-caption lfb ltb" data-x="50" data-y="50" data-speed="1200" data-start="600" data-easing="Expo.easeOut" data-end="2500" data-endspeed="800">
+                                <a href="#"><img src="../images/homeslider/bag1.png" alt="bag1"></a>
+                            </div>
+                            <div class="tp-caption lfb ltb rev-price" data-x="370" data-y="180" data-speed="1200" data-start="900" data-easing="Expo.easeOut" data-end="2800" data-endspeed="800"> 
+                                $135
+                            </div>
+                            <div class="tp-caption lfb ltb" data-x="50" data-y="140" data-speed="1200" data-start="3400" data-easing="Expo.easeOut" data-end="5500" data-endspeed="500">
+                                <a href="#"><img src="../images/homeslider/bag3.png" alt="bag3"></a>
+                            </div>
+                            <div class="tp-caption lfb ltb rev-price" data-x="400" data-y="110" data-speed="1200" data-start="3600" data-easing="Expo.easeOut" data-end="5700" data-endspeed="800"> 
+                                $364
+                            </div>
+                            <div class="tp-caption lfb ltb" data-x="80" data-y="70" data-speed="800" data-start="6100" data-easing="Expo.easeOut" data-endspeed="500">
+                                <a href="#"><img src="../images/homeslider/bag2.png" alt="bag2"></a>
+                            </div>
+                            <div class="tp-caption lfb ltb rev-price" data-x="320" data-y="200" data-speed="1200" data-start="6300" data-easing="Expo.easeOut" data-endspeed="500"> 
+                                $364
+                            </div> -->
+                        </li>
+                        <!-- <li data-transition="curtain-1" data-slotamount="15" data-masterspeed="400" data-saveperformance="on"  data-title="What's New?">
+                            <img src="../images/revslider/dummy.png"  alt="slidebg2" data-lazyload="../images/homeslider/slide2.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+                            <div class="tp-caption lfb ltb" data-x="50" data-y="40" data-speed="1600" data-start="1800" data-easing="Expo.easeOut">
+                                <a href="#"><img src="../images/homeslider/girl1.png" alt="girl1"></a>
+                            </div>
+                            <div class="tp-caption lfb ltb" data-x="220" data-y="60" data-speed="1800" data-start="2500" data-easing="Expo.easeOut">
+                                <a href="#"><img src="../images/homeslider/girl2.png" alt="girl2"></a>
+                            </div>
+                            <div class="tp-caption lfb ltb" data-x="470" data-y="50" data-speed="2000" data-start="3200" data-easing="Expo.easeOut">
+                                <a href="#"><img src="../images/homeslider/girl3.png" alt="girl3"></a>
+                            </div>
+                            <div class="tp-caption rev-title skewfromright skewtoright" data-x="720" data-y="220" data-speed="800" data-start="900" data-easing="Power3.easeIn" data-endspeed="300">What’s New?</div>
+                            <div class="tp-caption rev-text sfl stl" data-x="720" data-y="270" data-speed="800" data-start="1300" data-easing="Power3.easeIn" data-endspeed="300">Sed volutpat vel massa id euismod. Nullam et nulla pulvinar, consequat massa sit amet, molestie nisl. Aenean sagittis diam consectetur augue viverra, at interdum elit blandit. </div>
+                            
+                            <div class="tp-caption sfb stb" data-x="720" data-y="400" data-speed="1200" data-start="2000" data-easing="Power3.easeIn" data-endspeed="300">
+                                <a href="#" class="btn btn-custom-2">Take a Look</a>
+                            </div>
+                        </li>
+                        <li data-transition="curtain-1" data-slotamount="15" data-masterspeed="400" data-saveperformance="on"  data-title="Back in Black">
+                            <img src="../images/revslider/dummy.png"  alt="slidebg3" data-lazyload="../images/homeslider/slide3.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+                            <div class="tp-caption sfl stl" data-x="40" data-y="30" data-speed="1600" data-start="1200" data-easing="Expo.easeOut">
+                                <a href="#"><img src="../images/homeslider/girl4.png" alt="girl4"></a>
+                            </div>
+                            <div class="tp-caption sfl stl" data-x="170" data-y="25" data-speed="1800" data-start="1800" data-easing="Expo.easeOut">
+                                <a href="#"><img src="../images/homeslider/girl5.png" alt="girl5"></a>
+                            </div>
+                            
+                            <div class="tp-caption rev-title big lft ltt" data-x="460" data-y="210" data-speed="800" data-start="1200" data-easing="Power3.easeIn" data-endspeed="300">Back In Black</div>
+                            <div class="tp-caption rev-text2 lfb ltb" data-x="450" data-y="270" data-speed="1200" data-start="1800" data-easing="Power3.easeIn" data-endspeed="300">Wide-brimmed hats, tomboy touches and witchy black lace will leave you spellbound. </div>
+                            
+                            <div class="tp-caption lfb ltb" data-x="540" data-y="368" data-speed="1200" data-start="2400" data-easing="Power3.easeIn" data-endspeed="300">
+                                <a href="#" class="btn btn-custom-2">Shop Now</a>
+                            </div>
+
+                            <div class="tp-caption sfr str" data-x="760" data-y="20" data-speed="2000" data-start="3200" data-easing="Expo.easeOut">
+                                <a href="#"><img src="../images/homeslider/girl6.png" alt="girl6"></a>
+                            </div>
+
+                            <div class="tp-caption sfr str" data-x="920" data-y="30" data-speed="2000" data-start="3800" data-easing="Expo.easeOut">
+                                <a href="#"><img src="../images/homeslider/girl7.png" alt="girl7"></a>
+                            </div>
+                        </li> -->
+                    </ul>
+                </div><!-- End #slider-rev -->
+            </div><!-- End #slider-rev-container -->
+            
+            <div class="xlg-margin"></div><!-- Space -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        
+                        <div class="row">
+                            
+                            <div class="col-md-12 col-sm-12 col-xs-12 main-content">
+                                <div class="row home-banners">
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <a href="#"><img src="../images/1.jpg" alt="Home Big Banner 1" class="img-responsive"></a>
+                                    </div><!-- End .col-md-4 -->
+                                    
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <a href="#"><img src="../images/2.jpg" alt="Home Big Banner 2" class="img-responsive"></a>
+                                    </div><!-- End .col-md-4 -->
+
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <a href="#"><img src="../images/3.jpg" alt="Home Big Banner 2" class="img-responsive"></a>
+                                    </div><!-- End .col-md-4 -->
+                                </div><!-- End .home-banners -->
+
+                                <div class="lg-margin"></div><!-- space -->
+                                <!-- 锚点 -->
+                                <a name="shagnpin"></a>
+                                <div class="purchased-items-container carousel-wrapper">
+                                    <header class="content-title">
+                                        <div class="title-bg">
+                                            <h2 class="title">优选商品</h2>
+                                        </div><!-- End .title-bg -->
+                                        <p class="title-desc">本产品仅对于本店会员开放,会员同时可以享受打折优惠</p>
+                                    </header>
+                                
+                                    <div class="carousel-controls">
+                                        <div id="purchased-items-slider-prev" class="carousel-btn carousel-btn-prev"></div><!-- End .carousel-prev -->
+                                        <div id="purchased-items-slider-next" class="carousel-btn carousel-btn-next carousel-space"></div><!-- End .carousel-next -->
+                                    </div><!-- End .carousel-controllers -->
+                                    <div class="purchased-items-slider owl-carousel">
+                                        <div class="item item-hover" ng-repeat="product in buy">
+                                            <div class="item-image-wrapper">
+                                                <figure class="item-image-container">
+                                                    <a href="/product/{{product.extData.commodityObj.id}}">
+                                                        <!-- <img src="../images/products/item2.jpg" alt="item1" class="item-image"> -->
+                                                        <img ng-src="{{selectimgUrl+product.extData.commodityObj.extData.logo}}" alt="item1" class="item-image" style="width:220px;height:310px">
+                                                        <img ng-src="{{selectimgUrl+product.extData.commodityObj.extData.logo}}" alt="item1  Hover" class="item-image-hover">
+                                                    </a>
+                                                </figure>
+                                                <div class="item-price-container">
+                                                    <span class="old-price" ng-show="product.extData.commodityObj.extData.primePrice">￥{{product.extData.commodityObj.extData.primePrice}}</span>
+                                                    <span class="item-price" ng-show="product.extData.commodityObj.extData.nowPrice">￥{{product.extData.commodityObj.extData.nowPrice}}<span class="sub-price">.999</span></span>
+                                                </div><!-- End .item-price-container -->
+                                                <span class="new-rect" ng-show='product.extData.fresh'>{{product.extData.fresh}}</span>
+                                            </div><!-- End .item-image-wrapper -->
+                                            <div class="item-meta-container">
+                                                <div class="ratings-container">
+                                                    <div class="ratings" ng-show="product.extData.level">
+                                                        <div class="ratings-result" data-result="{{product.extData.level}}" ></div>
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-amount">
+                                                        &nbsp;评论 {{product.extData.reviewTotal}} 条
+                                                    </span>
+                                                </div><!-- End .rating-container -->
+                                                <h3 class="item-name"><a href="/product/{{product.extData.commodityObj.id}}">{{product.extData.skuName}}</a></h3>
+                                                <div class="item-action">
+                                                    <a href="#" class="item-add-btn">
+                                                        <span class="icon-cart-text"  ng-click="addToCart(product,selectimgUrl+product.extData.commodityObj.extData.logo,product.extData.sku,false)">购买</span>
+                                                    </a>
+                                                    <div class="item-action-inner">
+                                                        <a href="#" class="icon-button icon-like">Favourite</a>
+                                                        <a href="#" class="cart icon-cart"  ng-click="addToCart(product,selectimgUrl+product.extData.commodityObj.extData.logo,product.extData.sku,true)">Cart</a>
+                                                    </div><!-- End .item-action-inner -->
+                                                </div><!-- End .item-action -->
+                                            </div><!-- End .item-meta-container --> 
+                                        </div><!-- End .item -->
+
+                                    </div><!--purchased-items-slider -->
+                                </div>
+
+                                <div class="lg-margin"></div><!-- Space -->
+                                <!-- 锚点 -->
+                                <a name="gushi"></a>
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <header class="content-title">
+                                            <h2 class="title">{{story.name}}</h2>
+                                        </header>
+                                        
+                                        <p><div ng-bind-html="story.content | totrusted" style="display:inline"></div><!-- <a href="#"style="color:red;display:inline">更多...</a> --></p>
+                                    </div><!-- End .col-md-6 -->
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="sm-margin visible-xs"></div><!-- space -->
+                                        <img ng-src="{{storyimgurl+story.extData.timgurl}}" style="width:560px;height:310px" alt="Showcase Venedor" class="img-responsive">
+                                    </div><!-- End .col-md-5 -->
+                                </div><!-- End .row -->
+
+                                <div class="xlg-margin"></div><!-- Space -->
+                                <!-- 锚点 -->
+                                <a name="temai"></a>                        
+                                <div class="purchased-items-container carousel-wrapper">
+                                    <header class="content-title">
+                                        <div class="title-bg">
+                                            <h2 class="title">特卖商品</h2>
+                                        </div><!-- End .title-bg -->
+                                        <p class="title-desc">本产品仅对于本店会员开放,会员同时可以享受打折优惠</p>
+                                    </header>
+                                
+                                    <div class="carousel-controls">
+                                        <div id="purchased-items-slider-prev" class="carousel-btn carousel-btn-prev"></div><!-- End .carousel-prev -->
+                                        <div id="purchased-items-slider-next" class="carousel-btn carousel-btn-next carousel-space"></div><!-- End .carousel-next -->
+                                    </div><!-- End .carousel-controllers -->
+                                    <div class="purchased-items-slider owl-carousel">
+                                        <div class="item item-hover" ng-repeat="product in selectcommodity">
+                                            <div class="item-image-wrapper">
+                                                <figure class="item-image-container">
+                                                    <a href="/product/{{product.extData.commodityObj.id}}">
+                                                        <!-- <img src="../images/products/item2.jpg" alt="item1" class="item-image"> -->
+                                                        <img ng-src="{{sellimgUrl+product.extData.commodityObj.extData.logo}}" alt="item1" class="item-image" style="width:220px;height:310px">
+                                                        <img ng-src="{{sellimgUrl+product.extData.commodityObj.extData.logo}}" alt="item1  Hover" class="item-image-hover">
+                                                    </a>
+                                                </figure>
+                                                <div class="item-price-container">
+                                                    <span class="old-price" ng-show="product.extData.commodityObj.extData.primePrice">￥{{product.extData.commodityObj.extData.primePrice}}</span>
+                                                    <span class="item-price" ng-show="product.extData.commodityObj.extData.nowPrice">￥{{product.extData.commodityObj.extData.nowPrice}}<span class="sub-price">.999</span></span>
+                                                </div><!-- End .item-price-container -->
+                                                <span class="new-rect" ng-show='product.extData.fresh'>{{product.extData.fresh}}</span>
+                                            </div><!-- End .item-image-wrapper -->
+                                            <div class="item-meta-container">
+                                                <div class="ratings-container">
+                                                    <div class="ratings" ng-show="product.extData.level">
+                                                        <div class="ratings-result" data-result="{{product.extData.level}}" ></div>
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-amount">
+                                                        &nbsp;评论 {{product.extData.reviewTotal}} 条
+                                                    </span>
+                                                </div><!-- End .rating-container -->
+                                                <h3 class="item-name"><a href="/product/{{product.extData.commodityObj.id}}">{{product.extData.skuName}}</a></h3>
+                                                <div class="item-action">
+                                                    <a href="#" class="item-add-btn">
+                                                        <span class="icon-cart-text"  ng-click="addToCart(product,sellimgUrl+product.extData.commodityObj.extData.logo,product.extData.sku,false)">购买</span>
+                                                    </a>
+                                                    <div class="item-action-inner">
+                                                        <a href="#" class="icon-button icon-like">Favourite</a>
+                                                        <a href="#" class="cart icon-cart"  ng-click="addToCart(product,sellimgUrl+product.extData.commodityObj.extData.logo,product.extData.sku,true)">Cart</a>
+                                                    </div><!-- End .item-action-inner -->
+                                                </div><!-- End .item-action -->
+                                            </div><!-- End .item-meta-container --> 
+                                        </div><!-- End .item -->
+
+                                    </div><!--purchased-items-slider -->
+                                </div>
+                            </div><!-- End .col-md-12 -->
+                        </div><!-- End .row -->
+
+                        <div class="lg-margin"></div><!-- Space -->
+                        <div id="services-slider-container" class="carousel-wrapper">
+                            <header class="content-title">
+                                <div class="title-bg">
+                                    <h2 class="title">分销店铺</h2>
+                                </div>
+                                <!-- End .title-bg -->
+                            </header>
+                            <div class="carousel-controls">
+                                <div id="services-slider-prev" class="carousel-btn carousel-btn-prev">
+                                </div>
+                                <!-- End .carousel-prev -->
+                                <div id="services-slider-next" class="carousel-btn carousel-btn-next carousel-space">
+                                </div>
+                                <!-- End .carousel-next -->
+                            </div>
+                            <!-- End .carousel-controllers -->
+                            <div class="sm-margin"></div>
+                            <!-- space -->
+                            <div class="row">
+                                <div class="services-slider owl-carousel">
+                                   <div class="services-box" ng-repeat="shoplist in shops">
+                                        <!-- <img src="../images/yyg.jpg" alt="" style="width:260px;height:370px"> -->
+                                        <img ng-src="{{shopimgurl+shoplist.siteId+imgurl1+shoplist.extData.logo}}" alt="" style="width:360px;height:291px">
+                                        <div class="find-shop">
+                                            <font size="4" color="#454547" style="margin-right:10px">看着也醉了</font>
+                                            <font size="5" color="#F35A42">迷情澳洲</font>
+                                            <hr/>
+                                            <!-- <div class="price">￥<font size="5">69.0</font></div> -->
+                                            <span>柔嫩味美，仅有5%脂肪</span>
+                                        </div>
+                                    </div>
+                                    <!-- End .services-box -->
+                                </div>
+                                <!-- End .services-slider -->
+                            </div>
+                            <!-- End .row -->
+                        </div>
+                    </div><!-- End .col-md-12 -->
+                </div><!-- End .row -->
+            </div><!-- End .container -->
+        </section>
+        <!-- End #content -->
+
+        <footer id="footer" ng-hide="$state.includes('login')">
+            <div id="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12 widget">
+                            <div class="title-bg">
+                                <h3>最受欢迎</h3>
+                            </div>
+                            <!-- End .title-bg -->
+
+                            <div class="footer-popular-slider flexslider footerslider">
+                                <ul class="slides">
+                                    <li>
+                                        <div class="slide-item clearfix">
+                                            <figure class="item-image-container">
+                                                <a href="product.html">
+                                                    <img src="/images/bottom/1.jpg" alt="item1">
+                                                </a>
+                                            </figure>
+                                            <p class="item-name">
+                                                <a href="product.html">有机生菜 400g</a>
+                                            </p>
+                                            <div class="ratings-container">
+                                                <div class="ratings">
+                                                    <div class="ratings-result" data-result="80"></div>
+                                                </div>
+                                                <!-- End .ratings -->
+                                            </div>
+                                            <div class="item-price-special">$14.5</div>
+                                            <!-- End item-price-special -->
+                                        </div>
+                                        <!-- End .slide-item -->
+                                        <div class="slide-item clearfix">
+                                            <figure class="item-image-container">
+                                                <a href="product.html">
+                                                    <img src="/images/bottom/2.jpg" alt="item2">
+                                                </a>
+                                            </figure>
+                                            <p class="item-name">
+                                                <a href="product.html">有机西红柿 400g</a>
+                                            </p>
+                                            <div class="ratings-container">
+                                                <div class="ratings">
+                                                    <div class="ratings-result" data-result="100"></div>
+                                                </div>
+                                                <!-- End .ratings -->
+                                            </div>
+                                            <div class="item-price-special">$16</div>
+                                            <!-- End item-price-special -->
+                                        </div>
+                                        <!-- End .slide-item -->
+                                        <div class="slide-item clearfix">
+                                            <figure class="item-image-container">
+                                                <a href="product.html">
+                                                    <img src="/images/bottom/3.jpg" alt="item3">
+                                                </a>
+                                            </figure>
+                                            <p class="item-name">
+                                                <a href="product.html">有机西芹 450g</a>
+                                            </p>
+                                            <div class="item-price-special">$16</div>
+                                            <!-- End item-price-special -->
+                                        </div>
+                                        <!-- End .slide-item -->
+                                    </li>
+                                    <li>
+                                        <div class="slide-item clearfix">
+                                            <figure class="item-image-container">
+                                                <a href="product.html">
+                                                    <img src="/images/bottom/1.jpg" alt="item4">
+                                                </a>
+                                            </figure>
+                                            <p class="item-name">
+                                                <a href="product.html">有机生菜 400g</a>
+                                            </p>
+                                            <div class="ratings-container">
+                                                <div class="ratings">
+                                                    <div class="ratings-result" data-result="80"></div>
+                                                </div>
+                                                <!-- End .ratings -->
+                                            </div>
+                                            <div class="item-price-special">$14.5</div>
+                                            <!-- End item-price-special -->
+                                        </div>
+                                        <!-- End .slide-item -->
+                                        <div class="slide-item clearfix">
+                                            <figure class="item-image-container">
+                                                <a href="product.html">
+                                                    <img src="/images/bottom/2.jpg" alt="item5">
+                                                </a>
+                                            </figure>
+                                            <p class="item-name">
+                                                <a href="product.html">有机西红柿 400g</a>
+                                            </p>
+                                            <div class="ratings-container">
+                                                <div class="ratings">
+                                                    <div class="ratings-result" data-result="100"></div>
+                                                </div>
+                                                <!-- End .ratings -->
+                                            </div>
+                                            <div class="item-price-special">$16</div>
+                                            <!-- End item-price-special -->
+                                        </div>
+                                        <!-- End .slide-item -->
+                                        <div class="slide-item clearfix">
+                                            <figure class="item-image-container">
+                                                <a href="product.html">
+                                                    <img src="/images/bottom/3.jpg" alt="item6">
+                                                </a>
+                                            </figure>
+                                            <p class="item-name">
+                                                <a href="product.html">有机西芹 450g</a>
+                                            </p>
+                                            <div class="item-price-special">$16</div>
+                                            <!-- End item-price-special -->
+                                        </div>
+                                        <!-- End .slide-item -->
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End Footerpouplar-slider -->
+                            <div class="md-margin visible-xs"></div>
+                            <!-- space -->
+                        </div>
+                        <!-- End .col-md-4 -->
+
+                        <div class="col-md-4 col-sm-4 col-xs-12 widget">
+                            <div class="title-bg">
+                                <h3>精选</h3>
+                            </div>
+                            <!-- End .title-bg -->
+
+                            <div class="footer-featured-slider flexslider footerslider">
+                                <ul class="slides">
+                                    <li>
+                                        <div class="slide-item clearfix">
+                                            <figure class="item-image-container">
+                                                <a href="product.html">
+                                                    <img src="/images/bottom/4.jpg" alt="item4">
+                                                </a>
+                                            </figure>
+                                            <p class="item-name">
+                                                <a href="product.html">有机圆白菜 500g</a>
+                                            </p>
+                                            <div class="ratings-container">
+                                                <div class="ratings">
+                                                    <div class="ratings-result" data-result="80"></div>
+                                                </div>
+                                                <!-- End .ratings -->
+                                            </div>
+                                            <div class="item-price-special">$16.8</div>
+                                            <!-- End item-price-special -->
+                                        </div>
+                                        <!-- End .slide-item -->
+                                        <div class="slide-item clearfix">
+                                            <figure class="item-image-container">
+                                                <a href="product.html">
+                                                    <img src="/images/bottom/5.jpg" alt="item5">
+                                                </a>
+                                            </figure>
+                                            <p class="item-name">
+                                                <a href="product.html">柿子椒 250g</a>
+                                            </p>
+                                            <div class="ratings-container">
+                                                <div class="ratings">
+                                                    <div class="ratings-result" data-result="100"></div>
+                                                </div>
+                                                <!-- End .ratings -->
+                                            </div>
+                                            <div class="item-price-special">$16</div>
+                                            <!-- End item-price-special -->
+                                        </div>
+                                        <!-- End .slide-item -->
+                                        <div class="slide-item clearfix">
+                                            <figure class="item-image-container">
+                                                <a href="product.html">
+                                                    <img src="/images/bottom/8.jpg" alt="item6">
+                                                </a>
+                                            </figure>
+                                            <p class="item-name">
+                                                <a href="product.html">圣女果 350g</a>
+                                            </p>
+                                            <div class="item-price-special">$6.5</div>
+                                            <!-- End item-price-special -->
+                                        </div>
+                                        <!-- End .slide-item -->
+                                    </li>
+                                    <li>
+                                        <div class="slide-item clearfix">
+                                            <figure class="item-image-container">
+                                                <a href="product.html">
+                                                    <img src="/images/bottom/4.jpg" alt="item7">
+                                                </a>
+                                            </figure>
+                                            <p class="item-name">
+                                                <a href="product.html">有机圆白菜 500g</a>
+                                            </p>
+                                            <div class="ratings-container">
+                                                <div class="ratings">
+                                                    <div class="ratings-result" data-result="80"></div>
+                                                </div>
+                                                <!-- End .ratings -->
+                                            </div>
+                                            <div class="item-price-special">$16.8</div>
+                                            <!-- End item-price-special -->
+                                        </div>
+                                        <!-- End .slide-item -->
+                                        <div class="slide-item clearfix">
+                                            <figure class="item-image-container">
+                                                <a href="product.html">
+                                                    <img src="/images/bottom/5.jpg" alt="item8">
+                                                </a>
+                                            </figure>
+                                            <p class="item-name">
+                                                <a href="product.html">柿子椒 250g</a>
+                                            </p>
+                                            <div class="ratings-container">
+                                                <div class="ratings">
+                                                    <div class="ratings-result" data-result="100"></div>
+                                                </div>
+                                                <!-- End .ratings -->
+                                            </div>
+                                            <div class="item-price-special">$16</div>
+                                            <!-- End item-price-special -->
+                                        </div>
+                                        <!-- End .slide-item -->
+                                        <div class="slide-item clearfix">
+                                            <figure class="item-image-container">
+                                                <a href="product.html">
+                                                    <img src="/images/bottom/8.jpg" alt="item9">
+                                                </a>
+                                            </figure>
+                                            <p class="item-name">
+                                                <a href="product.html">圣女果 350g</a>
+                                            </p>
+                                            <div class="item-price-special">$5.9</div>
+                                            <!-- End item-price-special -->
+                                        </div>
+                                        <!-- End .slide-item -->
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End Footerpouplar-slider -->
+                            <div class="md-margin visible-xs"></div>
+                            <!-- space -->
+                        </div>
+                        <!-- End .col-md-4 -->
+
+                        <div class="col-md-4 col-sm-4 col-xs-12 widget">
+                            <div class="title-bg">
+                                <h3>特卖</h3>
+                            </div>
+                            <!-- End .title-bg -->
+
+                            <div class="footer-specials-slider flexslider footerslider">
+                                <ul class="slides">
+                                    <li>
+                                        <div class="slide-item clearfix">
+                                            <figure class="item-image-container">
+                                                <a href="product.html">
+                                                    <img src="/images/bottom/11.jpg" alt="item7">
+                                                </a>
+                                            </figure>
+                                            <p class="item-name">
+                                                <a href="product.html">铁棍山药 350g</a>
+                                            </p>
+                                            <div class="ratings-container">
+                                                <div class="ratings">
+                                                    <div class="ratings-result" data-result="80"></div>
+                                                </div>
+                                                <!-- End .ratings -->
+                                            </div>
+                                            <div class="item-price-special">$15.7</div>
+                                            <!-- End item-price-special -->
+                                        </div>
+                                        <!-- End .slide-item -->
+                                        <div class="slide-item clearfix">
+                                            <figure class="item-image-container">
+                                                <a href="product.html">
+                                                    <img src="/images/bottom/17.jpg" alt="item8">
+                                                </a>
+                                            </figure>
+                                            <p class="item-name">
+                                                <a href="product.html">小紫薯 400g</a>
+                                            </p>
+                                            <div class="ratings-container">
+                                                <div class="ratings">
+                                                    <div class="ratings-result" data-result="100"></div>
+                                                </div>
+                                                <!-- End .ratings -->
+                                            </div>
+                                            <div class="item-price-special">$8.5</div>
+                                            <!-- End item-price-special -->
+                                        </div>
+                                        <!-- End .slide-item -->
+                                        <div class="slide-item clearfix">
+                                            <figure class="item-image-container">
+                                                <a href="product.html">
+                                                    <img src="/images/bottom/23.jpg" alt="item9">
+                                                </a>
+                                            </figure>
+                                            <p class="item-name">
+                                                <a href="product.html">毛芋头 400g</a>
+                                            </p>
+                                            <div class="item-price-special">$10.8</div>
+                                            <!-- End item-price-special -->
+                                        </div>
+                                        <!-- End .slide-item -->
+                                    </li>
+                                    <li>
+                                        <div class="slide-item clearfix">
+                                            <figure class="item-image-container">
+                                                <a href="product.html">
+                                                    <img src="/images/bottom/11.jpg" alt="item1">
+                                                </a>
+                                            </figure>
+                                            <p class="item-name">
+                                                <a href="product.html">铁棍山药 350g</a>
+                                            </p>
+                                            <div class="ratings-container">
+                                                <div class="ratings">
+                                                    <div class="ratings-result" data-result="80"></div>
+                                                </div>
+                                                <!-- End .ratings -->
+                                            </div>
+                                            <div class="item-price-special">$15.7</div>
+                                            <!-- End item-price-special -->
+                                        </div>
+                                        <!-- End .slide-item -->
+                                        <div class="slide-item clearfix">
+                                            <figure class="item-image-container">
+                                                <a href="product.html">
+                                                    <img src="/images/bottom/17.jpg" alt="item2">
+                                                </a>
+                                            </figure>
+                                            <p class="item-name">
+                                                <a href="product.html">小紫薯 400g</a>
+                                            </p>
+                                            <div class="ratings-container">
+                                                <div class="ratings">
+                                                    <div class="ratings-result" data-result="100"></div>
+                                                </div>
+                                                <!-- End .ratings -->
+                                            </div>
+                                            <div class="item-price-special">$8.5</div>
+                                            <!-- End item-price-special -->
+                                        </div>
+                                        <!-- End .slide-item -->
+                                        <div class="slide-item clearfix">
+                                            <figure class="item-image-container">
+                                                <a href="product.html">
+                                                    <img src="/images/bottom/23.jpg" alt="item3">
+                                                </a>
+                                            </figure>
+                                            <p class="item-name">
+                                                <a href="product.html">毛芋头 400g</a>
+                                            </p>
+                                            <div class="item-price-special">$10.8</div>
+                                            <!-- End item-price-special -->
+                                        </div>
+                                        <!-- End .slide-item -->
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End Footerpouplar-slider -->
+
+                        </div>
+                        <!-- End .col-md-4 -->
+                    </div>
+                    <!-- End .row -->
+                </div>
+                <!-- End .container -->
+            </div>
+            <!-- End #footer-top -->
+
+            <div id="inner-footer">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4 col-xs-12 widget">
+                            <h3>购物指南</h3>
+                            <ul class="links">
+                                <li>
+                                    <a href="#">积分制度</a>
+                                </li>
+                                <li>
+                                    <a href="#">会员介绍</a>
+                                </li>
+                                <li>
+                                    <a href="#">购物流程</a>
+                                </li>
+                                <li>
+                                    <a href="#">常见问题</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End .widget -->
+
+                        <div class="col-md-3 col-sm-4 col-xs-12 widget">
+                            <h3>配送服务</h3>
+                            <ul class="links">
+                                <li>
+                                    <a href="#">配送政策</a>
+                                </li>
+                                <li>
+                                    <a href="#">开箱验货</a>
+                                </li>
+                                <li>
+                                    <a href="#">配送运费</a>
+                                </li>
+                                <li>
+                                    <a href="#">配送范围</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End .widget -->
+
+                        <div class="col-md-3 col-sm-4 col-xs-12 widget">
+                            <h3>支付方式</h3>
+
+                            <ul class="contact-list">
+                                <li><a href="/infomation">货到付款</a></li>
+                                <li>在线支付</li>
+                                <li>优选卡</li>
+                                <li>发票制度</li>
+                            </ul>
+                        </div>
+                        <!-- End .widget -->
+                        <!-- <div class="clearfix visible-sm"></div> -->
+
+                        <div class="col-md-3 col-sm-12 col-xs-12 widget">
+                            <h3>售后服务</h3>
+
+                            <ul class="contact-list">
+                                <li>退款说明</li>
+                                <li>退换货流程</li>
+                                <li>退换货政策</li>
+                                <li>隐私条款</li>
+                            </ul>
+
+
+                        </div>
+                        <!-- End .widget -->
+                    </div>
+                    <!-- End .row -->
+                </div>
+                <!-- End .container -->
+
+            </div>
+            <!-- End #inner-footer -->
+
+            <div id="footer-bottom">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 footer-text-container" style="text-align:center">
+                            <p>&copy; 2014 Powered by Company&trade;. All Rights Reserved.</p>
+                        </div>
+                        <!-- End .col-md-5 -->
+                    </div>
+                    <!-- End .row -->
+                </div>
+                <!-- End .container -->
+            </div>
+            <!-- End #footer-bottom -->
+
+        </footer>
+        <!-- End #footer -->
+    </div>
+    <a href="#" id="scroll-top" title="Scroll to Top"><i class="fa fa-angle-up"></i></a>
+    <!-- End #scroll-top -->
+
+    <!-- END -->
+    <script src="scripts/js/getUrlParam.js"></script>
+    <script src="scripts/singleshop/singleshop.js"></script>
+    <script src="scripts/js/bootstrap.min.js"></script>
+    <script src="scripts/js/smoothscroll.js"></script>
+    <script src="scripts/js/jquery.debouncedresize.js"></script>
+    <script src="scripts/js/retina.min.js"></script>
+    <script src="scripts/js/jquery.placeholder.js"></script>
+    <script src="scripts/js/jquery.hoverIntent.min.js"></script>
+    <script src="scripts/js/twitter/jquery.tweet.min.js"></script>
+    <script src="scripts/js/jquery.flexslider-min.js"></script>
+    <script src="scripts/js/owl.carousel.min.js"></script>
+    <script src="scripts/js/jflickrfeed.min.js"></script>
+    <script src="scripts/js/jquery.prettyPhoto.js"></script>
+    <script src="scripts/js/jquery.themepunch.tools.min.js"></script>
+    <script src="scripts/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="scripts/js/main.js"></script>
+    <script src="scripts/js/revolution.js"></script>
+    
+    
+    
+</body>
+</html>

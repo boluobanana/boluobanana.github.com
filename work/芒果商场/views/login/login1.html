@@ -1,0 +1,75 @@
+<div class="login-content">
+    <div class="container">
+        <div class="row top">
+            <div class=" col-md-6 col-sm-6 col-xs-12">
+                <font>用户登录</font>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <!-- <span>还没有账号，现在就 <button class="btn-custom">注册</button></span> -->
+                <span style="">还没有账号，现在就 <a href="/login/signup" style="background:#79BB0B;color:#FFFFFF;padding:5px 10px">注册</a></span>
+            </div>
+            <!-- End .col-md-12 -->
+        </div>
+        <!-- End .row -->
+        <div class="row bottom">
+            <img src="../../images/login.png" alt="" style="width:548px;height:360px;float:left">
+            <div style="width:548px;background:#FFFFFF;float:left;padding:20px 30px">
+                <form class="form-horizontal" role="form">
+                    <div class="row" style="margin:50px 30px 10px 10px">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">帐号</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" ng-model="userName" placeholder="帐号">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">密码</label>
+                                <div class="col-md-10">
+                                    <input type="password" class="form-control" ng-model="password" id="password" placeholder="密码">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <button class="btn-custom" style="width:100%" ng-click="login()">登录</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="checkbox">自动登录
+                                    <a href="/login/findpsw" style="color:#7C807E;float:right">忘记密码</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    合作网站帐号登陆:
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <ul>
+                                        <li style="float:left;margin:0 5px;"><a href="#">QQ</a></li>
+                                        <li style="float:left;margin:0 5px;"><a href="#">|&nbsp;&nbsp;新浪微博</a></li>
+                                        <li style="float:left;margin:0 5px;"><a href="#">|&nbsp;&nbsp;腾讯微博</a></li>
+                                        <li style="float:left;margin:0 5px;"><a href="#">|&nbsp;&nbsp;支付宝</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- End .row -->
+    </div>
+</div>

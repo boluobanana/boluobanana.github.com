@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/styles/bootstrap.min.css">
+
+	<title>bindphone</title>
+	<style>
+		body{
+			height: 550px;
+		}
+		.uc-title{
+			color: #79bb0b;
+			text-indent: 20px;
+			border-bottom: 2px solid #79bb0b;
+			line-height: 34px;
+		}
+		.centent{
+			width: 100%;
+			text-align: center;
+			padding-top: 30px;
+		}
+		.centent input[type="tel"]{
+			margin-left: 16px;
+			margin-right: 10px;
+			width: 290px;
+			height: 40px;
+
+		}
+		.centent input[type="text"]{
+			margin-left: 16px;
+			margin-right: 10px;
+			width: 180px;
+			height: 40px;
+		}
+		
+		.centent span[class="glyphicon glyphicon-ok-sign"]{
+			font-size: 18px;
+			line-height: 18px;
+			color: #79bb0b;
+		}
+		.margen{
+			margin: 10px auto;
+			width: 242px;
+			text-align: left;
+		}
+		.btn-get{
+			background-color: rgb(255,94,77);
+			width: 100px;height: 40px;
+			margin-right: 28px;
+			color: #fff;
+		}
+		.btn-bind,.btn-change{
+			width: 100px;height: 40px;
+			background-color: #79bb0b;
+			color: #fff;
+			margin-left: 110px;
+		}
+		.btn-change{
+			margin-top: 40px;
+		}
+		big{
+			color: red;
+		}
+		.nowphone{
+			background-color: #eee;
+			width: 300px;height: 30px;
+			margin: 0 auto;
+			line-height: 30px;
+		}
+		.clickedBtn{
+			color:#fff;
+			background: #ddd;
+			cursor: not-allowed;
+		}
+		#centent2{
+			display: none;
+		}
+		#centent1{
+			display: none;
+		}
+
+	</style>
+</head>
+<body>
+	<div>
+
+		<div class="uc-title">
+			绑定手机
+		</div>
+		<div class="centent" id="centent1">
+		<form action="" method="get">
+			手机号
+			<input type="tel" name="phone" placeholder="" id="phone">
+			
+			<span class="glyphicon glyphicon-ok-sign"></span><br>
+			<div class="margen">
+				
+				<span>该号码可用</span><br>
+			</div>
+			
+			验证码
+			<input type="text" name="Verification code" placeholder="" id="code">
+			
+			<div class="btn btn-get" id="getMSM">
+				获取验证码
+			</div>
+			<div class="margen">
+				
+				<span>请输入验证码！</span><br>
+			</div>
+			<div class="btn-bind btn" id="bind">绑定</div>
+
+		</form>
+			
+		</div>
+		<div class="centent" id="centent2">
+			<div class="nowphone">
+				您现在绑定的号码是<big id="nowPhone">180****5555</big>
+			</div>
+			<button class="btn btn-change" id="change">
+				更改
+			</button>
+		</div>
+	</div>
+</body>
+	<script src="/Scripts/js/jquery-1.8.2.min.js"></script>
+    <script src="/Scripts/BaseJs/nature.head.js"></script>
+    <script src="/Scripts/BaseJs/nature.ajax.js"></script>
+    <script src="/Scripts/BaseJs/nature.QuickPager2.0.js"></script>
+    <script src="/scripts/usercenter/myaccount/bindphone.js"></script>
+</html>

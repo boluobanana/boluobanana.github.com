@@ -1,0 +1,65 @@
+<ion-view>
+	<ion-header-bar align-title="center" class="bar bar-header bar-calm">
+		<div>
+  			<a class="button icon-left ion-chevron-left button-clear "
+        href="javascript:history.back()"></a>
+  			<h1 class="title">抄表管理</h1>
+		</div>
+	</ion-header-bar>
+    <ion-content scroll="true" class="bgcolor-denglu" on-swipe-right="onSwipeRight()">
+        <ul class="list">
+            <li class="firstitem">
+                <a ng-click="action()">
+                  <div class="onemargin">
+                    表号 <span id="importent">{{value}}</span><i class="ion-ios-arrow-forward buttonright" ></i>
+                  </div>
+                </a>
+              <div class="firstspan"></div>
+            </li>
+             <li class="seconditem">
+                <a ng-click="action2()">
+                  <div class="onemargin">
+                    电表数 <span id="importent">{{deg}}</span><i class="ion-ios-arrow-forward buttonright" ></i>
+                  </div>
+                </a>
+              <div class="firstspan"></div>
+             </li>
+            <li class="seconditem">
+                
+              <div class="onemargin">
+                查表日期 <span id="importent" class="timeFont">{{time}}</span>
+              </div>
+
+              <div class="firstspan"></div>
+            </li>                                                
+        </ul>
+        <div class="btnDone">
+          <button ng-click="saveData()" class="button button-calm" style="width:100%">
+            确定
+          </button>
+        </div>       
+          
+    </ion-content>
+    <div class="backtrop" id="backtropQuer">
+          <div class="alert">
+            <p>请输入电表号</p>
+            <input type='text' placehoder='请输入电表号' ng-model="value">
+            <button class="button" ng-click="hide()">取消</button>
+            <button class="button" ng-click="hide()">确定</button>
+          </div>
+    </div> 
+    <div class="backtrop" id="backtrop2">
+          <div class="alert">
+            <p>请输入电表数</p>
+            <input type='text' placehoder='请输入电表数' ng-model="deg">
+            <button class="button" ng-click="hide()">取消</button>
+            <button class="button" ng-click="hide()">确定</button>
+          </div>
+    </div>
+    <div class="backtrop" id="backtrop3">
+          <div class="alt">
+            <p>修改成功!</p>
+            <button class="button button-light" ng-click="hide()">OK</button>
+          </div>
+        </div> 
+</ion-view>

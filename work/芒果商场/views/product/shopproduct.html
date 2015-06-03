@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <title>国家生态原产地保护产品商城</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/prettyPhoto.css">
+    <link rel="stylesheet" href="styles/owl.carousel.css">
+    <link rel="stylesheet" href="styles/revslider-bottom.css">
+    <link rel="stylesheet" href="styles/jquery.selectbox.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+
+    <!-- Favicon and Apple Icons -->
+    <link rel="icon" type="image/png" href="/images/icons/icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+   
+
+</head>
+<body>
+    <div id="wrapper">
+        <header id="header" class="header6" ng-hide="$state.includes('login')">
+            <div id="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="header-top-left">
+                                <ul id="top-links" class="clearfix">
+                                    <li>
+                                        <a href="www.baidu.com" title="My Wishlist"><span class="hide-for-xs">生态原产地产品保护网</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End .header-top-left -->
+                            <div class="header-top-right">
+                               <div class="header-text-container pull-right">
+                                    <p class="header-text" id="welcome">欢迎来到青芒果商城！</p>
+                                    <p class="header-link">
+                                        <a href="views/UserCenter/usercenter.html" id="username">&nbsp;&nbsp;</a>
+                                        <a href="/views/login/login.html"></i>&nbsp;&nbsp;退出</a>
+                                    </p>
+                                    <p class="header-link" id="wlogin">
+                                        <a href="/views/login/login.html">登录</a>&nbsp;或&nbsp;<a href="/views/login/signup.html">注册</a>
+                                    </p>
+                                </div>
+                                <!-- End .pull-right -->
+                            </div>
+                            <!-- End .header-top-right -->
+                        </div>
+                        <!-- End .col-md-12 -->
+                    </div>
+                    <!-- End .row -->
+                </div>
+                <div id="main-nav-container" hidden="true"></div>
+                <!-- End .container -->
+            </div>
+
+        </header>
+        <!-- End #header -->
+        <section id="content">
+           <div id="breadcrumb-container" style="margin:0 0 20px 0;background:#FFFFFF">
+                <div class="container" >
+                    <div class="col-md-10 shop-head">
+                        <!-- <img src="../images/middle-banner-1.jpg" width="150px" alt="" style="display:inline;vertical-align:middle"> -->
+                        <div id="singleshop"></div>
+                        <div class="shop-nav">
+                            <ul >
+                                <li style="float:left;margin:-15px 25px 0 350px">
+                                    <a class="active toShopIndex" href="javascript:void(0)" style="margin-right:25px">首页</a>|
+                                </li>
+                                <li style="float:left;margin:-15px 25px 0 0">
+                                    <a href="#" style="margin-right:25px">促销</a>|
+                                </li>
+                                <li style="float:left;margin:-15px 25px 0 0">
+                                    <a href="#shagnpin" style="margin-right:25px">商品</a>|
+                                </li>
+                                <li style="float:left;margin:-15px 25px 0 0">
+                                    <a href="#gushi" style="margin-right:25px">故事</a>|
+                                </li>
+                                <li style="float:left;margin:-15px 25px 0 0">
+                                    <a href="#temai" style="margin-right:25px">特卖</a>|
+                                </li>
+                                <li style="float:left;margin:-15px 25px 0 0">
+                                    <a href="#fenxiao">分销</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+   
+                    <div class="col-md-2">
+                        <a href="#"><img src="../images/weixin.png" width="25px" alt="" style="display:inline"></a>
+                        <a href="#"><img src="../images/weibo.png" width="25px" alt="" style="display:inline"></a>
+                        <a href="#"><img src="../images/kongjian.png" width="25px" alt="" style="display:inline"></a>
+                        <a href="#"><img src="../images/douban.png" width="25px" alt="" style="display:inline"></a>
+                       <!--  <a href="/sale">
+                            <div style="width:80px;background-color:#80AE09;margin:25px 0 0 -100px;color:#FFFFFF;text-align:center;padding:8px">成为会员</div>
+                        </a> -->
+                        <a href="/sale">
+                            <div style="width:115px;background-color:#80AE09;margin:30px 0 0 0;color:#FFFFFF;text-align:center;padding:8px">成为会员</div>
+                        </a>
+                    </div>
+                </div><!-- End .container -->
+            </div><!-- End .breadcrumb-container -->
+            <div id="breadcrumb-container">
+                <div class="container">
+                    <ul class="breadcrumb">
+                        <li><a href="javascript:void(0)" class="toShopIndex">首页</a></li>
+                        <li id="productName" class="active"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        
+                        <div class="row" id="product">
+                        
+                            
+                        </div><!-- End .row -->
+                        
+                        <div class="lg-margin2x"></div><!-- End .space -->
+                        <div class="row instructions">
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                储藏条件:<label id="condition" style="margin-left:5px"></label>
+                            </div><!-- End .col-md-6 -->
+                            <div class="col-md-8 col-sm-12 col-xs-12">
+                                重量(含包装):<label id="weight" style="margin-left:5px"></label>
+                            </div><!-- End .col-md-6 -->
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                销售单位:<label id="unit" style="margin-left:5px"></label>
+                            </div><!-- End .col-md-6 -->
+                            <div class="col-md-8 col-sm-12 col-xs-12">
+                                产地:<label id="address" style="margin-left:5px"></label>
+                            </div><!-- End .col-md-6 -->
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                规格:<label id="guige" style="margin-left:5px"></label>
+                            </div><!-- End .col-md-6 -->
+                            <div class="col-md-8 col-sm-12 col-xs-12">
+                            </div><!-- End .col-md-6 -->
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                温馨提示:优鲜生所销售商品均经过严格的供应商资质审查、商品审查、入库安检、出货全检流程。由于部分商品存在厂家更换包装、不同批次、不同生产日期、不同生产工厂等情况，导致商品实物与图片存在微小差异，因此请您以收到的商品实物为准，同时我们尽量做到及时更新，一次给您带来的不便敬请谅解，谢谢！
+                            </div><!-- End .col-md-12 -->
+                        </div><!-- End .row -->
+
+                         <div class="lg-margin2x"></div><!-- End .space -->
+
+                        <div class="row">
+                            <div class="col-md-12 display">
+                                <img src="../../images/spzs.png" alt="图片未能加载" style="vertical-align:middle;display:inline;margin-right:5px">商品展示
+                            </div>
+                            <div class="col-md-12" style="margin:20px 100px" id="shangpinzhanshi">
+                                <!-- <img src="../../images/product1.png" alt=""> -->
+                            </div>
+                        </div><!-- End .row -->
+                        <div class="row">
+                            <div class="col-md-12 display">
+                                <img src="../../images/wlbz.png" alt="图片未能加载" style="vertical-align:middle;display:inline;margin-right:5px">物流包装
+                            </div>
+                            <div class="col-md-12" style="margin:20px 100px" id="wuliubaozhuang">
+                                <!-- <img src="../../images/product2.png" alt=""> -->
+                            </div>
+                        </div><!-- End .row -->
+                        <div class="row">
+                            <div class="col-md-12 display">
+                                <img src="../../images/gycc.png" alt="图片未能加载" style="vertical-align:middle;display:inline;margin-right:5px">关于存储
+                            </div>
+                            <div class="col-md-12" style="margin:20px 100px" id="guanyucunchu">
+                                <!-- <img src="../../images/product3.png" alt=""> -->
+                            </div>
+                        </div><!-- End .row -->
+                        <div class="lg-margin2x"></div><!-- Space -->
+                        <div class="purchased-items-container carousel-wrapper">
+                            <header class="content-title">
+                                <div class="title-bg">
+                                    <h2 class="title">还购买了</h2>
+                                </div><!-- End .title-bg -->
+                                <p class="title-desc">购买本产品的人同时还购买了一下产品</p>
+                            </header>
+                        
+                            <div class="carousel-controls">
+                                <div id="purchased-items-slider-prev" class="carousel-btn carousel-btn-prev"></div><!-- End .carousel-prev -->
+                                <div id="purchased-items-slider-next" class="carousel-btn carousel-btn-next carousel-space"></div><!-- End .carousel-next -->
+                            </div><!-- End .carousel-controllers -->
+                            <div class="purchased-items-slider owl-carousel" id="buyShop">
+                            </div><!--purchased-items-slider -->
+                        </div><!-- End .purchased-items-container -->
+
+                    </div><!-- End .col-md-12 -->
+                </div><!-- End .row -->
+            </div><!-- End .container -->
+        </section>
+        <!-- End #content -->
+        
+        <footer id="footer">
+            <div id="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12 widget">
+                            <div class="title-bg">
+                                <h3>最受欢迎</h3>
+                            </div>
+                            <!-- End .title-bg -->
+
+                            <div class="footer-popular-slider flexslider footerslider">
+                                <ul class="slides" id="hotsellcommodityoffoot">
+                                    
+                                </ul>
+                            </div>
+                            <!-- End Footerpouplar-slider -->
+                            <div class="md-margin visible-xs"></div>
+                            <!-- space -->
+                        </div>
+                        <!-- End .col-md-4 -->
+
+                        <div class="col-md-4 col-sm-4 col-xs-12 widget">
+                            <div class="title-bg">
+                                <h3>精选</h3>
+                            </div>
+                            <!-- End .title-bg -->
+
+                            <div class="footer-featured-slider flexslider footerslider">
+                                <ul class="slides" id="selectcommodityoffoot">
+                                </ul>
+                            </div>
+                            <!-- End Footerpouplar-slider -->
+                            <div class="md-margin visible-xs"></div>
+                            <!-- space -->
+                        </div>
+                        <!-- End .col-md-4 -->
+
+                        <div class="col-md-4 col-sm-4 col-xs-12 widget">
+                            <div class="title-bg">
+                                <h3>特卖</h3>
+                            </div>
+                            <!-- End .title-bg -->
+
+                            <div class="footer-specials-slider flexslider footerslider">
+                                <ul class="slides" id="sellcommodityoffoot">
+                                </ul>
+                            </div>
+                            <!-- End Footerpouplar-slider -->
+
+                        </div>
+                        <!-- End .col-md-4 -->
+                    </div>
+                    <!-- End .row -->
+                </div>
+                <!-- End .container -->
+            </div>
+            <!-- End #footer-top -->
+
+            <div id="inner-footer">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4 col-xs-12 widget">
+                            <h3>购物指南</h3>
+                            <ul class="links">
+                                <li>
+                                    <a href="#">积分制度</a>
+                                </li>
+                                <li>
+                                    <a href="#">会员介绍</a>
+                                </li>
+                                <li>
+                                    <a href="#">购物流程</a>
+                                </li>
+                                <li>
+                                    <a href="#">常见问题</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End .widget -->
+
+                        <div class="col-md-3 col-sm-4 col-xs-12 widget">
+                            <h3>配送服务</h3>
+                            <ul class="links">
+                                <li>
+                                    <a href="#">配送政策</a>
+                                </li>
+                                <li>
+                                    <a href="#">开箱验货</a>
+                                </li>
+                                <li>
+                                    <a href="#">配送运费</a>
+                                </li>
+                                <li>
+                                    <a href="#">配送范围</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End .widget -->
+
+                        <div class="col-md-3 col-sm-4 col-xs-12 widget">
+                            <h3>支付方式</h3>
+
+                            <ul class="contact-list">
+                                <li><a href="/infomation">货到付款</a></li>
+                                <li>在线支付</li>
+                                <li>优选卡</li>
+                                <li>发票制度</li>
+                            </ul>
+                        </div>
+                        <!-- End .widget -->
+                        <!-- <div class="clearfix visible-sm"></div> -->
+
+                        <div class="col-md-3 col-sm-12 col-xs-12 widget">
+                            <h3>售后服务</h3>
+
+                            <ul class="contact-list">
+                                <li>退款说明</li>
+                                <li>退换货流程</li>
+                                <li>退换货政策</li>
+                                <li>隐私条款</li>
+                            </ul>
+
+
+                        </div>
+                        <!-- End .widget -->
+                    </div>
+                    <!-- End .row -->
+                </div>
+                <!-- End .container -->
+
+            </div>
+            <!-- End #inner-footer -->
+
+            <div id="footer-bottom">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 footer-text-container" style="text-align:center">
+                            <p>&copy; 2014 Powered by Company&trade;. All Rights Reserved.</p>
+                        </div>
+                        <!-- End .col-md-5 -->
+                    </div>
+                    <!-- End .row -->
+                </div>
+                <!-- End .container -->
+            </div>
+            <!-- End #footer-bottom -->
+
+        </footer>
+        <!-- End #footer -->
+    </div>
+    <a href="#" id="scroll-top" class="scroll-top" title="Scroll to Top"><img src="images/toTop1.png" style="width:40px;height:40px" alt="图片为加载"></a>
+    <!-- <a href="#" id="scroll-top" title="Scroll to Top"><i class="fa fa-angle-up"></i></a> -->
+    <!-- End #scroll-top -->
+
+    <!-- END -->
+
+    <script src="scripts/js/jquery-1.11.1.min.js"></script>
+    <script src="scripts/js/modernizr.custom.js"></script>
+    <script src="scripts/js/getUrlParam.js"></script>
+    <script src="scripts/product/shopproduct.js"></script>
+    <script src="scripts/js/bootstrap.min.js"></script>
+    <script src="scripts/js/smoothscroll.js"></script>
+    <script src="scripts/js/jquery.debouncedresize.js"></script>
+    <script src="scripts/js/retina.min.js"></script>
+    <script src="scripts/js/jquery.placeholder.js"></script>
+    <script src="scripts/js/jquery.hoverIntent.min.js"></script>
+    <script src="scripts/js/twitter/jquery.tweet.min.js"></script>
+    <script src="scripts/js/jquery.flexslider-min.js"></script>
+    <script src="scripts/js/owl.carousel.min.js"></script>
+    <script src="scripts/js/jflickrfeed.min.js"></script>
+    <script src="scripts/js/jquery.prettyPhoto.js"></script>
+    <script src="scripts/js/imagesloaded.min.js"></script>
+    <script src="scripts/js/isotope.min.js"></script>
+    <script src="scripts/js/jquery.fitvids.js"></script>
+    <script src="scripts/js/jquery.elastislide.js"></script>
+    <script src="scripts/js/jquery.elevateZoom.min.js"></script>
+    <!-- // <script src="scripts/js/revolution.js"></script> -->
+    <script src="scripts/js/main.js"></script>
+
+</body>
+</html>
