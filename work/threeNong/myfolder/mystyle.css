@@ -1,0 +1,75 @@
+body{
+	/*background-color: #361742;*/
+}
+.bodypic{
+	width: 100%;
+	height: 600px;
+	background: url(../images/bigpicbg.jpg) no-repeat;
+	background-size: cover;
+}
+.header-global {
+	margin-bottom: 0 !important;
+}
+.hm-life-promotion{
+	margin-top: 0 !important;
+}
+.bodypic .center{
+	height: 600px;
+	width: 960px;
+	margin: 0 auto;
+	padding-top: 100px;
+}
+/*@media(min-width: 1440px) .bodypic .center{
+	width: 1350px;
+}*/
+.center .centRow {
+	width: 500px;
+	margin: 0 auto;
+}
+.fammer,.business{
+	width: 200px;
+	height: 80px;
+	border-radius: 10px;
+	opacity: 0.5;
+	float: left;
+	font-size: 20px;
+	border: 2px solid #eee;
+	line-height: 80px;
+	text-align: center;
+	font-weight: bold;
+}
+.center .centRow .business{
+	margin-left: 50px;
+}
+.fammer:hover{
+	background-color: #fff;
+	opacity: 0.7;
+	
+}
+.business:hover{
+	background-color: #fff;
+	opacity: 0.7;
+}
+.campaign-slide-text-inner h3,.campaign-slide-text-inner h2,.campaign-slide-text-inner p{
+	color: #fff !important;
+}
+.campaign-navigation-next{
+	border: 28px solid black;
+	border-color: transparent transparent transparent rgba(0, 0, 0, 0.54);
+	z-index: 999;
+	background-color: transparent !important;
+}
+.campaign-navigation-prev{
+	border: 28px solid black;
+	border-color: transparent rgba(0, 0, 0, 0.54) transparent transparent ;
+	z-index: 999;
+	background-color: transparent !important;
+}
+.campaign-slide-item-image-wrapper img{
+	height: 99%!important;
+}
+.campaign-slide-text-inner{
+	position: absolute;
+	top: 30%;
+	background-color: rgba(0,0,0,0.3);
+}

@@ -15,7 +15,7 @@ angular.module('starter.controllers', [])
     }
 })
 .controller('meterCtrl', function($scope, $stateParams, $http, querys){
-     
+  
   var bac = document.getElementById('backtropQuer');
   var bac2 = document.getElementById('backtrop2');
   var bac3 = document.getElementById('backtrop3');

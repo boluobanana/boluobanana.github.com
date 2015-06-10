@@ -1,0 +1,127 @@
+
+.body{
+	margin: 0 auto;
+	width: 960px;
+
+}
+
+body{
+	
+}
+
+/*------ body header ------*/
+.body .bodyHeader{
+	height: 400px;
+
+}
+.body .bodyHeader .bhAd{
+	width: 240px;
+	height: 400px;
+	float: left;
+	-webkit-tansition:height .5s ease-in;
+	position: relative;
+}
+.body .bodyHeader .bhAd img{
+	width: 100%;
+}
+.body .bodyHeader .bhAd .detail{
+	display: block;
+	position: absolute;
+	height: 400px;
+	width: 240px;
+	text-align: center;
+	background-color: rgba(8, 8, 8, 0.31);
+	color: #fff;
+	font-size: 40px;
+	cursor: pointer;
+}
+.body .bodyHeader div:nth-child(even){
+	background-color: #B0EFED;
+	
+}
+.body .bodyHeader div:nth-child(odd){
+	background-color: #13D0CC;
+	
+}
+
+.body .bodyHeader .bhAd{
+	overflow: hidden;
+}
+.bgGreen{
+	background-color: #AEE290 !important;
+}
+.bgMilk{
+	background-color: #DAD5C4 !important;
+}
+.bgBlue{
+	background-color: #7EF4F9 !important
+}
+.bgRed{
+	background-color: #FF8484 !important;
+}
+/*------ /body header ------*/
+
+
+/*------ body content ------*/
+
+.body .bodycontent{
+	padding: 12px 0 0 0;
+}
+
+.body .bodycontent .listHeader{
+	height: 80px; 
+	width: 100%;
+	background-color: #eee;
+	margin-bottom: 6px;
+	
+}
+.body .bodycontent .listHeader h1{
+
+	line-height: 80px;
+	font-size:40px;
+}
+.body .bodycontent .shoplist{
+	width: 181px;
+	height: 181px;
+	margin: 6px 11px 6px 0;
+	background-color: #13D0CC;
+	float: left;
+	overflow: hidden;
+}
+.clear{
+	clear: both;
+}
+.goTopDiv{
+	position: fixed;
+	width: 50px;
+	height: 45px;
+	bottom: 100px;
+	right: 50px;
+	background: #95EAC5;
+	-webkit-transition: all .3s ease-in;
+	-o-transition: all .3s ease-in;
+	transition: all .3s ease-in;
+	opacity: 0;
+	font-size: 15px;
+	line-height: 15px;
+	padding-top: 16px;
+	text-align: center;
+}
+
+/*------ /body content ------*/
+
+
+/*----------- 适配 ---------*/
+@media (min-width: 1440px){
+	.body{
+		width: 1350px;
+	}
+	.body .bodyHeader .bhAd{
+		width: 337px;
+		
+	}
+	.body .bodyHeader .bhAd .detail{
+		width: 337px;
+	}
+} 
+/*----------- /适配 ---------*/
