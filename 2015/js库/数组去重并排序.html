@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组去重并排序</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function seq (x , y) {
+		return x -y;
+	}
+	Array.prototype.unique1 = function() {
+		var n =[];
+		for (var i = 0; i < this.length; i++) {
+			if (n.indexOf(this[i]) == -1) {
+				n.push(this[i])
+			};
+		};
+		return n.sort(seq);
+	};
+	Array.prototype.unique2 = function() {
+	    var n = {},
+	        r = [];
+	    for (var i = 0; i < this.length; i++) {
+	        // 使用哈希表，利用关键字的判断来去重
+	        // 如果哈希表中没有当前项
+	        if (!n[this[i]]) {
+	            n[this[i]] = true;
+	            r.push(this[i]);
+	        };
+	    };
+	    return r.sort(seq);
+	};
+	Array.prototype.unique3 = function() {
+	    var n = [this[0]];
+
+	    //如果当前数组的第i项在当前数组中第一次出现的位置不是i，
+	    //那么表示第i项是重复的，忽略掉。否则存入结果数组
+	    for (var i = 1; i < this.length; i++) {
+	        if (this.indexOf(this[i]) == i) {
+	            n.push(this[i]);
+	        };
+	    };
+	    return n.sort(seq); // 最后进行一次排序
+	};
+	Array.prototype.unique4 = function() {
+	    this.sort(seq); // 先进行数组排序
+	    var n = [];
+	    for (var i = 0; i < this.length; i++) {
+	        // 如果当前项和上一项的值不一样时，则存入结果数组
+	        if (this[i] != this[i - 1]) {
+	            n.push(this[i]);
+	        };
+	    };
+	    return n;
+	};
+	Array.prototype.unique5 = function() {
+	    // 使用ES5的reduce方法。
+	    // 参考链接：http://www.zhangxinxu.com/wordpress/2013/04/es5%E6%96%B0%E5%A2%9E%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/#reduce
+	    return this.reduce(function(a, b){
+	        if (a.indexOf(b) < 0 ) {
+	            a.push(b);
+	        };
+	        return a;
+	    }, []);
+	};
+	window.onload = function(){
+		var test = [1,2,5,2,55,23,3,4,5,5,4,2,3,1];
+		console.log(test.unique1());
+		console.log(test.unique2())
+		test.forEach(function  (num) {
+			console.log(num);
+		})
+	}
+</script>
+</html>
