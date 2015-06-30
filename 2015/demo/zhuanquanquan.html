@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<title>Title</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="http://a.tbcdn.cn/??tbsp/tbsp.css,p/global/1.0/global-min.css" />
+<style type="text/css">
+.common{ width:10px; height:10px; border-radius:5px; background:#f60; position:absolute;}
+#circle{ left:95px; top:295px;}
+#base{ left:195px; top:295px;}
+.path{ width:200px; height:200px; border:1px #f00 solid; border-radius:100px; position:absolute; top:200px; left:100px;}
+</style>
+</head>
+<body>
+    <div id="circle" class="common"></div>
+    <div id="base" class="common"></div>
+    <div class="path"></div>
+</body>
+<script type="text/javascript">
+    var r = 100; // 半径100
+    var a = 0; // 初始角度为0
+    var obj = document.getElementById('circle');
+    // 基点坐标为200,300
+    setInterval(function(){
+        obj.style.left = (200 - Math.cos(a) * r - 5) + 'px';
+        obj.style.top = (300 - Math.sin(a) * r - 5) + 'px';
+        a += 0.05;
+    }, 50);
+</script>
+</html

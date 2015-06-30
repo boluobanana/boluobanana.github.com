@@ -25,12 +25,51 @@
 				width: 600px;
 			}
 		}
+		.t1{/*
+			float: left;*/
+			position: absolute;
+			left: 0;
+			width: 200px;
+			height: 100px;
+			background-color: red;
+		}
+		.t2{
+			/*float: right;*/
+			position: absolute;
+			right: 0;
+			width: 200px;
+			height: 100px;
+			background-color: green;
+		}
+		.t3{
+			
+			margin-left: 200px;
+			margin-right: 200px;
+			height: 100px;
+			background-color: #000;
+
+		}
+		.row{
+			float: left;
+			/*margin-right: -200px;*/
+			width: 100%;
+			height: 100px;
+			border: 1px solid #000;
+		}
 	</style>
 </head>
 <body>
 	<div class="header" style="background-color:#ccc;"></div>
 	<div class="col col-1"></div>
 	<div class="col col-2"></div>
+	
+	<div class="row">
+		<div class="t3"></div>
+	</div>
+	<div class="t1">1</div>
+	<div class="t2">2</div>
+		
+	
 	
 </body>
 </html>

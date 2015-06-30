@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>CSS3: Spinner动画效果 |美瑞网mxria.com</title>
+<style>
+#spinner1 { 
+position: absolute; 
+top: 30%; 
+left: 40%; 
+height: 128px; 
+width: 128px; 
+-webkit-mask-image: url(spinner.png);//采用遮罩的方式，提供一个图形 
+background-color: #000; 
+-webkit-animation-name: spinnerRotate; 
+-webkit-animation-duration: 2s; 
+-webkit-animation-iteration-count: infinite; 
+-webkit-animation-timing-function: linear;
+} 
+#spinner2 {  
+position: absolute; 
+top: 10%; 
+left: 40%; 
+height: 64px; 
+width: 64px; 
+background-image:
+url(spinner2.gif); 
+-webkit-animation-name: spinnerRotate;//关键帧 
+-webkit-animation-duration: 1s; 
+-webkit-animation-iteration-count: infinite;//动画循环的次数：无限次  -webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes spinnerRotate {//设置动画效果的关键帧 
+from {  
+-webkit-transform:rotate(0deg);  } 
+to {  
+-webkit-transform:rotate(360deg);
+ }
+}  
+</style>
+</head>
+<body>
+<p align=center>CSS3 Transform动画效果--
+<a href='http://www.mxria.com'>美瑞网mxria.com</a>
+</p> <div id="spinner1"></div>
+<div id="spinner2"></div>
+</body>
+</html>

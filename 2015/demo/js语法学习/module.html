@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="UTF-8">
+	<title>module</title>
+</head>
+<body>
+	module
+</body>
+
+<script>
+/*---------最简单的module------------*/
+// var Calculator = function (eq) {
+// 	    //这里可以声明私有成员
+
+//     var eqCtl = document.getElementById(eq);
+
+//     return {
+//         // 暴露公开的成员
+//         add: function (x, y) {
+//             var val = x + y;
+//             return val;
+//         }
+//     };
+// };
+// //使用module
+// var calculator = new Calculator('eq');
+// console.log(calculator.add(2, 2));
+
+/*---------/最简单的module------------*/
+
+
+/*----------------不使用new的module----------*/
+
+var Calculator = function (eq) {
+	    //这里可以声明私有成员
+
+    var eqCtl = document.getElementById(eq);
+
+    return {
+        // 暴露公开的成员
+        add: function (x, y) {
+            var val = x + y;
+            return val;
+        }
+    };
+}();
+var cal = Calculator;
+console.log(cal.add(2,3));
+/*----------------不使用new的module----------*/
+
+
+/*-------------扩展----------------*/
+var blogModule = (function (my) {
+    my.AddPhoto = function () {
+        //添加内部代码  
+        console.log(1);
+    };
+    return my;
+} (blogModule));
+
+blogModule.AddPhoto();
+/*-------------扩展----------------*/
+
+</script>
+</html>

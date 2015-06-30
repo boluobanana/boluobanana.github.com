@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>题目3</title>
+	<style>
+		/*.row{
+			position: relative;
+		}
+		input{
+			width: 100%;
+			display: inline;
+			left: 10px;
+			width: 100px;
+			border: 0px;
+		}
+		.selfInput{
+			min-width: 40px;
+			height: 20px;
+			display: inline;
+			position: absolute;
+			
+		}*/
+	</style>
+	<style>
+		.container {  
+		    position:relative;  
+		    display:inline-block;  
+		     
+		    zoom:1;  
+		}  
+		.selfAdapta {  
+		    width:100%;  
+		    position:absolute;  
+		}  
+		input,span{  
+		    font-family:verdana,Arial,Helvetica,sans-serif;
+		    font-size: 1.2rem;
+		} 
+	</style>
+</head>
+
+<body>
+	<div id="container" class="container">  
+        <input type="text" class="selfAdapta"/>  
+        <span style="visibility:hidden">增加点长度</span>  
+	</div>  
+</body>
+
+
+<script>
+	
+	(function(){  
+
+	    function valueChange(tid,sid){  
+	            var jsUserName = "";  
+	                  
+	            var span = document.getElementsByTagName('span')[0],
+	            	input = document.getElementsByTagName('input')[0];
+	            input.addEventListener('input',function(){
+	            	var tem = input.value;
+	            	span.innerHTML = tem;
+	            })
+	    }  
+	              
+	    valueChange("input","span");  
+	})()
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="UTF-8">
+	<title>自执行函数</title>
+</head>
+<body>
+	<a href="">a</a>
+	<a href="">b</a>
+	<a href="">c</a>
+	<a href="">d</a>
+	<a href="">e</a>
+	<a href="">f</a>
+	<a href="">g</a>
+	<a href="">h</a>
+	<a href="">i</a>
+	<a href="">j</a>
+</body>
+<script>
+	var elems = document.getElementsByTagName('a');
+
+	for (var i = 0; i < elems.length; i++) {
+
+	    (function (lockedInIndex) {
+
+	        elems[i].addEventListener('click', function (e) {
+	            e.preventDefault();
+	            alert('I am link #' + lockedInIndex);
+	        }, 'false');
+
+	    })(i);
+
+	}
+</script>
+</html>

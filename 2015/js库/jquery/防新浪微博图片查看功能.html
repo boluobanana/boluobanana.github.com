@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片放大</title>
+	<style>
+		.minImg{
+			
+		}
+		.minImg img{
+			max-width: 200px;
+			cursor: zoom-in;
+		}
+		.showView{
+			display: none;
+			
+		}
+		.showView img{
+			max-width: 600px;
+			cursor: zoom-out;
+		}
+		.showView div{
+			overflow: hidden;
+		}
+		li{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="minImg">
+		<img src="imgs/mini.jpg" alt="mini">
+	</div>
+	<div class="showView">
+		<ul>
+			<li>向右旋转</li>
+			<li>向左旋转</li>
+		</ul>
+		<div class="box">
+			<img src="imgs/norl.jpg" alt="normal">
+		</div>
+		
+	</div>
+</body>
+
+<script>
+	(function(){
+		var doc = document,
+			minImg = doc.getElementsByClassName('minImg')[0],
+			showView = doc.getElementsByClassName('showView')[0],
+			bigImg = showView.getElementsByTagName('img')[0],
+			box = showView.getElementsByClassName('box')[0]
+			;
+
+		console.log(bigImg);
+		minImg.addEventListener('click',function(){
+			minImg.style.display = 'none';
+			showView.style.display="block";
+		})
+
+		bigImg.addEventListener('click', function(){
+			minImg.style.display = 'block';
+			showView.style.display="none";
+		})
+
+		var lis = doc.getElementsByTagName('li');
+		lis[0].addEventListener('click', function(){
+			var t = bigImg.style.transform.replace(/[^0-9]/ig,"");
+			var num = t - 0 + 90;
+			// console.log(t);
+			if (!/[.]/.test(t/180)) {
+				console.log('1')
+				box.style.height = '\"'+bigImg.width+'\"';
+			}else{
+				box.style.height = '\"'+bigImg.height+'\"';
+			};
+			bigImg.style.transform = 'rotate('+ num +'deg)';
+		})
+		lis[1].addEventListener('click', function(){
+			var t = bigImg.style.transform.replace(/[^0-9+-]/ig,"");
+			var num = t - 0 - 90;
+			// console.log(t);
+			if (!/[.]/.test(t/180)) {
+				box.style.height = bigImg.width;
+			}else{
+				box.style.height = bigImg.height;
+			};
+			bigImg.style.transform = 'rotate('+ num +'deg)';
+		})
+	})()
+</script>
+</html>

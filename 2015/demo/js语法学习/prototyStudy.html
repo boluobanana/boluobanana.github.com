@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="UTF-8">
+	<title>prototypeStudy</title>
+</head>
+<body>
+	<h1>
+		prototype
+	</h1>
+</body>
+<script>
+	var o = function () {
+		this.name = 'name';
+	}
+	// o.prototype.add = function(a , b){
+	// 	return a + b;
+	// }
+	// var t = new o;
+	// console.log(t.add(1,2));
+	o.prototype = {
+
+		add:function(x,y){
+			return x + y;
+		},
+		sub:function(x,y){
+			return x - y;
+		}
+	}
+	var t = function(){
+	};
+	t.prototype = new o();
+	var h = function(){
+		
+	}
+	console.log(t.prototype);
+	console.log(t.prototype.add(1,2));
+	console.log(t.sub(1,2));
+</script>
+</html>
