@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ready事件</title>
+</head>
+<body>
+	<h1>ready事件</h1>
+	<p>模拟浏览器dom加载完成</p>
+</body>
+<script>
+
+	if (document.addEventListener) {
+		document.addEventListener('DOMContentLoaded',function(){
+			console.log('DOMContentLoad is ready');
+
+		})
+	};
+
+	// setInterval(function(){
+	// 	if (/loaded|complete/.test(document.readyState)) {
+	// 		console.log('/loaded|complete/is ready')
+
+	// 	};
+	// },
+	// 110)
+	
+	if (document.attachEvent) {
+		document.attachEvent('onreadystatechange',function(){
+			if (document.readyState == 'complete') {
+				document.detachEvent('onreadystatechange', arguments.callee);
+				console.log('onreadystatechange is ready')
+			};
+		})
+	};
+	
+
+</script>
+</html>

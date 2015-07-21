@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>外边距合并</title>
+	<style>
+		.p1,.p2{
+			border: 1px solid #000;
+			/*margin: 50px 0;*/
+		}
+		.p1{
+			margin-bottom: 100px;
+		}
+		.p2{
+			margin-top: 50px;
+		}
+		ol{
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<p class="p1">我是p1</p>
+	<p class="p2">我是p2</p>
+	<span>上面2个p的margintop和marginbutton都是50，<br>
+		但是在他们之间只会有一个50的距离
+	</span>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+
+	</ul>
+	<button>click
+		<span>aaa</span>
+	</button>
+	<ul>
+		<ol>1</ol>
+		<ol>2</ol>
+		<ol>3</ol>
+		<ol>4</ol>
+		<ol>5</ol>
+	</ul>
+</body>
+<script>
+	var btn = document.querySelector('button');
+	console.log(btn);
+
+	var lis = document.querySelectorAll('li');
+	console.log(lis);
+	var ols = document.querySelectorAll('ol');
+	for (var i = 0; i < lis.length; i++) {
+		(function(i){
+			lis[i].addEventListener('click', function(){
+						console.log(i);
+						ols[i].style.opacity = '1';
+					})
+		})(i)
+		
+	};
+
+</script>
+</html>

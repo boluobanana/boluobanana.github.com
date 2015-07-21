@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>quagga</title>
+</head>
+<body>
+	<img src="../../img/img001.png" alt="">
+</body>
+<script src="quagga.min.js"></script>
+<script>
+	var testImg = document.querySelector('img');
+	console.log(testImg)
+	Quagga.decodeSingle({
+	    decoder: {
+	        readers: ["code_128_reader"] // List of active readers
+	    },
+	    locate: true, // try to locate the barcode in the image
+	    src: 'mobile-detected.png'  // or 'data:image/jpg;base64,' + data
+	}, function(result){
+	    console.log(result);
+	});
+</script>
+</html>

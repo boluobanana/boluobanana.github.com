@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象的getset方法</title>
+</head>
+<body>
+	对象的getset方法
+</body>
+<script>
+	(function(){
+		var pen = {
+			name : 'pen',
+			wei : '@pen',
+			get age(){
+				var a = 'aa';
+				return a;
+			},
+			set age(val){
+				console.log('con-t set val')
+			}
+		}
+		console.log(pen.age)
+	})()
+
+
+</script>
+</html>

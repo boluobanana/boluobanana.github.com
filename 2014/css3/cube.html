@@ -73,7 +73,7 @@
             var y = document.getElementById("rotatey").value;
             var z = document.getElementById("rotatez").value;
             document.getElementById('cube').style.webkitTransform = "rotateX("+x+"deg) rotateY("+y+"deg) rotateZ("+z+"deg)";
-
+        
             document.getElementById('degx-span').innerText = x;
             document.getElementById('degy-span').innerText = y;
             document.getElementById('degz-span').innerText = z;
@@ -93,11 +93,11 @@
 </div>
 <div id="op">
     <p>rotate x: <span id="degx-span">0</span> deg</p>
-    <input type="range" min="-360" max="360" id="rotatex" value="0" class="range-control" onchange="rotate()" /><br/>
+    <input type="range" min="-360" max="360" id="rotatex" value="0" class="range-control" oninput="rotate()" /><br/>
     <p>rotate y: <span id="degy-span">0</span> deg</p>
-    <input type="range" min="-360" max="360" id="rotatey" value="0" class="range-control" onchange="rotate()" /><br/>
+    <input type="range" min="-360" max="360" id="rotatey" value="0" class="range-control" oninput="rotate()" /><br/>
     <p>rotate z: <span id="degz-span">0</span> deg</p>
-    <input type="range" min="-360" max="360" id="rotatez" value="0" class="range-control" onchange="rotate()" /><br/>
+    <input type="range" min="-360" max="360" id="rotatez" value="0" class="range-control" oninput="rotate()" /><br/>
 </div>
 </body>
 </html>
