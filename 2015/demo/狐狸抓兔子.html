@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>狐狸抓兔子</title>
+</head>
+<body>
+	<h1>
+
+ 2. 围绕着山顶有10个圆形排列的洞，狐狸要吃兔子，
+  兔子说：“可以，但必须先找到我，我就藏身于这十个洞中的某个洞。
+  你从1号洞找，下次隔1个洞（即3号洞）找，第三次隔2个洞（即6号洞）找，
+  再隔3个…以后在这个圆圈中如此类推，次数不限。”但狐狸从早到晚进进出出了1000次，仍没有找到兔子。
+
+问：兔子可能在哪个洞里？</h1>
+</body>
+<script>
+	
+	(function () {
+		var tem=1,t = [],e;
+		
+
+		function seq (x , y) {
+		return x -y;
+		}
+		Array.prototype.unique1 = function() {
+			var n =[];
+			for (var i = 0; i < this.length; i++) {
+				if (n.indexOf(this[i]) == -1) {
+					n.push(this[i])
+				};
+			};
+			return n.sort(seq);
+		};
+		for (var i = 1; i < 1000; i++) {
+			tem = tem+i+1;
+			e = tem % 10;
+			t.push(e);
+		};
+		console.log(t.unique1());
+	})()
+</script>
+</html>
