@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta content="width=device-width,user-scalable=no" name="viewport">
+	<meta charset="UTF-8">
+	<title>蝙蝠侠</title>
+	<style>
+		video{
+			width: 100%;
+		}
+		body{
+			margin: 0;
+		}
+		.box{
+			position: relative;
+		}
+		#jin1{
+			position: absolute;
+			top: 0;left: 0;
+		}
+		.box{
+			width: 640px;
+			display: inline-block;
+		}
+		#canvas{
+			width: 600px;
+			height: 480px;
+			border: 1px solid #000000;
+			display: inline;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<video id="video1" preload="auto" webkit-playsinline="true" autoplay="true">
+			<source src="http://cdn2.ressvr.com/batman-640x480_1080.mp4">
+		</video>
+		<img src="interactive/tuoyuan.png" alt="" class="jin1" id="jin1">	
+	</div>
+	<canvas id="canvas"></canvas>
+	<button class="btn1">点我播放</button>
+	<button class="btn2">pause</button>
+</body>
+<script src="http://cdn.bootcss.com/jquery/3.0.0-alpha1/jquery.min.js"></script>
+<script src="http://cdn2.ressvr.com/velocity.min.js"></script>
+<script>
+	var video1 = document.getElementById('video1');
+	var btn1 = document.querySelector('.btn1');
+	var $btn2 = $('.btn2');
+	var $jin = $('#jin1');
+	var flag = false;
+	var _x,_y;
+	console.log(video1);
+	btn1.onclick = function (e) {
+		video1.play();
+		Velocity(video1, { opacity: 0.5 }, { duration: 1000 });
+	}
+	$btn2.click(function(){
+		video1.pause();
+	})
+
+	$jin.on('mousedown', function(e){
+		console.log($(this).offset());
+		$(this).offset();
+		_x = e.clientX - this.offsetLeft;
+		_y = e.clientY - this.offsetTop;
+		flag = true;
+		return false;
+	})
+
+	$jin.on('mousemove', function (e) {
+		if(flag){
+			var $this = $(this);
+			console.log('X:' + e.offsetX + 'Y:' + e.offsetY);
+			$this.css({
+				'left': e.clientX - _x + 'px',
+				'top': e.clientY - _y +'px'
+			})
+			return false;
+		}
+	})
+
+	$jin.on('mouseup', function(e){
+		flag = false;
+	})
+</script>
+</html>
