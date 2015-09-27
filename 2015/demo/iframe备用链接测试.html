@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>iframe备用链接测试</title>
+	<style>
+		iframe{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<iframe src="" frameborder="0"></iframe>
+</body>
+<script>
+	function ajax(obj){
+		    obj.type = obj.type || 'GET';
+		    var xhr = createXHR();
+		    obj.data = obj.data || null;
+
+		    xhr.onreadystatechange = function(){
+		        if(xhr.readyState == 4){
+		            if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+		                obj.success(xhr.responseText);
+		            } else {
+		                obj.error('Resquest was unsuccessful: ' + xhr.status)
+		            }
+		        }
+		    }
+
+		    try{
+		        xhr.open(obj.type, obj.url, true);
+		        xhr.send(obj.data);
+		    }catch(err){
+		        throw err;
+		    }   
+		}
+		function createXHR(){
+			if (typeof XMLHttpRequest != "undefined") {
+				return new XMLHttpRequest();
+			} else if (typeof ActiveXobject != "undefined") {
+				if (typeof arguments.callee.activeString != "string") {
+					var versions = ["MSXML2.XMLHttp.6.0", "XSXML2.XMLHttp.3.0", "MSXML2.XMLHttp"],i,len;
+					for (i=0, len=versions.length; i < len; i++){
+						try{
+							new AcctiveXobject(versions[i]);
+							arguments.callee.activeXString = versions[i];
+							break;
+						}catch(ex){
+
+						}
+					}
+				};
+				return new ActiveXobject(arguments.callee.activeXString);
+			}else{
+				throw new Error("no XHR object available.")
+			}
+		}
+		ajax({
+			url:'https://www.baidu.com/',
+			success:setUrl,
+			error:setUrlBack
+		})
+		function setUrl(){
+			var if = document.querySelector('iframe');
+			if.src = "https://www.baidu.com/";
+		}
+		function setUrlBack(){
+			var if = document.querySelector('iframe');
+			if.src = "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe"
+		}
+</script>
+</html>
