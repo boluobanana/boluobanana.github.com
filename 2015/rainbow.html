@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>rainbows</title>
+</head>
+<body>
+	<canvas></canvas>
+</body>
+<script>
+	!function(window)
+	{
+	    var request = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame
+	        || function(cb) { return setTimeout(cb, 30) };
+
+	    var Rainbow = function()
+	    {
+	        var me     = this;
+	        var canvas = document.getElementsByTagName('canvas')[0];
+	        var engine = canvas.getContext('2d');
+	        var color  = 0;
+	        var points = [];
+	        var size   = 50;
+
+	        var pSize = 2;
+
+	        var targetTick = 40;
+	        var moveTarget = 40;
+	        var childSize  = 10;
+	        var childPos   = [];
+	        var colorfull  = true;
+
+	        var width  = window.innerWidth;
+	        var height = window.innerHeight;
+
+	        var target = {
+	            x : 500,
+	            y : 50
+	        };
+
+
+	        var fastTick   = 0.3;
+	        var normalTick = fastTick * 0.5;
+
+	        var check = [
+	            {
+	                pPos  : 'x',
+	                pDir  : 'dirX',
+	                multi : 1
+	            },
+	            {
+	                pPos  : 'y',
+	                pDir  : 'dirY',
+	                multi : 2
+	            },
+	        ];
+
+
+	        this.run = function()
+	        {
+	            init();
+	            tick();
+	        };
+
+	        var init = function()
+	        {
+	            canvas.setAttribute('width', window.innerWidth);
+	            canvas.setAttribute('height', window.innerHeight);
+	            engine.lineWidth = 2;
+
+	            canvas.addEventListener('mousemove', function(e) {
+	                //target.x = e.clientX;
+	                //target.y = e.clientY;
+	            });
+
+	            canvas.addEventListener('click', function(e) {
+	                console.log('test');
+	                colorfull = !colorfull;
+	            });
+
+	            for (var i = 0; i < childSize; i++) {
+	                childPos.push([
+	                    padding(midRand(20), 10),
+	                    padding(midRand(20), 10)
+	                ]);
+	            }
+
+	            createPoints();
+	        };
+
+	        var padding = function(val, pad)
+	        {
+	            if (val < 0) {
+	                return val - pad;
+	            } else {
+	                return val + pad;
+	            }
+	        };
+
+	        var createPoints = function()
+	        {
+	            points = new Array(size);
+
+	            for (var i = 0; i < size; i++) {
+	                points[i] = {
+	                    x     : Math.random() * width,
+	                    y     : Math.random() * height,
+	                    dirX  : (0.5 - Math.random()) * 3,
+	                    dirY  : (0.5 - Math.random()) * 3,
+	                    lx    : null,
+	                    ly    : null,
+	                    color : null,
+	                    tick  : Math.random() * normalTick,
+	                    width : 1 + Math.random() * 5
+	                };
+
+	                points[i].lx = points[i].x;
+	                points[i].ly = points[i].y;
+
+	                points[i].color         = 'hsl(' + getColor(points[i]) + ', 100%, 50%)';
+	                points[i].colorTick     = Math.random() * 360;
+	                points[i].colorTickPush = 1 + Math.random() * 5;
+	            }
+	        };
+
+	        var getColor = function(point)
+	        {
+	            return 180 / window.innerWidth * point.x + 180 / window.innerHeight * point.y;
+	        };
+
+	        var goToTarget = function(point)
+	        {
+	            for (var i = 0; i < 2; i++) {
+	                if (point[check[i].pPos] > target[check[i].pPos]) {
+	                    if (point[check[i].pDir] > 0) {
+	                        point[check[i].pDir] -= check[i].multi * (fastTick + point.tick);
+	                    } else {
+	                        point[check[i].pDir] -= check[i].multi * (normalTick + point.tick);
+	                    }
+	                } else if (point[check[i].pPos] < target[check[i].pPos]) {
+	                    if (point[check[i].pDir] < 0) {
+	                        point[check[i].pDir] += check[i].multi * (fastTick + point.tick);
+	                    } else {
+	                        point[check[i].pDir] += check[i].multi * (normalTick + point.tick);
+	                    }
+	                }
+	            }
+	        };
+
+	        var tick = function()
+	        {
+	            targetTick++;
+
+	            if (targetTick >= moveTarget) {
+	                targetTick = 0 - Math.random() * moveTarget;
+	                target.x = (width / 10) + Math.random() * (width - (width / 5));
+	                target.y = (height / 10) + Math.random() * (height - (height  / 5));
+	            }
+
+	            //engine.clearRect(0, 0, window.innerWidth, window.innerHeight);
+	            if (colorfull) {
+	                engine.fillStyle = 'rgba(0, 0, 0, 0.05)';
+	            } else {
+	                engine.fillStyle = 'rgba(100, 0, 0, 0.1)';
+	            }
+
+	            engine.fillRect(0, 0, width, height);
+
+
+
+	            for (var i = 0; i < size; i++) {
+
+	                goToTarget(points[i]);
+
+	                points[i].lx = points[i].x;
+	                points[i].ly = points[i].y;
+	                points[i].x += points[i].dirX;
+	                points[i].y += points[i].dirY;
+
+	                //engine.fillStyle = points[i].color;
+	                //engine.fillStyle = 'hsl(' + getColor(points[i]) + ', 100%, 50%)';
+
+	                var hue   = '100%';
+	                var light = '50%';
+
+	                if (!colorfull) {
+	                    light = parseInt(50 * (1 + Math.sin(points[i].colorTick / 50))) + '%';
+	                    hue   = '0%';
+	                }
+
+	                //console.log('hsla(' + points[i].colorTick + ', ' + hue + ', ' + light + ', 0.05)');
+
+	                engine.fillStyle    = 'hsla(' + points[i].colorTick + ', ' + hue + ', ' + light + ', 0.05)';
+	                engine.strokeStyle  = 'hsl(' + points[i].colorTick + ', ' + hue + ', ' + light + ')';
+	                points[i].colorTick += points[i].colorTickPush;
+
+
+	                engine.lineWidth = points[i].width;
+	                engine.beginPath();
+	                engine.moveTo(points[i].lx, points[i].ly);
+	                engine.lineTo(points[i].x, points[i].y);
+	                engine.stroke();
+
+	                engine.strokeStyle = 'hsla(' + points[i].colorTick + ', ' + hue + ', ' + light + ', 0.4)';
+	                engine.lineWidth   = 2;
+
+	                for (var j = 0; j < childSize; j++) {
+	                    engine.moveTo(points[i].lx + childPos[j][0], points[i].ly + childPos[j][1]);
+	                    engine.lineTo(points[i].x + childPos[j][0], points[i].y + childPos[j][1]);
+	                }
+
+
+	                engine.stroke();
+	                engine.closePath();
+	            }
+
+	            request(tick);
+	        };
+
+	        var midRand = function(range)
+	        {
+	            return (0.5 - Math.random()) * range;
+	        }
+	    };
+
+	    var r = new Rainbow();
+	    r.run();
+	}(window);
+
+</script>
+</html>
