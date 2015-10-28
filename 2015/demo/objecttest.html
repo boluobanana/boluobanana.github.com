@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象测试  对象属性的获取是获取的指针?</title>
+</head>
+<body>
+	<h1>对象测试  对象属性的获取是获取的指针?</h1>
+</body>
+<script>
+	(function(){
+
+		var o = {};
+		o.data = [1,2,3,4,5,6];
+
+		var t = o.data;
+		console.log(t);
+		for(var i = 0; i < t.length; i++){
+			t[i] = t[i] + 1;
+		}
+		console.log('t:'+ t);
+		console.log('o.data' + o.data);
+
+		var oo = o;
+		console.log(oo.data);
+	})()
+</script>
+</html>

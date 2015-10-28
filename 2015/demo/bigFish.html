@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<title>大鱼小鱼canvas</title>
 </head>
 <style>
@@ -10,20 +11,140 @@
 		padding-top: 10px;
 	}
 	.canvas1,.canvas2{
-		position: absolute;
-		top: 0;
+		/*position: absolute;*/
+		/*top: 200px;*/
+		border: 1px solid #000;
 	}
 	.canvas1{
 		z-index: 1;
 	}
 	.canvas2{
 		z-index: 0;
+		
 	}
 </style>
 <body>
 
 	<canvas id="canvas1" class="canvas1" width="800" height="800">  </canvas>
 	<canvas id="canvas2" class="canvas2" width="800" height="800"></canvas>
+	<input id="imgFileInput" type="file">
 
 </body>
+<script>
+	(function(){
+
+		if (window.File && window.FileReader && window.FileList && window.Blob) {
+		  // Great success! All the File APIs are supported.
+			var imgFileInput = document.querySelector('#imgFileInput');
+
+			var canvas1 = document.querySelector('#canvas1');
+			var ctx1 = canvas1.getContext('2d');
+			var canvas2 = document.querySelector('#canvas2');
+			var ctx2 = canvas2.getContext('2d');
+			
+			imgFileInput.addEventListener('change', listenFileInput);
+
+
+			function listenFileInput (e) {
+				
+				var fileInput = e.target;
+				var files = e.target.files;
+				console.log(files);
+
+				var output = document.querySelector('#list');
+
+				var reader = new FileReader;
+				reader.onload = (function (theFile) {
+					return function(e){
+
+						var i = new Image();
+						i.src = e.target.result;
+						i.onload = function(){
+							drawImg(i);
+						}
+						
+					}
+				})(files[0])
+				reader.readAsDataURL(files[0]);
+			}
+			
+
+			function drawImg (img) {
+				
+				ctx1.drawImage(img,0,0,canvas1.width,canvas1.height);
+				var imgData = ctx1.getImageData(0,0,canvas1.width,canvas1.height);
+				
+				get256(imgData);
+			}
+
+			// 256灰度图
+			function get256 (imgData) {
+				
+				var data = imgData.data;
+
+
+				var len = data.length,
+					i = 0;
+				for( i;i<len;i = i + 4 ){
+					var grap;
+					var r = data[i], g = data[i+1], b = data[i+2];
+					grap = r * 0.3 + g * 0.59 + b * 0.11;
+
+					data[i] = grap;
+					data[i+1] = grap;
+					data[i+2] = grap; 
+				}
+				// imgData.data = data;
+				ctx2.putImageData(imgData,0,0);
+			}
+			//黑白
+			function getBlack(imgData){
+
+				var data = imgData.data;
+				var len = data.length,
+					i = 0;
+				for( i;i<len;i = i + 4 ){
+					var grap;
+					var r = data[i], g = data[i+1], b = data[i+2];
+					grap = (r + g + b)/3;
+					if (grap < 100) {
+						data[i] = 0;
+						data[i+1] = 0;
+						data[i+2] = 0; 
+					}else{
+						data[i] = 255;
+						data[i+1] = 255;
+						data[i+2] = 255; 
+					};
+					
+				}
+
+				ctx2.putImageData(imgData,0,0);
+			}
+
+			//马赛克
+			function getMosaics(imgData){
+
+				var data = imgData.data;
+				var len = data.length,
+					i = 0;
+				for( i;i<len;i = i + 4 ){
+					var grap;
+					var r = data[i], g = data[i+1], b = data[i+2];
+					grap = (r + g + b)/3;
+					
+					
+				}
+
+				ctx2.putImageData(imgData,0,0);
+			}
+
+
+		} else {
+		  alert('The File APIs are not fully supported in this browser.');
+		}
+
+
+	})()
+</script>
 </html>
