@@ -6,12 +6,12 @@
 	};
 
 	var PVFS = {
-		main: function (){
+		main: function(){
 			this.is.init();
 			this.polyfill();
-
 		},
 		play: function(){},
+		draw: function(){},
 		basePlayer: function(){},
 		playOnAndroidWeChat: function(){},
 		playOnSafariWeChat: function(){},
@@ -35,9 +35,9 @@
 			mobile: false
 		},
 
-		playCanvas: null,
-		playVideo: null,
-		playAudio: null
+		targetCanvas: null,
+		targetVideo: null,
+		targetAudio: null
 	};
 	win.PVFS = PVFS;
 
@@ -79,38 +79,38 @@
 
 		function safariHelp (){
 			var initial = {};
-			initial.play = this.playVideo.play;
+			initial.play = this.targetVideo.play;
 
-			initial.paused = Object.getOwnPropertyDescriptor(this.playVideo.__proto__.__proto__, 'paused') || Object.getOwnPropertyDescriptor(this.playVideo, 'paused');
+			initial.paused = Object.getOwnPropertyDescriptor(this.targetVideo.__proto__.__proto__, 'paused') || Object.getOwnPropertyDescriptor(this.targetVideo, 'paused');
 
-			//改this.playVideo转发audio的事件
+			//改this.targetVideo转发audio的事件
 			['pause', 'play','ended'].forEach(function (event) {
-				this.playAudio.addEventListener(event, function (e) {
+				this.targetAudio.addEventListener(event, function (e) {
 
-					dispatch(this.playVideo, e.type);
+					dispatch(this.targetVideo, e.type);
 				});
 			});
-			Object.defineProperty(this.playVideo, 'paused', {
+			Object.defineProperty(this.targetVideo, 'paused', {
 					configurable: true, // this.initial.paused.configurable,
 					enumerable: initial.paused.enumerable,
 					get: function () {
-						return this.playAudio.paused;
+						return this.targetAudio.paused;
 					}.bind(this),
 					set: function (value) {
-						this.playAudio.paused = !!value;
+						this.targetAudio.paused = !!value;
 					}.bind(this)
 				});
 
-			// 修改this.playVideo的play
-			this.playVideo.play = function(){
-				this.playAudio.play();
+			// 修改this.targetVideo的play
+			this.targetVideo.play = function(){
+				this.targetAudio.play();
 			};
-			this.playVideo.pause = function(){
-				this.playAudio.pause();
+			this.targetVideo.pause = function(){
+				this.targetAudio.pause();
 			};
 
 			var safariAutoPlay = function (){
-				this.playVideo.play();
+				this.targetVideo.play();
 				document.removeEventListener('click',safariAutoPlay);
 			};
 			document.addEventListener('click',safariAutoPlay);
@@ -160,21 +160,20 @@
 			this.playOnSafari();
 			return;
 		}
-			
 	};
 	PVFS.playOnAndroidWeChat = function (){
 
-		playVideo.src = url;
-		playVideo.style.height = '100%';
-		playVideo.style.width = '100%';
-		playVideo.style.zIndex = "100";
-		playVideo.style.display = 'block';
-		playVideo.style.position = 'absolute';
-		playVideo.style.opacity = 1;
-		playVideo.style.left = 0;
-		playVideo.style.top = 0;
+		targetVideo.src = url;
+		targetVideo.style.height = '100%';
+		targetVideo.style.width = '100%';
+		targetVideo.style.zIndex = "100";
+		targetVideo.style.display = 'block';
+		targetVideo.style.position = 'absolute';
+		targetVideo.style.opacity = 1;
+		targetVideo.style.left = 0;
+		targetVideo.style.top = 0;
 
-		playVideo.play();
+		targetVideo.play();
 
 		video.addEventListener('ended',function(){
 			// alert('ended !');
@@ -183,50 +182,107 @@
 		});
 	};
 	PVFS.playOnSafariWeChat = function (){
-		
-	
 
+		PVFS.basePlayer();
 	};
 	PVFS.playOnChrome = function (){
 
+		PVFS.basePlayer();
 	};
 	PVFS.playOnSafari = function (){
 		var src = url;
 		src.split('|').forEach(function(src){
 			if(src.match(/.mp3/)){
-				this.playAudio.src = src;
+				this.targetAudio.src = src;
 			}
 			if(src.match(/.mp4/)){
-				this.playVideo.src = src;
+				this.targetVideo.src = src;
 			}
 		});
 
-		this.playVideo.addEventListener('canplaythrough', function(){
-			this.playVideo.play();
+		this.targetVideo.addEventListener('canplaythrough', function(){
+			this.targetVideo.play();
 		});
 
+		safariDraw();
+
+		function safariDraw() {
+			var __FRAME_RATE__ = 30;
+			var __PERIOD__ = 1.0 / __FRAME_RATE__;
+			/**
+			 *	当 audio 数据不够的时候，直接停下就行了，不需要通知 video
+			 *	当 video 数据不够的时候，需要让 audio 也暂停下来
+			 */
+			 // console.log('v readyState:' + video.readyState + '  v HAVE_ENOUGH_DATA : ' + video.HAVE_ENOUGH_DATA);
+			if (targetVideo.readyState < targetVideo.HAVE_ENOUGH_DATA) {
+				targetVideo.pause();
+			} else{
+				if(targetAudio.src){
+					var pos = targetAudio.currentTime;
+					targetVideo.currentTime = pos;
+					if (Math.abs(pos - targetVideo.currentTime) >= __PERIOD__) {
+						targetVideo.currentTime += __PERIOD__ * parseInt((pos - targetVideo.currentTime) / __PERIOD__);
+					}
+				}else{
+					if( targetVideo.duration - targetVideo.currentTime < __PERIOD__){
+						targetVideo.currentTime = targetVideo.duration;
+						//手动触发ended事件
+						dispatch(targetVideo, 'ended');
+					}else{
+						targetVideo.currentTime += __PERIOD__ ;
+					}
+				}
+			}
+		}
+
+		PVFS.basePlayer();
 
 	};
 	PVFS.basePlayer = function(){
 
-		if( document.getElementById('playVideo') ){
-			this.playVideo.crossOrigin = 'anonymous';
-			this.playVideo.setAttribute('preload','auto');
-			this.playVideo.setAttribute('webkit-playsinline', true);
-			this.playVideo.load();
-			this.playVideo.id = 'playVideo';
+		if( document.getElementById('targetVideo') ){
+			this.targetVideo.crossOrigin = 'anonymous';
+			this.targetVideo.setAttribute('preload','auto');
+			this.targetVideo.setAttribute('webkit-playsinline', true);
+			this.targetVideo.load();
+			this.targetVideo.id = 'targetVideo';
 		}
-		if( !document.getElementById('playCanvas') ){
-			this.playCanvas = document.createElement('canvas');
-			this.playCanvas.style.position = 'absolute';
-			this.playCanvas.style.top = 0;
-			this.playCanvas.style.left = 0;
-			this.playCanvas.id = 'playCanvas';
+		if( !document.getElementById('targetCanvas') ){
+			this.targetCanvas = document.createElement('canvas');
+			this.targetCanvas.style.position = 'absolute';
+			this.targetCanvas.style.top = 0;
+			this.targetCanvas.style.left = 0;
+			this.targetCanvas.id = 'targetCanvas';
 		}
-		var ctx = this.playCanvas.getContext('2d');
+		var ctx = this.targetCanvas.getContext('2d');
 		canvasResize();
+		this.targetVideo.play();
+		
+	};
+	PVFS.draw = function() {
+
+		var ctx = targetCanvas.getContext('2d');
+		ctx.drawImage(targetVideo,0,0,canvas.clientWidth,canvas.clientHeight);
+		if(targetVideo.duration){
+			var endTime;
+			if(targetVideo.duration > targetAudio.duration){
+				endTime = targetAudio.duration;
+			}else{
+				endTime = targetVideo.duration;
+			}
+			if(targetVideo.currentTime < endTime ){
+				prev_time = targetVideo.currentTime;
+
+				aniId = requestAnimationFrame(this.draw);
+			}else{
+				cancelAnimationFrame(aniId);
+
+				console.log('cancel ');
+			}
+		}else{
+			aniId = requestAnimationFrame(this.draw);
+		}
 
 	};
-
 
 })(window);
